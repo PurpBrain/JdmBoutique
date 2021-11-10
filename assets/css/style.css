@@ -49,6 +49,10 @@ header {
   color: #fff;
 }
 
+.btn {
+  position: center;
+}
+
 .product {
   background-color: #575757;
   padding: 40px 30px;
@@ -112,6 +116,28 @@ header {
 
 .adress p i {
   padding-right: 10px;
+}
+
+footer {
+  background-color: #575757;
+  height: 100px;
+  width: 100%;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 10px;
+}
+
+footer p a {
+  color: #000000;
+}
+
+.newslater {
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  color: #A5A5A5;
 }
 
 /*# sourceMappingURL=style.css.map */
