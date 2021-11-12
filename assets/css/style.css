@@ -15,17 +15,50 @@ h2 {
   margin-bottom: 20px !important;
 }
 
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #575757;
+  width: 100px;
+  content: " ";
+  margin: 0 auto;
+  margin-top: 2px;
+}
+
+h2 a {
+  text-decoration: none;
+  color: #575757;
+}
+
+h2 a:hover {
+  color: #fff;
+  transition: color 1s;
+}
+
+h2 a:not(:hover) {
+  color: #575757;
+  transition: color 1s;
+}
+
 header {
   background-image: url(../img/rx7-fc.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .home-title {
   padding-top: 30%;
   color: #fff;
+}
+
+.blog1 {
+  background-image: url(../img/Jzx100.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
 }
 
 .btn-white {
@@ -53,6 +86,18 @@ header {
   position: center;
 }
 
+.btn-footer {
+  background-color: #575757;
+  color: #000000;
+  border-radius: 10px;
+  transition: background-color 1s;
+}
+
+.btn-footer:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
 .product {
   background-color: #575757;
   padding: 40px 30px;
@@ -66,9 +111,11 @@ header {
   display: block;
   margin: 0 auto;
   width: 100%;
+  height: 200px;
 }
 
 .product h3 {
+  font-size: 22px;
   padding-top: 10px;
   color: #fff;
   text-align: center;
@@ -120,7 +167,6 @@ header {
 
 footer {
   background-color: #575757;
-  height: 100px;
   width: 100%;
 }
 
@@ -135,9 +181,47 @@ footer p a {
 
 .newslater {
   padding: 10px 0;
+  height: 7vh;
+}
+
+.newslater input {
+  border-radius: 10px;
+  background-color: #a5a5a5;
+}
+
+.search {
   display: flex;
-  justify-content: flex-end;
-  color: #A5A5A5;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+search input {
+  border-radius: 10px;
+  background-color: #575757;
+}
+
+.clients h2 {
+  color: #575757;
+}
+
+.clients blockquote {
+  color: #575757;
+  font-style: italic;
+  line-height: 130%;
+  padding: 5px;
+}
+
+cite {
+  font-size: 90%;
+  display: block;
+  margin-top: 20px;
+}
+
+cite img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
