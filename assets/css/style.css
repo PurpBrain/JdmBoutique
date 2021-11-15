@@ -41,7 +41,7 @@ h2 a:not(:hover) {
 }
 
 header {
-  background-image: url(../img/rx7-fc.jpg);
+  background-image: url(../img/Voitures-Img/rx7-fc.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -54,7 +54,7 @@ header {
 }
 
 .blog1 {
-  background-image: url(../img/Jzx100.jpg);
+  background-image: url(../img/Voitures-Img/Jzx100.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
