@@ -1,5 +1,5 @@
 body {
-  background-color: #A7A7A7 !important;
+  background-color: #a7a7a7 !important;
 }
 
 h1, h2 {
@@ -141,11 +141,6 @@ header {
 
 .contact-message {
   width: 100%;
-}
-
-.btn-contact {
-  background-color: green;
-  color: #fff;
 }
 
 .form p {
