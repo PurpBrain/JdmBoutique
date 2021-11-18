@@ -20,7 +20,7 @@
 
 <body>
     <!--NAVBAR----------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary ps-3">
+    <nav class="navbar navbar-expand-lg navbar-light ps-3">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,6 +35,103 @@
                     <a class="nav-link active" aria-current="page" href="blog.html">Nos véhicules</a>
                 </li>
             </ul>
+            <!-- Button trigger modal -->
+            <div class="pe-3">
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
+                    Login / Register
+                </button>
+                <!-- Modal login-->
+                <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="login">Connectez-vous</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <section id="contact">
+                                    <div class="row">
+                                        <form>
+                                            <!--Email & Name-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="contact-form">
+                                                        <label>Email :</label>
+                                                        <input type="text" id="email"
+                                                            placeholder="Ajouter votre email" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="contact-form">
+                                                        <label>Mot de passe :</label>
+                                                        <input type="password" id="password"
+                                                            placeholder="Ajouter un mot de passe" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-secondary" data-bs-target="#register"
+                                            data-bs-toggle="modal">Pas de compte ?</button>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Se connecter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal register-->
+            <div class="modal fade" id="register" aria-hidden="true" aria-labelledby="register" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="register">Crée un compte</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!--Email & Name-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Nom :</label>
+                                        <input type="text" id="name" placeholder="Ajouter votre nom" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Email :</label>
+                                        <input type="email" id="email" placeholder="Ajouter votre email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Password-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Mot de passe :</label>
+                                        <input type="password" id="password" placeholder="Mot de passe" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Confirmation mot de passe :</label>
+                                        <input type="password" id="password" placeholder="Confirmation mot de passe" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="login"
+                                data-bs-toggle="modal">Enregistrez-vous</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     <!--user----------------------------------------------------->
@@ -44,7 +141,7 @@
                 <h2>Utilisateurs</h2>
             </div>
         </div>
-        <div class="box row">
+        <div class="box row txt-color-white">
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <img src="assets/img/Autres/img-pp.jpg">
                 <p>Daniel Isoji</p>
@@ -126,11 +223,11 @@
                 <h2>Blog</h2>
             </div>
             <div class="col-md-12 d-flex justify-content-end pb-2">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ModalBlog">
+                <button type="button" class="btn txt-color-white" data-bs-toggle="modal" data-bs-target="#ModalBlog">
                     <i class="fas fa-plus-square"></i></button>
             </div>
         </div>
-        <div class="box row">
+        <div class="box row txt-color-white">
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="idblog.html">
                     <img src="assets/img/Voitures-Img/Jzx100.jpg">
@@ -153,7 +250,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="">
-                    <img src="assets/img/Voitures-Img/rx7-veilside.jpg">
+                    <img src="assets/img/Voitures-Img/rx7.jpg">
                 </a>
                 <p>Page : Rx-7</p>
                 <div>
@@ -183,7 +280,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="">
-                    <img src="assets/img/Voitures-Img/rx7-veilside.jpg">
+                    <img src="assets/img/Voitures-Img/rx7.jpg">
                 </a>
                 <p>Page : Rx-7</p>
                 <div>
@@ -200,11 +297,11 @@
                 <h2>Commentaires</h2>
             </div>
             <div class="col-md-12 d-flex justify-content-end pb-2">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#ModalCom">
+                <button type="button" class="btn txt-color-white" data-bs-toggle="modal" data-bs-target="#ModalCom">
                     <i class="fas fa-plus-square"></i></button>
             </div>
         </div>
-        <div class="box row">
+        <div class="box row txt-color-white">
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="idblog.html">
                     <img src="assets/img/Voitures-Img/Jzx100.jpg">
@@ -227,7 +324,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="idblog.html">
-                    <img src="assets/img/Voitures-Img/rx7-veilside.jpg">
+                    <img src="assets/img/Voitures-Img/rx7.jpg">
                 </a>
                 <p>Gael Liop</p>
                 <div>
@@ -257,7 +354,7 @@
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-around py-3">
                 <a href="idblog.html">
-                    <img src="assets/img/Voitures-Img/rx7-veilside.jpg">
+                    <img src="assets/img/Voitures-Img/rx7.jpg">
                 </a>
                 <p>Gael Liop</p>
                 <div>
