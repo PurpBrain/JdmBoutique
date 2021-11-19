@@ -32,16 +32,13 @@
                     <a class="nav-link active" aria-current="page" href="contact.html">Qui sommes nous ?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#nosproduits">Nos véhicules</a>
-                </li>
-                <li class="nav-items">
-                    <a class="nav-link active" aria-current="page" href="admin.html">Admin</a>
+                    <a class="nav-link active" aria-current="page" href="blog.html">Nos véhicules</a>
                 </li>
             </ul>
             <!-- Button trigger modal -->
             <div class="pe-3">
                 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
-                    Login / Register
+                    Se connecter
                 </button>
                 <!-- Modal login-->
                 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
@@ -53,7 +50,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <section>
+                                <section id="contact">
                                     <div class="row">
                                         <form>
                                             <!--Email & Name-->
@@ -74,8 +71,17 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        <div class="form-check d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                                Se souvenir du mot de passe
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify-content-end">
+                                    <div class="d-flex justify-content-around">
+                                        <button class="btn btn-secondary" data-bs-target="#forgotpassword"
+                                            data-bs-toggle="modal">Mot de passe oublié</button>
                                         <button class="btn btn-secondary" data-bs-target="#register"
                                             data-bs-toggle="modal">Pas de compte ?</button>
                                     </div>
@@ -135,6 +141,32 @@
                     </div>
                 </div>
             </div>
+            <!--Modal forgot password-->
+            <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="forgotpassword">Mot de passe oublié ?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!--Email-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Email :</label>
+                                        <input type="email" id="email" placeholder="Ajouter votre email" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-bs-target="login"
+                                data-bs-toggle="modal">Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     <!--HEADER------------------------------------------------------------------->
@@ -155,35 +187,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Nos véhicules les plus populaires</h2>
+                    <h2>Nos véhicules en ventes</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="product d-flex align-items-center justify-content-center txt-color-white">
+            <div class="row pb-3 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 pb-sm-4">
+                    <div class="product txt-color-white py-auto">
                         <a href="idblog.html"><img src="assets/img/Voitures-Img/Jzx100.jpg"></a>
-                        <h3>Toyota Jzx100 Mark II</h3>
-                        <p>Curabitur consectetur pulvinar lacus, faucibus viverra magna cursus in. Sed ac iaculis
-                            nisi.
-                        </p>
+                        <h3 class="text-start">Toyota Jzx100 Mark II</h3>
+                        <p>Plus récent</p>
                     </div>
                 </div>
-                <div class="col-md-4 ">
-                    <div class="product d-flex align-items-center justify-content-center txt-color-white">
+                <div class="col-12 col-md-6 col-lg-4 pb-sm-4">
+                    <div class="product txt-color-white">
                         <img src="assets/img/Voitures-Img/rx7.jpg">
-                        <h3>Mazda RX-7 Kit Veilside</h3>
-                        <p>Curabitur consectetur pulvinar lacus, faucibus viverra magna cursus in. Sed ac iaculis
-                            nisi.
-                        </p>
+                        <h3 class="text-start">Mazda RX-7</h3>
+                        <p>Plus récent</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="product d-flex align-items-center justify-content-center txt-color-white">
+                <div class="col-12 col-md-6 col-lg-4 pb-sm-4">
+                    <div class="product txt-color-white">
                         <img src="assets/img/Voitures-Img/s13.jpg">
-                        <h3>Nissan Silvia S13</h3>
-                        <p>Curabitur consectetur pulvinar lacus, faucibus viverra magna cursus in. Sed ac iaculis
-                            nisi.
-                        </p>
+                        <h3 class="text-start">Nissan Silvia S13</h3>
+                        <p>Plus récent</p>
                     </div>
                 </div>
             </div>
@@ -296,10 +322,10 @@
                     <p><a href="/">Mentions légales</a></p>
                 </div>
                 <div class="col-md-4">
-                        <p>S'abonner a la newslater</p>
+                    <p>S'abonner a la newslater</p>
                     <div class="newslater d-flex justify-content-center row">
                         <input type="text" name="newslater" id="newslater" placeholder="Your Email">
-                    </div>>
+                    </div>
                 </div>
             </div>
         </div>
