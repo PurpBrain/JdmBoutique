@@ -99,6 +99,10 @@ header {
   position: center;
 }
 
+.btn-contact {
+  color: #adb2b3 !important;
+}
+
 .btn-footer {
   background-color: #152e30;
   color: #000000;
