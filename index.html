@@ -20,79 +20,83 @@
 
 <body>
     <!--NAVBAR----------------------------------------------------------->
-    <nav class="navbar navbar-expand-lg navbar-light ps-3">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="index.html">Boutique JDM</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="contact.html">Qui sommes nous ?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="blog.html">Nos véhicules</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="admin.html">Admin</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-stuck fixed-top">
+        <div class="container">
+            <!--Titre-->
+            <a class="navbar-brand me-3 me-xl-4 order-lg-1" href="index.html">Boutique JDM</a>
+            <!--Toggler-->
+            <button class="navbar-toggler ms-auto order-lg-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <!-- Button trigger modal -->
-            <div class="pe-3">
+            <div class="order-lg-3">
                 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#login">
                     Se connecter
                 </button>
-                <!-- Modal login-->
-                <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="login">Connectez-vous</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <section id="contact">
-                                    <div class="row">
-                                        <form>
-                                            <!--Email & Name-->
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="contact-form">
-                                                        <label>Email :</label>
-                                                        <input type="text" id="email"
-                                                            placeholder="Ajouter votre email" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="contact-form">
-                                                        <label>Mot de passe :</label>
-                                                        <input type="password" id="password"
-                                                            placeholder="Ajouter un mot de passe" />
-                                                    </div>
+            </div>
+            <!--List-->
+            <div class="collapse order-lg-2 navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Qui sommes nous ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog.html">Nos véhicules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Modal login-->
+            <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="login">Connectez-vous</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section id="contact">
+                                <div class="row">
+                                    <form>
+                                        <!--Email & Name-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="contact-form">
+                                                    <label>Email :</label>
+                                                    <input type="text" id="email" placeholder="Ajouter votre email" />
                                                 </div>
                                             </div>
-                                        </form>
-                                        <div class="form-check d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                id="flexCheckDefault">
-                                            <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
-                                                Se souvenir du mot de passe
-                                            </label>
+                                            <div class="col-md-6">
+                                                <div class="contact-form">
+                                                    <label>Mot de passe :</label>
+                                                    <input type="password" id="password"
+                                                        placeholder="Ajouter un mot de passe" />
+                                                </div>
+                                            </div>
                                         </div>
+                                    </form>
+                                    <div class="form-check d-flex justify-content-center">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                            Se souvenir du mot de passe
+                                        </label>
                                     </div>
-                                    <div class="d-flex justify-content-around">
-                                        <button class="btn btn-secondary" data-bs-target="#forgotpassword"
-                                            data-bs-toggle="modal">Mot de passe oublié</button>
-                                        <button class="btn btn-secondary" data-bs-target="#register"
-                                            data-bs-toggle="modal">Pas de compte ?</button>
-                                    </div>
-                                </section>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Se connecter</button>
-                            </div>
+                                </div>
+                                <div class="d-flex justify-content-around">
+                                    <button class="btn btn-secondary" data-bs-target="#forgotpassword"
+                                        data-bs-toggle="modal">Mot de passe oublié</button>
+                                    <button class="btn btn-secondary" data-bs-target="#register"
+                                        data-bs-toggle="modal">Pas
+                                        de compte ?</button>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Se connecter</button>
                         </div>
                     </div>
                 </div>
@@ -145,7 +149,8 @@
                 </div>
             </div>
             <!--Modal forgot password-->
-            <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword" tabindex="-1">
+            <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword"
+                tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -174,9 +179,9 @@
     </nav>
     <!--HEADER------------------------------------------------------------------->
     <header>
-        <div class="container">
+        <div class="container pt-5">
             <div class="row">
-                <div class="col-md-12 home-title">
+                <div class="col-12 home-title">
                     <h1>Japanese domestic market</h1>
                     <p>N°1 des ventes en lignes de véhicule japonais</p>
                     <a href="blog.html" class="btn-white btn-full">Tout nos produits</a>
@@ -218,7 +223,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-12">
                         <h2><a href="blog.html"><i class="fas fa-angle-double-right"></i> Voir plus <i
                                     class="fas fa-angle-double-left"></i></a>
                         </h2>
@@ -230,7 +235,7 @@
     <!--BANNER------------------------------------------------------->
     <section>
         <div class="container">
-            <div class="col-md-12">
+            <div class="col-12">
                 <video src="assets/img/Vidéo/Jimmy's R32 GTR _ 4K.mp4" autoplay muted loop width=100%></video>
             </div>
         </div>
@@ -268,13 +273,14 @@
                             <div class="col-md-6">
                                 <div class="contact-form">
                                     <label>Nom :</label>
-                                    <input type="text" id="name" />
+                                    <input class="border rounded-2" type="text" id="name" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="contact-form">
                                     <label>Email :</label>
-                                    <input type="email" id="email" placeholder="Ajouter votre email" />
+                                    <input type="email" id="email" class="border rounded-2"
+                                        placeholder="Ajouter votre email" />
                                 </div>
                             </div>
                         </div>
@@ -283,7 +289,7 @@
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <label>Sélectionnez le service</label>
-                                    <select>
+                                    <select class="border rounded-2">
                                         <option>Service client</option>
                                         <option>Service comptable</option>
                                         <option>SAV</option>
@@ -296,17 +302,13 @@
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <label>Votre message:</label>
-                                    <textarea id="message" rows="3" class="contact-message"></textarea>
+                                    <textarea id="message" rows="3" class="contact-message border rounded-2"></textarea>
                                 </div>
                             </div>
                         </div>
                         <!--Send Button-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="contact-form">
-                                    <button class="btn btn-contact">Envoyer</button>
-                                </div>
-                            </div>
+                        <div class="contact-form">
+                            <button class="btn btn-contact">Envoyer</button>
                         </div>
                     </form>
                 </div>
@@ -327,9 +329,10 @@
                 <div class="col-md-4">
                     <p>S'abonner a la newslater</p>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Your email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" placeholder="Your email"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Envoyer</button>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

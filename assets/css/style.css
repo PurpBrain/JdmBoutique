@@ -8,7 +8,7 @@ h1, h2 {
 }
 
 h2 {
-  color: #adb2b3;
+  color: #fff;
   text-align: center;
   font-size: 230% !important;
   margin-top: 20px !important;
@@ -18,7 +18,7 @@ h2 {
 h2:after {
   display: block;
   height: 2px;
-  background-color: #adb2b3;
+  background-color: #fff;
   width: 100px;
   content: " ";
   margin: 0 auto;
@@ -27,7 +27,7 @@ h2:after {
 
 h2 a {
   text-decoration: none;
-  color: #adb2b3;
+  color: #fff;
 }
 
 h2 a:hover {
@@ -36,25 +36,53 @@ h2 a:hover {
 }
 
 h2 a:not(:hover) {
-  color: #adb2b3;
+  color: #fff;
   transition: color 0.5s;
 }
 
 .txt-color-white {
-  color: #adb2b3 !important;
+  color: #fff !important;
 }
 
 h4 {
   font-size: 100% !important;
-  color: #adb2b3;
+  color: #fff;
 }
 
 nav a {
-  color: #adb2b3 !important;
+  color: #fff !important;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fixed-top {
+  background-color: #152e30;
 }
 
 header {
   background-image: url(../img/Voitures-Img/rx7-fc.jpg);
+  transform: scaleX(-1);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,8 +90,9 @@ header {
 }
 
 .home-title {
-  padding-top: 30%;
-  color: #adb2b3;
+  transform: scaleX(-1);
+  padding-top: 15%;
+  color: #fff;
 }
 
 .blog1 {
@@ -81,50 +110,32 @@ header {
   border-radius: 10px;
   transition: background-color 1s, color 1s, border 1s;
   margin-bottom: 20px;
-  color: #adb2b3;
+  color: #fff !important;
 }
 
 .btn-full {
   background-color: #575757;
-  color: #adb2b3;
+  color: #fff;
   margin-right: 15px;
 }
 
 .btn-full:hover {
-  background-color: #575757;
-  color: #adb2b3;
-}
-
-.btn {
-  position: center;
+  background-color: #a5a5a5;
+  color: #000000 !important;
 }
 
 .btn-contact {
-  color: #adb2b3 !important;
-}
-
-.btn-footer {
-  background-color: #152e30;
-  color: #000000;
-  border-radius: 10px;
-  transition: background-color 1s;
-}
-
-.btn-footer:hover {
-  background-color: #adb2b3;
-  color: #000000;
+  color: #fff !important;
 }
 
 .product {
-  padding-top: 50px;
+  padding-top: 10px;
   border-radius: 10px;
-  height: 35vh;
 }
 
 .product img {
   border-radius: 10px;
   display: block;
-  margin: 0 auto;
   width: 100%;
   height: auto;
 }
@@ -136,10 +147,6 @@ header {
 
 .product p {
   color: #bf621b;
-}
-
-.banner {
-  width: 100%;
 }
 
 .contact-form {
@@ -166,13 +173,13 @@ footer {
 }
 
 footer p {
-  color: #adb2b3;
+  color: #fff;
   text-align: center;
   padding-top: 10px;
 }
 
 footer p a {
-  color: #adb2b3;
+  color: #fff;
 }
 
 .newslater {
@@ -190,21 +197,28 @@ footer p a {
   display: flex;
   justify-content: center;
   padding-top: 15px;
-  color: #adb2b3;
+  color: #fff;
 }
 
 search input {
   border-radius: 10px;
   background-color: transparent;
-  border-color: #adb2b3;
+  border-color: #fff;
+}
+
+.form-select-sm {
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  background-color: #152e30;
+  color: #fff;
 }
 
 .clients h2 {
-  color: #adb2b3;
+  color: #fff;
 }
 
 .clients blockquote {
-  color: #adb2b3;
+  color: #fff;
   font-style: italic;
   line-height: 130%;
   padding: 5px;
