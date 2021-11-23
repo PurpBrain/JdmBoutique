@@ -12515,6 +12515,20 @@ nav a {
   background-color: #152e30;
 }
 
+.nav-link2.active {
+  color: #000000 !important;
+  background-color: #fff !important;
+}
+
+.nav-link2 {
+  color: #fff !important;
+  border-radius: 0.25em;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 0;
+}
+
 header {
   background-image: url(../img/Voitures-Img/rx7-fc.jpg);
   transform: scaleX(-1);

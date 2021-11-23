@@ -44,133 +44,131 @@
                     </li>
                 </ul>
             </div>
-            <!-- Modal login-->
-            <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="login">Connectez-vous</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <section id="contact">
+        </div>
+    </nav>
+    <!-- Modal login-->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="login">Connectez-vous</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section id="contact">
+                        <div class="row">
+                            <form>
+                                <!--Email & Name-->
                                 <div class="row">
-                                    <form>
-                                        <!--Email & Name-->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="contact-form">
-                                                    <label>Email :</label>
-                                                    <input type="text" id="email" placeholder="Ajouter votre email" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="contact-form">
-                                                    <label>Mot de passe :</label>
-                                                    <input type="password" id="password"
-                                                        placeholder="Ajouter un mot de passe" />
-                                                </div>
-                                            </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Email :</label>
+                                            <input type="text" id="email" placeholder="Ajouter votre email" />
                                         </div>
-                                    </form>
-                                    <div class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
-                                            Se souvenir du mot de passe
-                                        </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Mot de passe :</label>
+                                            <input type="password" id="password"
+                                                placeholder="Ajouter un mot de passe" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
-                                    <button class="btn btn-secondary" data-bs-target="#forgotpassword"
-                                        data-bs-toggle="modal">Mot de passe oublié</button>
-                                    <button class="btn btn-secondary" data-bs-target="#register"
-                                        data-bs-toggle="modal">Pas
-                                        de compte ?</button>
-                                </div>
-                            </section>
+                            </form>
+                            <div class="form-check d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                    Se souvenir du mot de passe
+                                </label>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Se connecter</button>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-secondary" data-bs-target="#forgotpassword"
+                                data-bs-toggle="modal">Mot de passe oublié</button>
+                            <button class="btn btn-secondary" data-bs-target="#register" data-bs-toggle="modal">Pas
+                                de compte ?</button>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
-            <!--Modal register-->
-            <div class="modal fade" id="register" aria-hidden="true" aria-labelledby="register" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="register">Crée un compte</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!--Email & Name-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Nom :</label>
-                                        <input type="text" id="name" placeholder="Ajouter votre nom" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Email :</label>
-                                        <input type="email" id="email" placeholder="Ajouter votre email" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Password-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Mot de passe :</label>
-                                        <input type="password" id="password" placeholder="Mot de passe" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Confirmation mot de passe :</label>
-                                        <input type="password" id="password" placeholder="Confirmation mot de passe" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" data-bs-target="login"
-                                data-bs-toggle="modal">Enregistrez-vous</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Modal forgot password-->
-            <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword"
-                tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="forgotpassword">Mot de passe oublié ?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!--Email-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Email :</label>
-                                        <input type="email" id="email" placeholder="Ajouter votre email" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" data-bs-target="login"
-                                data-bs-toggle="modal">Envoyer</button>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Se connecter</button>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!--Modal register-->
+    <div class="modal fade" id="register" aria-hidden="true" aria-labelledby="register" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="register">Crée un compte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Email & Name-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Nom :</label>
+                                <input type="text" id="name" placeholder="Ajouter votre nom" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Email :</label>
+                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--Password-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Mot de passe :</label>
+                                <input type="password" id="password" placeholder="Mot de passe" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Confirmation mot de passe :</label>
+                                <input type="password" id="password" placeholder="Confirmation mot de passe" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="login"
+                        data-bs-toggle="modal">Enregistrez-vous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal forgot password-->
+    <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotpassword">Mot de passe oublié ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Email-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Email :</label>
+                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="login" data-bs-toggle="modal">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!--HEADER------------------------------------------------------------------->
     <section class="blog1">
         <div class="container pt-6">
@@ -251,8 +249,8 @@
             </div>
         </div>
     </div>
-     <!--Footer--------------------------------------------------------->
-     <footer class="footer">
+    <!--Footer--------------------------------------------------------->
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -266,9 +264,10 @@
                 <div class="col-md-4">
                     <p>S'abonner a la newslater</p>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Your email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" placeholder="Your email"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Envoyer</button>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
