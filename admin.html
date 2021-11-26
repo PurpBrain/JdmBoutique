@@ -44,134 +44,131 @@
                     </li>
                 </ul>
             </div>
-            <!-- Modal login-->
-            <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="login">Connectez-vous</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <section id="contact">
+        </div>
+    </nav>
+    <!-- Modal login-->
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="login">Connectez-vous</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section id="contact">
+                        <div class="row">
+                            <form>
+                                <!--Email & Name-->
                                 <div class="row">
-                                    <form>
-                                        <!--Email & Name-->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="contact-form">
-                                                    <label>Email :</label>
-                                                    <input type="text" id="email" placeholder="Ajouter votre email" />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="contact-form">
-                                                    <label>Mot de passe :</label>
-                                                    <input type="password" id="password"
-                                                        placeholder="Ajouter un mot de passe" />
-                                                </div>
-                                            </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Email :</label>
+                                            <input type="text" id="email" placeholder="Ajouter votre email" />
                                         </div>
-                                    </form>
-                                    <!--Saves password-->
-                                    <div class="form-check d-flex justify-content-center">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
-                                            Se souvenir du mot de passe
-                                        </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Mot de passe :</label>
+                                            <input type="password" id="password"
+                                                placeholder="Ajouter un mot de passe" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-around">
-                                    <button class="btn btn-secondary" data-bs-target="#forgotpassword"
-                                        data-bs-toggle="modal">Mot de passe oublié</button>
-                                    <button class="btn btn-secondary" data-bs-target="#register"
-                                        data-bs-toggle="modal">Pas
-                                        de compte ?</button>
-                                </div>
-                            </section>
+                            </form>
+                            <!--Saves password-->
+                            <div class="form-check d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                    Se souvenir du mot de passe
+                                </label>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Se connecter</button>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-secondary" data-bs-target="#forgotpassword"
+                                data-bs-toggle="modal">Mot de passe oublié</button>
+                            <button class="btn btn-secondary" data-bs-target="#register" data-bs-toggle="modal">Pas
+                                de compte ?</button>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
-            <!--Modal register-->
-            <div class="modal fade" id="register" aria-hidden="true" aria-labelledby="register" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="register">Crée un compte</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!--Email & Name-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Nom :</label>
-                                        <input type="text" id="name" placeholder="Ajouter votre nom" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Email :</label>
-                                        <input type="email" id="email" placeholder="Ajouter votre email" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Password-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Mot de passe :</label>
-                                        <input type="password" id="password" placeholder="Mot de passe" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Confirmation mot de passe :</label>
-                                        <input type="password" id="password" placeholder="Confirmation mot de passe" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" data-bs-target="login"
-                                data-bs-toggle="modal">Enregistrez-vous</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Modal forgot password-->
-            <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword"
-                tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="forgotpassword">Mot de passe oublié ?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!--Email-->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="contact-form">
-                                        <label>Email :</label>
-                                        <input type="email" id="email" placeholder="Ajouter votre email" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" data-bs-target="login"
-                                data-bs-toggle="modal">Envoyer</button>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Se connecter</button>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <!--Modal register-->
+    <div class="modal fade" id="register" aria-hidden="true" aria-labelledby="register" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="register">Crée un compte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Email & Name-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Nom :</label>
+                                <input type="text" id="name" placeholder="Ajouter votre nom" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Email :</label>
+                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--Password-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Mot de passe :</label>
+                                <input type="password" id="password" placeholder="Mot de passe" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Confirmation mot de passe :</label>
+                                <input type="password" id="password" placeholder="Confirmation mot de passe" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="login"
+                        data-bs-toggle="modal">Enregistrez-vous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal forgot password-->
+    <div class="modal fade" id="forgotpassword" aria-hidden="true" aria-labelledby="forgotpassword" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotpassword">Mot de passe oublié ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Email-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Email :</label>
+                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="login" data-bs-toggle="modal">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Tabs----------------------------------------------------->
     <div class="container pt-6">
         <div class="row">
@@ -198,8 +195,13 @@
                             <div class="col-md-12">
                                 <h2>Utilisateurs</h2>
                             </div>
+                            <div class="col-md-12 d-flex justify-content-end pb-2">
+                                <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
+                                    data-bs-target="#ModalAddUser">
+                                    <i class="fas fa-plus-square"></i></button>
+                            </div>
                         </div>
-                        <div class="box col txt-color-white">
+                        <div class="box col txt-color-black">
                             <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                                 <img src="assets/img/Autres/img-pp.jpg">
                                 <p>Daniel Isoji</p>
@@ -247,7 +249,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button href="/" type="button" class="btn btn-primary">Bannir</button>
+                                <button href="/" type="button" class="btn btn-danger">Bannir</button>
                             </div>
                         </div>
                     </div>
@@ -260,12 +262,12 @@
                                 <h2>Blog</h2>
                             </div>
                             <div class="col-md-12 d-flex justify-content-end pb-2">
-                                <button type="button" class="btn txt-color-white" data-bs-toggle="modal"
+                                <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                                     data-bs-target="#ModalBlog">
                                     <i class="fas fa-plus-square"></i></button>
                             </div>
                         </div>
-                        <div class="box col txt-color-white">
+                        <div class="box col txt-color-black">
                             <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                                 <a href="idblog.html">
                                     <img src="assets/img/Voitures-Img/Jzx100.jpg">
@@ -320,7 +322,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button href="/" type="button" class="btn btn-primary">Supprimer</button>
+                                <button href="/" type="button" class="btn btn-danger">Supprimer</button>
                             </div>
                         </div>
                     </div>
@@ -333,12 +335,12 @@
                                 <h2>Commentaires</h2>
                             </div>
                             <div class="col-md-12 d-flex justify-content-end pb-2">
-                                <button type="button" class="btn txt-color-white" data-bs-toggle="modal"
+                                <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                                     data-bs-target="#ModalCom">
                                     <i class="fas fa-plus-square"></i></button>
                             </div>
                         </div>
-                        <div class="box col txt-color-white">
+                        <div class="box col txt-color-black">
                             <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                                 <a href="idblog.html">
                                     <img src="assets/img/Voitures-Img/Jzx100.jpg">
@@ -346,8 +348,9 @@
                                 <p>Daniel Isoji</p>
                                 <div>
                                     <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
-                                        data-bs-target="#editCom"></i></a>
-                                    <a><i class="fas fa-trash-alt"></i></a>
+                                            data-bs-target="#editCom"></i></a>
+                                    <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
                                 </div>
                             </div>
                             <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
@@ -357,8 +360,9 @@
                                 <p>Daniel Isoji</p>
                                 <div>
                                     <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
-                                        data-bs-target="#editCom"></i></a>
-                                    <a><i class="fas fa-trash-alt"></i></a>
+                                            data-bs-target="#editCom"></i></a>
+                                    <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
                                 </div>
                             </div>
                             <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
@@ -368,11 +372,37 @@
                                 <p>Daniel Isoji</p>
                                 <div>
                                     <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
-                                        data-bs-target="#editCom"></i></a>
-                                    <a><i class="fas fa-trash-alt"></i></a>
+                                            data-bs-target="#editCom"></i></a>
+                                    <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
                                 </div>
                             </div>
                     </section>
+                </div>
+                <!--Modal delete com-->
+                <div class="modal fade" id="deleteCom" tabindex="-1" aria-labelledby="modalDeleteCom" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalDeleteCom">Supprimer un commentaires</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="contact-form">
+                                            <label>Contenu du commentaire :</label>
+                                            <textarea class="form-control" id="text-message">Sed hendrerit ultricies orci at aliquet. Curabitur tristique fermentum finibus. Curabitur convallis convallis dolor sit amet sollicitudin
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button href="/" type="button" class="btn btn-danger">Supprimer</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -390,8 +420,7 @@
                         <div class="col-md-12">
                             <div class="contact-form">
                                 <label>Contenu du commentaire :</label>
-                                <textarea class="form-control" id="text-message"
-                                >Sed hendrerit ultricies orci at aliquet. Curabitur tristique fermentum finibus. Curabitur convallis convallis dolor sit amet sollicitudin
+                                <textarea class="form-control" id="text-message">Sed hendrerit ultricies orci at aliquet. Curabitur tristique fermentum finibus. Curabitur convallis convallis dolor sit amet sollicitudin
                                 </textarea>
                             </div>
                         </div>
@@ -402,84 +431,111 @@
                 </div>
             </div>
         </div>
-        </section>
-        <!--Modal Blog---------------------------------------------->
-        <div class="modal fade" id="ModalBlog" tabindex="-1" aria-labelledby="ModalBlog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalBlog">Ajouter un article</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!--Name & Description-->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="contact-form">
-                                    <label>Nom de l'article :</label>
-                                    <input type="text" id="name" placeholder="Ajouter votre nom" />
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="contact-form">
-                                    <label>Description :</label>
-                                    <input type="text" id="description" />
-                                </div>
+    </div>
+    </section>
+    <!--Modal add Blog---------------------------------------------->
+    <div class="modal fade" id="ModalBlog" tabindex="-1" aria-labelledby="ModalBlog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalBlog">Ajouter un article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Name & Description-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Nom de l'article :</label>
+                                <input type="text" id="name" placeholder="Ajouter votre nom" />
                             </div>
                         </div>
-                        <!--Image-->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button>Importer une image</button>
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Description :</label>
+                                <input type="text" id="description" />
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <!--Image-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button>Importer une image</button>
+                        </div>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
-        <!--Modal Com---------------------------------------------->
-        <div class="modal fade" id="ModalCom" tabindex="-1" aria-labelledby="ModalCom" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalCom">Ajouter un commentaire</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+    </div>
+    <!--Modal Add Com---------------------------------------------->
+    <div class="modal fade" id="ModalCom" tabindex="-1" aria-labelledby="ModalCom" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalCom">Ajouter un commentaire</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="contact-form">
-                                    <label>Commentaires</label>
-                                    <input type="text" id="AddCom">
-                                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="contact-form">
+                                <label>Commentaires</label>
+                                <input type="text" id="AddCom">
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
-        <!--Script-->
-        <script>
-            var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
-            triggerTabList.forEach(function (triggerEl) {
-                var tabTrigger = new bootstrap.Tab(triggerEl)
+    </div>
+    <!--Modal Ajouter User-->
+    <div class="modal fade" id="ModalAddUser" tabindex="-1" aria-labelledby="ModalAddUser" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalAddUser">Ajouter un utilisateur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!--Name & Description-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-form">
+                                <label>Nom :</label>
+                                <input type="text" name="dname" id="dname" placeholder="Ajouter un nom" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveUser()">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Script-->
+    <script>
+        var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+        triggerTabList.forEach(function (triggerEl) {
+            var tabTrigger = new bootstrap.Tab(triggerEl)
 
-                triggerEl.addEventListener('click', function (event) {
-                    event.preventDefault()
-                    tabTrigger.show()
-                })
+            triggerEl.addEventListener('click', function (event) {
+                event.preventDefault()
+                tabTrigger.show()
             })
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
 </body>

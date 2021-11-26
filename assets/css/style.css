@@ -12434,7 +12434,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-color: #152e30 !important;
+  background-color: #fff !important;
 }
 
 h1, .h1, h2, .h2 {
@@ -12443,7 +12443,7 @@ h1, .h1, h2, .h2 {
 }
 
 h2, .h2 {
-  color: #fff;
+  color: #000000;
   text-align: center;
   font-size: 230% !important;
   margin-top: 20px !important;
@@ -12453,7 +12453,7 @@ h2, .h2 {
 h2:after, .h2:after {
   display: block;
   height: 2px;
-  background-color: #fff;
+  background-color: #575757;
   width: 100px;
   content: " ";
   margin: 0 auto;
@@ -12462,7 +12462,7 @@ h2:after, .h2:after {
 
 h2 a, .h2 a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
 }
 
 h2 a:hover, .h2 a:hover {
@@ -12471,21 +12471,21 @@ h2 a:hover, .h2 a:hover {
 }
 
 h2 a:not(:hover), .h2 a:not(:hover) {
-  color: #fff;
+  color: #000000;
   transition: color 0.5s;
 }
 
-.txt-color-white {
-  color: #fff !important;
+.txt-color-black {
+  color: #000000 !important;
 }
 
 h4, .h4 {
   font-size: 100% !important;
-  color: #fff;
+  color: #575757;
 }
 
 nav a {
-  color: #fff !important;
+  color: #000000 !important;
 }
 
 .navbar-nav {
@@ -12512,16 +12512,16 @@ nav a {
 }
 
 .fixed-top {
-  background-color: #152e30;
+  background-color: #fff;
 }
 
 .nav-link2.active {
   color: #000000 !important;
-  background-color: #fff !important;
+  background-color: #575757 !important;
 }
 
 .nav-link2 {
-  color: #fff !important;
+  color: #000000 !important;
   border-radius: 0.25em;
   background-color: transparent;
   padding: 0.5rem 1rem;
@@ -12552,19 +12552,19 @@ header {
   height: 80vh;
 }
 
-.btn-white {
+.btn-grey {
   display: inline-block;
   padding: 10px 30px;
   text-decoration: none;
   border-radius: 10px;
   transition: background-color 1s, color 1s, border 1s;
   margin-bottom: 20px;
-  color: #fff !important;
+  color: #000000 !important;
 }
 
 .btn-full {
   background-color: #575757;
-  color: #fff;
+  color: #000000;
   margin-right: 15px;
 }
 
@@ -12574,7 +12574,7 @@ header {
 }
 
 .btn-contact {
-  color: #fff !important;
+  color: #000000 !important;
 }
 
 .product {
@@ -12617,18 +12617,18 @@ header {
 }
 
 footer {
-  background-color: #20474a;
+  background-color: #a5a5a5;
   width: 100%;
 }
 
 footer p {
-  color: #fff;
+  color: #000000;
   text-align: center;
   padding-top: 10px;
 }
 
 footer p a {
-  color: #fff;
+  color: #000000;
 }
 
 .newslater {
@@ -12646,28 +12646,28 @@ footer p a {
   display: flex;
   justify-content: center;
   padding-top: 15px;
-  color: #fff;
+  color: #575757;
 }
 
 search input {
   border-radius: 10px;
   background-color: transparent;
-  border-color: #fff;
+  border-color: #575757;
 }
 
 .form-select-sm {
   font-size: 0.875rem;
   border-radius: 0.375rem;
-  background-color: #152e30;
-  color: #fff;
+  background-color: #fff;
+  color: #575757;
 }
 
 .clients h2, .clients .h2 {
-  color: #fff;
+  color: #000000;
 }
 
 .clients blockquote {
-  color: #fff;
+  color: #000000;
   font-style: italic;
   line-height: 130%;
   padding: 5px;
