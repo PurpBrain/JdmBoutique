@@ -23,7 +23,6 @@ function darkMode() {
             modeDark.classList.add("no-dark-mode");
 
         }
-        document.getElementsByClassName("emote").innerHTML="☀️"
     } else {
         for (textWhite = 0; textWhite < allBlackTheme.length; textWhite++) {
             allBlackTheme[textWhite].style.color = 'white';
