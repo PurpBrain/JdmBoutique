@@ -6,6 +6,7 @@ searchBar()
 function searchBar() {
     //Barre de recherche 
     searchBarFilter.addEventListener('keyup', resultatRecherche);
+    //console.log(resultatRecherche);
 }
 
 //Local Storage
@@ -42,15 +43,18 @@ function darkMode() {
 }
 // Barre de recherche fonction
 function resultatRecherche(e) {
-    const contenuClavier = e.target.value.toLowerCase();
-    document.querySelectorAll('.product-item').forEach(
-        function(tache) {
-            const motCle = tache.firstChild.textContent
-            if (motCle.toLocaleLowerCase().indexOf(contenuClavier)!= -1) {
-                tache.getElementsByClassName.display = 'block'
-            } else {
-                tache.style.display = 'none'
-            } 
+    var input, filter,voitures, div,i,txtValue, tet;
+    input = document.getElementById('search')
+    filter = input.value.toLowerCase()
+    voitures = document.getElementById('voitures')
+    div = voitures.getElementsByTagName('div')
+    for(i = 0; i < div.length; i++){
+        tet = div[i].getElementsByTagName('h3')[0]
+        txtValue = tet.textContent || a.innerText
+        if(txtValue.toLowerCase().indexOf(filter) > -1){
+            div[i].style.display = ''
+        }else{
+            div[i].style.display = 'none'
         }
-    )
+    }
 }
