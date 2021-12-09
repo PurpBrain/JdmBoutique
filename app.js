@@ -1,56 +1,56 @@
+//Dark mode 
+function darkMode() {
+
+    //Variable pour changer le Background
+    let background = document.body;
+            
+    //Variable pour changer le Texte
+    let txt = document.querySelectorAll("h1, h2, h3, label, input"); 
+    let i;
+
+    //Récupération de l'id pour changer la couleur du txt
+    var element = document.getElementById("texte");
+
+    //Si texte blanc alors on change en noir et on désactive le dark mode
+    if(element.style.color == 'white'){
+        for (i = 0; i < txt.length; i++) {
+            txt[i].style.color = 'black';
+            background.classList.remove("dark-mode");
+            background.classList.add("no-dark-mode");
+
+        }
+    //Sinon on met le text en blanc et on active le dark mode  
+    } else {
+        for (i = 0; i < txt.length; i++) {
+            txt[i].style.color = 'white';
+            background.classList.add("dark-mode");
+            
+        }
+    } 
+}
 //Définir l'interface
 const searchBarFilter = document.querySelector('#search');
 
 //Application
-searchBar()
 function searchBar() {
     //Barre de recherche 
     searchBarFilter.addEventListener('keyup', resultatRecherche);
     //console.log(resultatRecherche);
 }
-
-//Local Storage
-function saveUser() {
-    let addUser = document.getElementById('dname').value;
-    localStorage.setItem('userName', addUser)
-}
-
-//Dark mode 
-function darkMode() {
-
-    // Background
-    let modeDark = document.body;
-            
-    // Text
-    let allBlackTheme = document.querySelectorAll("h1, h2, h3, label, input"); 
-    let textWhite;
-    var element = document.getElementById("ziak");
-
-    if(element.style.color == 'white'){
-        for (textWhite = 0; textWhite < allBlackTheme.length; textWhite++) {
-            allBlackTheme[textWhite].style.color = 'black';
-            modeDark.classList.remove("dark-mode");
-            modeDark.classList.add("no-dark-mode");
-
-        }
-    } else {
-        for (textWhite = 0; textWhite < allBlackTheme.length; textWhite++) {
-            allBlackTheme[textWhite].style.color = 'white';
-            modeDark.classList.add("dark-mode");
-            
-        }
-    } 
-}
+searchBar()
 // Barre de recherche fonction
 function resultatRecherche(e) {
-    var input, filter,voitures, div,i,txtValue, tet;
+    //Déclarer les variables
+    var input, filter, voitures, div, i, txtValue, titre;
+    //Donner des valeurs aux variables
     input = document.getElementById('search')
     filter = input.value.toLowerCase()
     voitures = document.getElementById('voitures')
     div = voitures.getElementsByTagName('div')
+
     for(i = 0; i < div.length; i++){
-        tet = div[i].getElementsByTagName('h3')[0]
-        txtValue = tet.textContent || a.innerText
+        titre = div[i].getElementsByTagName('h3')[0]
+        txtValue = titre.textContent || a.innerText
         if(txtValue.toLowerCase().indexOf(filter) > -1){
             div[i].style.display = ''
         }else{
@@ -58,3 +58,17 @@ function resultatRecherche(e) {
         }
     }
 }
+//check password 
+function checkPassword() {
+    //Récupération de l'id des inputs
+    const password = document.getElementById('password')
+    const passwordConfirm = document.getElementById('passwordConfirm')
+    //Si password = passConfirm alors password match
+    if (password.value === passwordConfirm.value) {
+        let changeIcons = document.getElementById("Icons")
+        changeIcons.innerHTML = `<i class="fas fa-check-square"></i>`
+        console.log('mdp match');
+    } else {
+        console.log('mdp différent');
+    }
+}checkPassword()

@@ -55,7 +55,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <section id="contact">
+                    <section>
                         <div class="row">
                             <form>
                                 <!--Email & Name-->
@@ -63,13 +63,13 @@
                                     <div class="col-md-6">
                                         <div class="contact-form">
                                             <label>Email :</label>
-                                            <input type="text" id="email" placeholder="Ajouter votre email" />
+                                            <input class="form-control" type="text" id="email-login" placeholder="Ajouter votre email" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="contact-form">
                                             <label>Mot de passe :</label>
-                                            <input type="password" id="password"
+                                            <input class="form-control" type="password" id="password-login"
                                                 placeholder="Ajouter un mot de passe" />
                                         </div>
                                     </div>
@@ -104,19 +104,19 @@
                     <h5 class="modal-title" id="register">Crée un compte</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div id="modal-body" class="modal-body">
                     <!--Email & Name-->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Nom :</label>
-                                <input type="text" id="name" placeholder="Ajouter votre nom" />
+                                <input class="form-control" type="text" id="name-register" placeholder="Ajouter votre nom" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Email :</label>
-                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                                <input class="form-control" type="email" id="email-register" placeholder="Ajouter votre email" />
                             </div>
                         </div>
                     </div>
@@ -125,13 +125,22 @@
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Mot de passe :</label>
-                                <input type="password" id="password" placeholder="Mot de passe" />
+                                <div class="input-group mb-3">
+                                    <input class="form-control" type="password" id="password" placeholder="Mot de passe"
+                                        onchange="checkPassword()" />
+                                    <span class="input-group-text"><i class="far fa-times-circle"></i></span>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="contact-form">
+                            <div class="">
                                 <label>Confirmation mot de passe :</label>
-                                <input type="password" id="password" placeholder="Confirmation mot de passe" />
+                                <div class="input-group mb-3">
+                                    <input class="form-control" type="password" id="passwordConfirm"
+                                        placeholder="Confirmation mot de passe" onchange="checkPassword()" />
+                                    <span class="input-group-text"><i class="far fa-times-circle"></i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -157,7 +166,7 @@
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Email :</label>
-                                <input type="email" id="email" placeholder="Ajouter votre email" />
+                                <input class="form-control" type="email" id="email-forgot-password" placeholder="Ajouter votre email" />
                             </div>
                         </div>
                     </div>
@@ -167,7 +176,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!--HEADER------------------------------------------------------------------->
     <section class="blog1">
