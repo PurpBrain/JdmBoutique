@@ -1,0 +1,27 @@
+{{!--
+    Partial: Modal pour ajouter un user
+--}}
+<div class="modal fade" id="ModalAddUser" tabindex="-1" aria-labelledby="ModalAddUser" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalAddUser">Ajouter un utilisateur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--Name & Description-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Nom :</label>
+                            <input type="text" name="dname" id="dname" placeholder="Ajouter un nom" value="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="saveUser()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+{{!--
+    Partial: Tabs
+--}}
+<div class="container pt-6">
+    <div class="row">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="user">
+                <button class="nav-link2 active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user"
+                    type="button" role="tab" aria-controls="pills-user" aria-selected="true">Profil</button>
+            </li>
+            <li class="nav-item" role="page">
+                <button class="nav-link2" id="pills-page-tab" data-bs-toggle="pill" data-bs-target="#pills-page"
+                    type="button" role="tab" aria-controls="pills-page" aria-selected="false">Blog</button>
+            </li>
+            <li class="nav-item" role="com">
+                <button class="nav-link2" id="pills-com-tab" data-bs-toggle="pill" data-bs-target="#pills-com"
+                    type="button" role="tab" aria-controls="pills-com" aria-selected="false">Commentaires</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <!--User--->
+            <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-home-tab">
+                <section class="container adminimg" id="user">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Utilisateurs</h2>
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                            <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
+                                data-bs-target="#ModalAddUser">
+                                <i class="fas fa-plus-square"></i></button>
+                        </div>
+                    </div>
+                    <div class="box col txt-color-black">
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <img src="assets/img/Autres/img-pp.jpg">
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <img src="assets/img/Autres/img-pp.jpg">
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <img src="assets/img/Autres/img-pp.jpg">
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--Blog--->
+            <div class="tab-pane fade" id="pills-page" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <section class="container adminimg" id="blog">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Blog</h2>
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                            <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
+                                data-bs-target="#ModalBlog">
+                                <i class="fas fa-plus-square"></i></button>
+                        </div>
+                    </div>
+                    <div class="box col txt-color-black">
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Page : Jzx100</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteBlog"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Page : Jzx100</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteBlog"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Page : Jzx100</p>
+                            <div>
+                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteBlog"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--Commentaires-->
+            <div class="tab-pane fade" id="pills-com" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <section class="container adminimg" id="com">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Commentaires</h2>
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                            <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
+                                data-bs-target="#ModalCom">
+                                <i class="fas fa-plus-square"></i></button>
+                        </div>
+                    </div>
+                    <div class="box col txt-color-black">
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editCom"></i></a>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editCom"></i></a>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
+                            </div>
+                        </div>
+                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
+                            <a href="idblog.html">
+                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                            </a>
+                            <p>Daniel Isoji</p>
+                            <div>
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editCom"></i></a>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom"></i></a>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

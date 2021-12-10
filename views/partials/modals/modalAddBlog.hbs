@@ -1,0 +1,40 @@
+{{!--
+    Partial: Modal pour ajouter un article
+--}}
+<div class="modal fade" id="ModalBlog" tabindex="-1" aria-labelledby="ModalBlog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalBlog">Ajouter un article</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!--Name & Description-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Nom de l'article :</label>
+                            <input type="text" id="name" placeholder="Ajouter votre nom" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Description :</label>
+                            <input type="text" id="description" />
+                        </div>
+                    </div>
+                </div>
+                <!--Image-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <button>Importer une image</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
