@@ -11,6 +11,8 @@ require("dotenv").config();
 // Import de module
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 const port = process.env.PORT || 3003;
 const { engine } = require("express-handlebars");
 
@@ -21,6 +23,13 @@ app.engine("hbs", engine({
     defaultLayout: "main",
   })
 );
+
+app.use(methodOverride('_method'))
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 // Configuration de la route vers notre dossier static
 app.use('/assets', express.static('public'))

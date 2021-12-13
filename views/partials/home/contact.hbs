@@ -27,19 +27,19 @@
                         </div>
                     </div>
                 </div>
-                <form>
+                <form action="/" method="post">
                     <!--Email & Name-->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Nom :</label>
-                                <input class="border rounded-2" type="text" id="name" />
+                                <input name="Nom" class="border rounded-2" type="text" id="name" />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="contact-form">
                                 <label>Email :</label>
-                                <input type="email" id="email" class="border rounded-2"
+                                <input name="email" type="email" id="email" class="border rounded-2"
                                     placeholder="Ajouter votre email" />
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="col-md-12">
                             <div class="contact-form">
                                 <label>Sélectionnez le service</label>
-                                <select class="border rounded-2">
+                                <select name='destinataire' class="border rounded-2">
                                     <option>Service client</option>
                                     <option>Service comptable</option>
                                     <option>SAV</option>
@@ -62,13 +62,13 @@
                         <div class="col-md-12">
                             <div class="contact-form">
                                 <label>Votre message:</label>
-                                <textarea id="message" rows="3" class="contact-message border rounded-2"></textarea>
+                                <textarea name="message" id="message" rows="3" class="contact-message border rounded-2"></textarea>
                             </div>
                         </div>
                     </div>
                     <!--Send Button-->
                     <div class="contact-form">
-                        <button class="btn btn-contact">Envoyer</button>
+                        <button type="submit" class="btn btn-contact">Envoyer</button>
                     </div>
                 </form>
             </div>
