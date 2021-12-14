@@ -1,0 +1,58 @@
+{
+    "fiche": [
+        {
+            "id": 1,
+            "make": "Toyota",
+            "model": "Chaser",
+            "img_url": "/assets/img/Voitures-Img/Jzx100.jpg"
+        },
+        {
+            "id": 2,
+            "make": "Mazda",
+            "model": "RX-7",
+            "img_url": "/assets/img/Voitures-Img/rx7.jpg"
+        },
+        {
+            "id": 3,
+            "make": "Nissan",
+            "model": "Silvia S13",
+            "img_url": "/assets/img/Voitures-Img/s13.jpg"
+        },
+        {
+            "id": 4,
+            "make": "Nissan",
+            "model": "Silvia GT-R 32",
+            "img_url": "/assets/img/Voitures-Img/gtr32.jpg"
+        },
+        {
+            "id": 5,
+            "make": "Honda",
+            "model": "NSX",
+            "img_url": "/assets/img/Voitures-Img/honda-nsx.jpg"
+        },
+        {
+            "id": 6,
+            "make": "Subaru",
+            "model": "Impreza 22B",
+            "img_url": "/assets/img/Voitures-Img/Impreza.jpg"
+        },
+        {
+            "id": 7,
+            "make": "Toyota",
+            "model": "Ae86",
+            "img_url": "/assets/img/Voitures-Img/ae86.jpg"
+        },
+        {
+            "id": 8,
+            "make": "Toyota",
+            "model": "GT86",
+            "img_url": "/assets/img/Voitures-Img/gt86.jpg"
+        },
+        {
+            "id": 9,
+            "make": "Hoonigan",
+            "model": "Twerkstallion",
+            "img_url": "/assets/img/Voitures-Img/twerkstallion.jpg"
+        }
+    ]
+}

@@ -20,25 +20,35 @@ const AutController = require("./controllers/AutController")
 // Home
 router.route('/')
     .get(HomeController.homepage)
-    .post(ContactController.createMessage)
-    .post(AutController.login)
 
 // Contact
 router.route('/contact')
     .get(ContactController.contactpage)
     .post(ContactController.createMessage);
 
+//Register
+router.route('/register')
+    .post(AutController.register);
+
+//Login
+router.route('/login')
+    .post(AutController.login)
+
+// Forgot Password
+router.route('/forgot')
+    .post(AutController.forgot)
+
 // Blog
 router.route('/blog')
     .get(BlogController.blogpage)
 
+// ID Blog
+router.route('/blog/:id')
+    .get(IdBlogController.idblogpage)
+
 // Admin
 router.route('/admin')
     .get(AdminController.adminpage)
-
-// ID Blog
-router.route('/idblog')
-    .get(IdBlogController.idblogpage)
 
 // /Routes
 

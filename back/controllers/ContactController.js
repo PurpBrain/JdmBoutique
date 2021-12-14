@@ -11,10 +11,11 @@ exports.contactpage = (req, res) => {
 
 exports.createMessage = (req, res) => {
     console.log("Controller formulaire", req.body);
-    if (req.originalUrl === '/' ) {
+    res.redirect('back');
+    /*if (req.originalUrl === '/' ) {
         res.render('home')
     }
     if (req.originalUrl === '/contact') {
         res.render('contact')
-    }  
+    }*/  
 }

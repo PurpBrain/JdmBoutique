@@ -1,0 +1,144 @@
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="login">
+                        <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login"
+                            aria-selected="true">Se connecter</button>
+                    </li>
+                    <li class="nav-item" role="register">
+                        <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-register" type="button" role="tab" aria-controls="pills-register"
+                            aria-selected="false">Pas de compte ?</button>
+                    </li>
+                    <li class="nav-item" role="forgot-password">
+                        <button class="nav-link" id="pills-forgot-password-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-forgot-password" type="button" role="tab"
+                            aria-controls="pills-forgot-password" aria-selected="false">Mot de passe oublié</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+                <!--login--->
+                <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                    aria-labelledby="pills-home-tab">
+                    <form action="/login" method="post">
+                        <div class="modal-body">
+                            <div class="row">
+                                <!--Email & Name-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Email :</label>
+                                            <input name='email' class="form-control" type="text" id="email-login"
+                                                placeholder="Ajouter votre email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Mot de passe :</label>
+                                            <input name='mdp' class="form-control" type="password" id="password-login"
+                                                placeholder="Ajouter un mot de passe" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                        Se souvenir du mot de passe
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type='submit' id='connexion-modal-login' type="button" class="btn btn-primary">Se
+                                connecter</button>
+                        </div>
+                    </form>
+                </div>
+                <!--register--->
+                <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div id="modal-body" class="modal-body">
+                        <!--Email & Name-->
+                        <form action="/register" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Nom :</label>
+                                        <input name='name' class="form-control" type="text" id="name-register"
+                                            placeholder="Ajouter votre nom" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Email :</label>
+                                        <input name='email' class="form-control" type="email" id="email-register"
+                                            placeholder="Ajouter votre email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Password-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Mot de passe :</label>
+                                        <div class="input-group mb-3">
+                                            <input name='mdp' class="form-control" type="password" id="password"
+                                                placeholder="Mot de passe" onchange="checkPassword()" />
+                                            <span class="icons input-group-text"><i
+                                                    class="far fa-times-circle"></i></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="">
+                                        <label>Confirmation mot de passe :</label>
+                                        <div class="input-group mb-3">
+                                            <input name='mdpConfirm' class="form-control" type="password"
+                                                id="passwordConfirm" placeholder="Confirmation mot de passe"
+                                                onchange="checkPassword()" />
+                                            <span class="icons input-group-text"><i
+                                                    class="far fa-times-circle"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type='submit' class="btn btn-primary" data-bs-target="login"
+                                    data-bs-toggle="modal">Enregistrez-vous</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <!--forgot-password-->
+                <div class="tab-pane fade" id="pills-forgot-password" role="tabpanel"
+                    aria-labelledby="pills-contact-tab">
+                    <div class="modal-body">
+                        <!--Email-->
+                        <div class="row">
+                            <form action="/forgot" method="post">
+                                <div class="col-md-6">
+                                    <div class="contact-form">
+                                        <label>Email :</label>
+                                        <input name='email' class="form-control" type="email" id="email-forgot-password"
+                                            placeholder="Ajouter votre email" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="login"
+                                        data-bs-toggle="modal">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
