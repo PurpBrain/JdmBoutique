@@ -20,13 +20,15 @@ Partial: Tout les produits de la page blog
         </div>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{#each voiture}}
+            
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-item txt-color-black">
-                    <a href="blog/{{@key}}">
+                    <a href="blog/{{this.id}}">
                         <img src="{{this.img_url}}">
                     </a>
                     <h3>{{ this.make }} {{ this.model }}</h3>
                     <p>Plus récent</p>
+                    <P>{{this.id}}</P>
                 </div>
             </div>
             {{/each}}
