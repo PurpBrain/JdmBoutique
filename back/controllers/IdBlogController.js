@@ -7,18 +7,17 @@ const voiture = require("../../public/data/db.json").fiche;
 exports.idblogpage = (req, res) => {
     console.log('je suis la page idblog');
 
-    let article = {}
+    // let voitureItem = {}
 
-    voiture.forEach(art => {
-        if (art.id === Number(req.params.id)) {
-            article = art
-            console.log(article);
-        }
-        let n = number(article.id)-1
-    })
+    // voiture.forEach(art => {
+    //     if (art.id === Number(req.params.id)) {
+    //         voitureItem = art
+    //         console.log(voitureItem);
+    //     }        
+    // })
 
     res.render('idblog', {
-        article,
-        pathimg: `${voitures[n].img_url}`
+        voiture: voiture[req.params.id],
+        pathimg: `${voiture[req.params.id].img_url}`
     });
 }
