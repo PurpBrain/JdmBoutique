@@ -7,18 +7,18 @@ const voiture = require("../../public/data/db.json").fiche;
 exports.idblogpage = (req, res) => {
     console.log('je suis la page idblog');
 
-    let article = {}
+    let voitureItem = {}
 
     voiture.forEach(art => {
         if (art.id === Number(req.params.id)) {
-            article = art
-            console.log(article);
-        }
-        let n = number(article.id)-1
+            voitureItem = art
+        }        
     })
-
+    
+    var nbr = Number(voitureItem.id)
+    nbr-=1
     res.render('idblog', {
-        article,
-        pathimg: `${voitures[n].img_url}`
+        voiture: voiture[nbr],
+        pathimg: `${voiture[nbr].img_url}`
     });
 }
