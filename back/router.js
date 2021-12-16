@@ -14,6 +14,7 @@ const BlogController = require("./controllers/BlogControllers");
 const AdminController = require("./controllers/AdminController");
 const IdBlogController = require("./controllers/IdBlogController")
 const AutController = require("./controllers/AutController")
+const Upload = require('./config/multer');
 
 // Routes
 
@@ -28,8 +29,8 @@ router.route('/contact')
 
 //Register
 router.route('/register')
-    .post(AutController.register);
 
+    .post(Upload.single('avatar'),AutController.register)
 //Login
 router.route('/login')
     .post(AutController.login)
@@ -49,7 +50,7 @@ router.route('/blog/:id')
 // Admin
 router.route('/admin')
     .get(AdminController.adminpage)
-
+    
 // /Routes
 
 // Export de notre router

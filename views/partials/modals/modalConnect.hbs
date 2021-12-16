@@ -63,7 +63,7 @@
                 <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div id="modal-body" class="modal-body">
                         <!--Email & Name-->
-                        <form action="/register" method="post">
+                        <form action="/register" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="contact-form">
@@ -107,6 +107,9 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                                <input type="file" name="avatar" />
+                            
                             <div class="modal-footer">
                                 <button type='submit' class="btn btn-primary" data-bs-target="login"
                                     data-bs-toggle="modal">Enregistrez-vous</button>
