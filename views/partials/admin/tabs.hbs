@@ -1,5 +1,5 @@
 {{!--
-    Partial: Tabs
+Partial: Tabs
 --}}
 <div class="container pt-6">
     <div class="row">
@@ -73,39 +73,19 @@
                         </div>
                     </div>
                     <div class="box col txt-color-black">
+                        {{#each voiture}}
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                             <a href="idblog.html">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
+                                <img src="{{this.img_url}}">
                             </a>
-                            <p>Page : Jzx100</p>
+                            <p>Page : {{ this.make }} {{ this.model }}</p>
                             <div>
                                 <i class="fas fa-pencil-ruler pe-3"></i>
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
                                         data-bs-target="#deleteBlog"></i></a>
                             </div>
                         </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <a href="idblog.html">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
-                            </a>
-                            <p>Page : Jzx100</p>
-                            <div>
-                                <i class="fas fa-pencil-ruler pe-3"></i>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteBlog"></i></a>
-                            </div>
-                        </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <a href="idblog.html">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
-                            </a>
-                            <p>Page : Jzx100</p>
-                            <div>
-                                <i class="fas fa-pencil-ruler pe-3"></i>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteBlog"></i></a>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                 </section>
             </div>
