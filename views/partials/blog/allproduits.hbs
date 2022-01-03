@@ -18,20 +18,53 @@ Partial: Tout les produits de la page blog
                 </select>
             </label>
         </div>
+        <button onclick="trieCroissant()"></button>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{#each voiture}}
-            
+
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-item txt-color-black">
-                    <a href="blog/{{this.id}}">
+                    <a href="/blog/{{this.id}}">
                         <img src="{{this.img_url}}">
                     </a>
                     <h3>{{ this.make }} {{ this.model }}</h3>
-                    <p>Plus récent</p>
-                    <p>{{ this.id }}</p>
+                    <p>Prix: {{ this.price }}€</p>
+                    {{!-- <p>{{ this.id }}</p> --}}
                 </div>
             </div>
             {{/each}}
         </div>
     </div>
 </produits>
+
+<script>
+    function trieCroissant() {
+        fetch("http://localhost:3000/assets/data/db.json")
+            .then(x => x.json())
+            .then(data => sortCroissant(data.fiche));
+    }
+
+    function sortCroissant(data) {
+        console.log(data)
+        const arry = [];
+        
+
+        for (i = 0; i < data.length; i++) {
+
+            const obj = {
+                id: data[i].id,
+                price: data[i].price,
+                make: data[i].make,
+                model: data[i].model,
+                img_url: data[i].img_url
+            }
+            console.log("1", i)
+            arry.push(obj)
+        }
+
+        console.log("j'adore la vie")
+        arry.sort(function (a, b) { return a.price - b.price })
+        console.log(arry)
+
+    }
+</script>

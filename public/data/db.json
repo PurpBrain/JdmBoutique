@@ -1,55 +1,64 @@
 {
     "fiche": [
         {
-            "prix": 23000,
+            "id": 1,
+            "price": 12000,
             "make": "Toyota",
             "model": "Chaser",
             "img_url": "/assets/img/Voitures-Img/Jzx100.jpg"
         },
         {
-            "prix": 30000,
+            "id": 2,
+            "price": 20000,
             "make": "Mazda",
             "model": "RX-7",
             "img_url": "/assets/img/Voitures-Img/rx7.jpg"
         },
         {
-            "prix": 11900,
+            "id": 3,
+            "price": 15000,
             "make": "Nissan",
             "model": "Silvia S13",
             "img_url": "/assets/img/Voitures-Img/s13.jpg"
         },
         {
-            "prix": 20500,
+            "id": 4,
+            "price": 27000,
             "make": "Nissan",
             "model": "Silvia GT-R 32",
             "img_url": "/assets/img/Voitures-Img/gtr32.jpg"
         },
         {
-            "prix": 49000,
+            "id": 5,
+            "price": 30000,
             "make": "Honda",
             "model": "NSX",
             "img_url": "/assets/img/Voitures-Img/honda-nsx.jpg"
         },
         {
-            "prix": 17000,
+            "id": 6,
+            "price": 17000,
             "make": "Subaru",
             "model": "Impreza WRX",
             "img_url": "/assets/img/Voitures-Img/Impreza.jpg"
         },
         {
-            "prix": 18500,
+            "id": 7,
+            "price": 13000,
             "make": "Toyota",
             "model": "Ae86",
             "img_url": "/assets/img/Voitures-Img/ae86.jpg"
         },
         {
-            "prix": 26000,
+            "id": 8,
+            "price": 22000,
             "make": "Toyota",
             "model": "GT86",
             "img_url": "/assets/img/Voitures-Img/gt86.jpg"
         },
         {
-            "prix": 12000,
+            "id": 9,
+            "price": 14000,
             "make": "Mazda",
             "model": "Rx-7 FC",
             "img_url": "/assets/img/Voitures-Img/twerkstallion.jpg"
