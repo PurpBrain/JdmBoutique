@@ -26,26 +26,5 @@
   bottom: 10px
   right: 20px
   z-index: 0
-.neon-button::before 
-  pointer-events: none
-  content: ""
-  position: absolute
-  width: 80%
-  height: 80%
-  opacity: 0.7
-.neon-button::after 
-  content: ""
-  position: absolute
-  opacity: 0
-  background-color: $white
-  transition: opacity 100ms linear
-.neon-button:hover,
-.neon-button:focus 
+.neon-button:hover
   color: $grey
-  text-shadow: none
-.neon-button:hover::before,
-.neon-button:focus::before 
-  opacity: 1
-.neon-button:hover::after,
-.neon-button:focus::after 
-  opacity: 1

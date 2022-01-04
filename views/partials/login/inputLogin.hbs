@@ -1,0 +1,38 @@
+{{!--
+    Partial: Page de connexion 
+--}}
+<form action="/login" method="post">
+    <div class="container col-sm-12 col-md-12 col-lg-9 col-xl-8 pt-8">
+        <div class="p-4 border border-dark rounded">
+            <!--Email & Name-->
+            <div class="row">
+                <h2>Connectez-vous</h2>
+                <div class="col-md-12">
+                    <div class="contact-form">
+                        <label>Email :</label>
+                        <input name='email' class="form-control" type="text" id="email-login"
+                            placeholder="Ajouter votre email" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="contact-form">
+                        <label>Mot de passe :</label>
+                        <input name='mdp' class="form-control" type="password" id="password-login"
+                            placeholder="Ajouter votre mot de passe" />
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-center justify-content-center form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label ps-2" for="flexCheckDefault">
+                        Rester connecté
+                    </label>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <button type='submit' type="button" class="btn btn-primary">Se
+                        connecter</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="mb-2 mt-2 col-md-12 btn btn-secondary">Créer votre compte ?</button>
+    </div>
+</form>

@@ -29,12 +29,13 @@ router.route('/contact')
 
 //Register
 router.route('/register')
-
     .post(Upload.single('avatar'),AutController.register)
+    .get(AutController.registerpage)
 //Login
 router.route('/login')
     .post(AutController.login)
-
+    .get(AutController.loginpage)
+    
 // Forgot Password
 router.route('/forgot')
     .post(AutController.forgot)

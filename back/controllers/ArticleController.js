@@ -1,8 +1,8 @@
 /*
- * Controller: ID Blog
+ * Controller: Article
  * ******************* */
 
-// Controller pour la page de l'ID blog
+// Controller pour la page article
 const voiture = require("../../public/data/db.json").fiche;
 exports.articlepage = (req, res) => {
     console.log('Page article');

@@ -41,20 +41,20 @@ search.addEventListener('keydown', function (event) {
 // Barre de recherche fonction
 function resultatRecherche(e) {
     //Déclarer les variables
-    var input, filter, voitures, div, i, txtValue, titre;
+    var input, filter, voitures, div, o, txtValue, titre;
     //Donner des valeurs aux variables
     input = document.getElementById('search')
     filter = input.value.toLowerCase()
     voitures = document.getElementById('voitures')
     div = voitures.getElementsByTagName('div')
 
-    for (i = 0; i < div.length; i++) {
-        titre = div[i].getElementsByTagName('h3')[0]
+    for (o = 0; o < div.length; i++) {
+        titre = div[o].getElementsByTagName('h3')[0]
         txtValue = titre.textContent || a.innerText
         if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            div[i].style.display = ''
+            div[o].style.display = ''
         } else {
-            div[i].style.display = 'none'
+            div[o].style.display = 'none'
         }
     }
 }
