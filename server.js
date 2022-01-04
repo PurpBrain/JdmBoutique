@@ -1,7 +1,7 @@
 /*
  * Server.js
  * Point d'entré de l'application (Main / Root)
- * ******************************************** */ 
+ * ******************************************** */
 
 console.log("Node JS");
 
@@ -20,33 +20,41 @@ const Handlebars = require('handlebars');
 // Configuration de handlebars
 app.set("view engine", "hbs");
 app.engine("hbs", engine({
-    extname: "hbs",
-    defaultLayout: "main",
-  })
+  extname: "hbs",
+  defaultLayout: "main",
+})
 );
 
 app.use(methodOverride('_method'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+  extended: false
 }));
 
 // Configuration de la route vers notre dossier static
 app.use('/assets', express.static('public'))
 
 // Helper pour donner une limite de card a afficher
-Handlebars.registerHelper('limit', function(ar, max){
-    var db = ar.slice(0,max);
-    return db;
-  });
+Handlebars.registerHelper('limit', function (ar, max) {
+
+  let arrayVoiture = [];
+  for (i = 0; i < max; i++) {
+    var random = Math.floor(Math.random() * ar.length);
+    var random_voiture = ar[random];
+
+    arrayVoiture.push(random_voiture)    
+  }
+  return arrayVoiture;
+});
 
 
 // Import de notre router
-const ROUTER = require('./back/router')
-app.use('/', ROUTER) 
+const ROUTER = require('./back/router');
+const { array } = require("./back/config/multer");
+app.use('/', ROUTER)
 
 // Lancement de l'appli
 app.listen(port, () => {
-    console.log("le serv est sur le port:" + port);
+  console.log("le serv est sur le port:" + port);
 })

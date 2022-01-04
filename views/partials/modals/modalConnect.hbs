@@ -22,6 +22,43 @@
                 </ul>
             </div>
             <div class="tab-content" id="pills-tabContent">
+                <!--login--->
+                <div class="tab-pane fade show active" id="pills-login" role="tabpanel"
+                    aria-labelledby="pills-home-tab">
+                    <form action="/login" method="post">
+                        <div class="modal-body">
+                            <div class="row">
+                                <!--Email & Name-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Email :</label>
+                                            <input name='email' class="form-control" type="text" id="email-login"
+                                                placeholder="Ajouter votre email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contact-form">
+                                            <label>Mot de passe :</label>
+                                            <input name='mdp' class="form-control" type="password" id="password-login"
+                                                placeholder="Ajouter un mot de passe" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label ps-2 pb-2" for="flexCheckDefault">
+                                        Se souvenir du mot de passe
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type='submit' id='connexion-modal-login' type="button" class="btn btn-primary">Se
+                                connecter</button>
+                        </div>
+                    </form>
+                </div>
                 <!--register--->
                 <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div id="modal-body" class="modal-body">
