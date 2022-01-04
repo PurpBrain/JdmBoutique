@@ -12452,6 +12452,7 @@ body {
 h1, .h1, h2, .h2 {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
+  transition: 1s;
 }
 
 h2, .h2 {
@@ -12460,6 +12461,7 @@ h2, .h2 {
   font-size: 230% !important;
   margin-top: 20px !important;
   margin-bottom: 20px !important;
+  transition: 1s;
 }
 
 h2:after, .h2:after {
@@ -12470,11 +12472,13 @@ h2:after, .h2:after {
   content: " ";
   margin: 0 auto;
   margin-top: 2px;
+  transition: 1s;
 }
 
 h2 a, .h2 a {
   text-decoration: none;
   color: #000000;
+  transition: 1s;
 }
 
 h2 a:hover, .h2 a:hover {
@@ -12489,11 +12493,13 @@ h2 a:not(:hover), .h2 a:not(:hover) {
 
 .txt-color-black {
   color: #000000;
+  transition: 1s;
 }
 
 h4, .h4 {
   font-size: 100% !important;
   color: #575757;
+  transition: 1s;
 }
 
 nav a {
@@ -12598,6 +12604,7 @@ header {
   position: fixed;
   bottom: 10px;
   right: 20px;
+  z-index: 0;
 }
 
 .neon-button::before {
@@ -12648,6 +12655,7 @@ header {
 .product h3, .product .h3 {
   font-size: 22px;
   padding-top: 10px;
+  transition: 1s;
 }
 
 .product p {
@@ -12691,6 +12699,7 @@ footer p a {
 .newslater {
   padding-top: 5px;
   height: 5vh;
+  z-index: -1;
 }
 
 .newslater input {

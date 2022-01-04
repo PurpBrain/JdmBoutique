@@ -2,9 +2,13 @@
  * Controller: Home
  * **************** */ 
 
-// Controller pour la page home
+// Import la base de donnée
+const voiture = require("../../public/data/db.json").fiche;
 
+// Controller pour la page home
 exports.homepage = (req, res) => {
-    console.log('je suis la page home');
-    res.render('home');
+    console.log('Page home');
+    res.render('home',{
+        voiture
+    });
 }

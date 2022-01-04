@@ -12,7 +12,7 @@ const HomeController = require("./controllers/HomeController");
 const ContactController = require("./controllers/ContactController");
 const BlogController = require("./controllers/BlogControllers");
 const AdminController = require("./controllers/AdminController");
-const IdBlogController = require("./controllers/IdBlogController")
+const ArticleController = require("./controllers/ArticleController")
 const AutController = require("./controllers/AutController")
 const Upload = require('./config/multer');
 
@@ -45,7 +45,7 @@ router.route('/blog')
 
 // ID Blog
 router.route('/blog/:id')
-    .get(IdBlogController.idblogpage)
+    .get(ArticleController.articlepage)
 
 // Admin
 router.route('/admin')

@@ -31,17 +31,13 @@ function darkMode() {
 //Définir l'interface
 const searchBarFilter = document.querySelector('#search');
 
-//Application
-// function searchBar() {
 //Barre de recherche 
 search.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
         resultatRecherche()
     } else return;
 })
-//console.log(resultatRecherche);
-// }
-// searchBar()
+
 // Barre de recherche fonction
 function resultatRecherche(e) {
     //Déclarer les variables

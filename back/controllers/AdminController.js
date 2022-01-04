@@ -6,7 +6,7 @@
 const voiture = require("../../public/data/db.json").fiche;
 
 exports.adminpage = (req, res) => {
-    console.log('je suis la page admin');
+    console.log('Page admin');
 
     res.render('admin',{
         voiture

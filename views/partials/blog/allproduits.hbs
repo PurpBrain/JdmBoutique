@@ -21,15 +21,14 @@ Partial: Tout les produits de la page blog
         <button onclick="trieCroissant()"></button>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{#each voiture}}
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-item txt-color-black">
+            <div id="voiture-{{@key}}" class="col-12 col-md-6 col-lg-4">
+                <div class="product-item">
                     <a href="/blog/{{this.id}}">
                         <img src="{{this.img_url}}">
                     </a>
                     <h3>{{ this.make }} {{ this.model }}</h3>
                     <p>Prix: {{ this.price }}€</p>
-                    {{!-- <p>{{ this.id }}</p> --}}
+                    <p>{{ this.id }}</p>
                 </div>
             </div>
             {{/each}}
@@ -45,26 +44,33 @@ Partial: Tout les produits de la page blog
     }
 
     function sortCroissant(data) {
-        console.log(data)
+
         const arry = [];
-        
 
         for (i = 0; i < data.length; i++) {
 
             const obj = {
                 id: data[i].id,
                 price: data[i].price,
-                make: data[i].make,
-                model: data[i].model,
-                img_url: data[i].img_url
+
             }
-            console.log("1", i)
             arry.push(obj)
         }
 
-        console.log("j'adore la vie")
-        arry.sort(function (a, b) { return a.price - b.price })
-        console.log(arry)
+        setTimeout(function () {
+            az()
+        }, 1000);
+
+        function az() {
+            arry.sort(function (a, b) { return a.price - b.price })
+            console.log(arry)
+
+            for (i = 0; i < arry.length; i++) {
+                console.log('order' + i, "id" + arry[i].id, "price" + arry[i].price)
+                document.getElementById(`voiture-${i}`).style.order = `${arry}`
+                //document.getElementById(arry[i].id).style.order = `${i}`
+            }
+        }
 
     }
 </script>

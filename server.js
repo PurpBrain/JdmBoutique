@@ -15,6 +15,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const port = process.env.PORT || 3003;
 const { engine } = require("express-handlebars");
+const Handlebars = require('handlebars');
 
 // Configuration de handlebars
 app.set("view engine", "hbs");
@@ -33,6 +34,13 @@ app.use(bodyParser.urlencoded({
 
 // Configuration de la route vers notre dossier static
 app.use('/assets', express.static('public'))
+
+// Helper pour donner une limite de card a afficher
+Handlebars.registerHelper('limit', function(ar, max){
+    var db = ar.slice(0,max);
+    return db;
+  });
+
 
 // Import de notre router
 const ROUTER = require('./back/router')

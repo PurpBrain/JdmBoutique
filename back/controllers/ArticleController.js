@@ -4,8 +4,8 @@
 
 // Controller pour la page de l'ID blog
 const voiture = require("../../public/data/db.json").fiche;
-exports.idblogpage = (req, res) => {
-    console.log('je suis la page idblog');
+exports.articlepage = (req, res) => {
+    console.log('Page article');
 
     let voitureItem = {}
 
@@ -17,7 +17,7 @@ exports.idblogpage = (req, res) => {
     
     var nbr = Number(voitureItem.id)
     nbr-=1
-    res.render('idblog', {
+    res.render('article', {
         voiture: voiture[nbr],
         pathimg: `${voiture[nbr].img_url}`
     });
