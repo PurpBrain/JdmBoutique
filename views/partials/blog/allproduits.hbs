@@ -11,66 +11,26 @@ Partial: Tout les produits de la page blog
             <label class="txt-color-black">
                 <i class="fas fa-sort"></i>
                 Trier par :
-                <select class="form-select-sm txt-color-black">
+                <select onchange="getValue()" id="monSelecteur" class="form-select-sm txt-color-black">
                     <option>Plus récent</option>
-                    <option>Prix : croissant</option>
+                    <option value="croissant">Prix : croissant</option>
                     <option>Prix : décroissant</option>
                 </select>
             </label>
         </div>
-        <button onclick="trieCroissant()"></button>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{#each voiture}}
-            <div id="voiture-{{@key}}" class="col-12 col-md-6 col-lg-4">
+            <div id="voiture-{{this.id}}" class="col-12 col-md-6 col-lg-4">
                 <div class="product-item">
                     <a href="/blog/{{this.id}}">
                         <img src="{{this.img_url}}">
                     </a>
                     <h3>{{ this.make }} {{ this.model }}</h3>
                     <p>Prix: {{ this.price }}€</p>
-                    <p>{{ this.id }}</p>
+                    {{!-- <p>{{ this.id }}</p> --}}
                 </div>
             </div>
             {{/each}}
         </div>
     </div>
 </produits>
-
-<script>
-    function trieCroissant() {
-        fetch("http://localhost:3000/assets/data/db.json")
-            .then(x => x.json())
-            .then(data => sortCroissant(data.fiche));
-    }
-
-    function sortCroissant(data) {
-
-        const arry = [];
-
-        for (i = 0; i < data.length; i++) {
-
-            const obj = {
-                id: data[i].id,
-                price: data[i].price,
-
-            }
-            arry.push(obj)
-        }
-
-        setTimeout(function () {
-            az()
-        }, 1000);
-
-        function az() {
-            arry.sort(function (a, b) { return a.price - b.price })
-            console.log(arry)
-
-            for (i = 0; i < arry.length; i++) {
-                console.log('order' + i, "id" + arry[i].id, "price" + arry[i].price)
-                document.getElementById(`voiture-${i}`).style.order = `${arry}`
-                //document.getElementById(arry[i].id).style.order = `${i}`
-            }
-        }
-
-    }
-</script>
