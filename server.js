@@ -14,7 +14,9 @@ const app = express();
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const port = process.env.PORT || 3003;
-const { engine } = require("express-handlebars");
+const {
+  engine
+} = require("express-handlebars");
 const Handlebars = require('handlebars');
 
 // Configuration de handlebars
@@ -22,8 +24,7 @@ app.set("view engine", "hbs");
 app.engine("hbs", engine({
   extname: "hbs",
   defaultLayout: "main",
-})
-);
+}));
 
 app.use(methodOverride('_method'))
 
@@ -42,8 +43,14 @@ Handlebars.registerHelper('limit', function (ar, max) {
   for (i = 0; i < max; i++) {
     var random = Math.floor(Math.random() * ar.length);
     var random_voiture = ar[random];
-
-    arrayVoiture.push(random_voiture)    
+    // Si random_voiture est présent dans arrayVoiture alors on retire 1 à i afin de refaire un tour de boucle 
+    if (arrayVoiture.includes(random_voiture)) {
+      i -= 1;
+      console.log("doublons");
+    } else {
+      // Ajout de la voiture choisi aléatoirement
+      arrayVoiture.push(random_voiture)
+    }
   }
   return arrayVoiture;
 });
@@ -51,7 +58,9 @@ Handlebars.registerHelper('limit', function (ar, max) {
 
 // Import de notre router
 const ROUTER = require('./back/router');
-const { array } = require("./back/config/multer");
+const {
+  array
+} = require("./back/config/multer");
 app.use('/', ROUTER)
 
 // Lancement de l'appli
