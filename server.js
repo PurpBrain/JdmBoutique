@@ -9,15 +9,29 @@ console.log("Node JS");
 require("dotenv").config();
 
 // Import de module
-const express = require("express");
-const app = express();
-const bodyParser = require('body-parser')
-const methodOverride = require('method-override')
-const port = process.env.PORT || 3003;
-const {
-  engine
-} = require("express-handlebars");
-const Handlebars = require('handlebars');
+const express = require("express"),
+ app = express(),
+ bodyParser = require('body-parser'),
+ methodOverride = require('method-override'),
+ port = process.env.PORT || 3003,
+ {engine} = require("express-handlebars"),
+ Handlebars = require('handlebars'),
+ mysql = require('mysql');
+
+let conf = {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
+};
+
+db = mysql.createConnection(conf);
+
+db.connect((err) => {
+  if (err) console.error('error connecting: ' + err.stack);
+  console.log('connected as id ' + db.threadId);
+});
+
 
 // Configuration de handlebars
 app.set("view engine", "hbs");

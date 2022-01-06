@@ -16,6 +16,12 @@ exports.registerpage = (req, res) => {
     res.render('register');
 }
 
+exports.forgotpage = (req, res) => {
+    console.log('Page MDP oublié');
+    // Afficher la page MDP oublié
+    res.render('forgot');
+}
+
 exports.login = (req, res) => {
     console.log("Controller login", req.body);
     //Pour revenir a la page de base

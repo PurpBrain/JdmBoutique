@@ -39,7 +39,7 @@ router.route('/login')
 // Forgot Password
 router.route('/forgot')
     .post(AutController.forgot)
-
+    .get(AutController.forgotpage)
 // Blog
 router.route('/blog')
     .get(BlogController.blogpage)
@@ -51,7 +51,12 @@ router.route('/blog/:id')
 // Admin
 router.route('/admin')
     .get(AdminController.adminpage)
+
+router.route('/admin/create/voiture')
+    .post(Upload.single('img'),AdminController.addVoiture)
     
+router.route('/api/voiture')
+    .get(AdminController.getVoiture)
 // /Routes
 
 // Export de notre router

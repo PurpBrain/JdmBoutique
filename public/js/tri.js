@@ -11,7 +11,7 @@ function getValue() {
 
 function prixCroissant() {
     // Récupération de la db
-    fetch("/assets/data/db.json")
+    fetch("/api/voiture")
         .then(x => x.json())
         .then(data => sortCroissant(data.fiche));
     
@@ -56,7 +56,7 @@ function prixCroissant() {
 }
 
 function prixDécroissant() {
-    fetch("/assets/data/db.json")
+    fetch("/api/voiture")
         .then(x => x.json())
         .then(data => sortDécroissant(data.fiche));
 

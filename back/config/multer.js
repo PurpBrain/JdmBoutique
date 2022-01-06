@@ -2,10 +2,10 @@ const multer = require("multer");
 
 const imageStorage = multer.diskStorage({
     // Destination to store image     
-    destination: './public/img/Autres',
+    destination: './public/img/Voitures-Img',
     filename: (req, file, callback) => {
         const name = file.originalname.split(' ').join('_');
-        callback(null,  Date.now()+'_' +name);
+        callback(null, name);
     }
 });
 

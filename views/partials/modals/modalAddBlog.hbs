@@ -8,33 +8,41 @@
                 <h5 class="modal-title" id="ModalBlog">Ajouter un article</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <form action="/admin/create/voiture" method="post" enctype="multipart/form-data">
             <div class="modal-body">
+                
                 <!--Name & Description-->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="contact-form">
-                            <label>Nom de l'article :</label>
-                            <input type="text" id="name" placeholder="Ajouter votre nom" />
+                            <label>Marque de la voiture :</label>
+                            <input name="make" type="text" id="name" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-form">
-                            <label>Description :</label>
-                            <input type="text" id="description" />
+                            <label>Model de la voiture :</label>
+                            <input name="model" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Prix de la voiture :</label>
+                            <input name="price" type="number" />
                         </div>
                     </div>
                 </div>
                 <!--Image-->
                 <div class="row">
                     <div class="col-md-6">
-                        <button>Importer une image</button>
+                        <input name="img" type="file"></input>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

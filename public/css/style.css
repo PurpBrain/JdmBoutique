@@ -12771,4 +12771,15 @@ cite img {
   border-radius: 10px;
 }
 
+.voiture-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
 /*# sourceMappingURL=style.css.map */
