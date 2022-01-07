@@ -12592,6 +12592,7 @@ header {
 
 .btn-contact {
   color: #000000 !important;
+  background-color: #a5a5a5 !important;
 }
 
 .neon-button {
@@ -12645,11 +12646,10 @@ header {
   border-radius: 10px;
 }
 
-.product img {
+.sameImg {
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .product h3, .product .h3 {
@@ -12766,7 +12766,7 @@ cite img {
   height: 50px;
 }
 
-.box {
+.boxAdmin {
   border: #000000 solid 2px;
   border-radius: 10px;
 }
@@ -12780,6 +12780,12 @@ cite img {
   background-color: #fff;
   background-clip: border-box;
   border-radius: 0.25rem;
+  width: auto !important;
+}
+
+.voiture-card:hover {
+  opacity: 0.8;
+  transition: 1s;
 }
 
 /*# sourceMappingURL=style.css.map */

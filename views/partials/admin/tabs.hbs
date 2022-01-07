@@ -20,18 +20,18 @@ Partial: Tabs
         <div class="tab-content" id="pills-tabContent">
             <!--User--->
             <div class="tab-pane fade show active" id="pills-user" role="tabpanel" aria-labelledby="pills-home-tab">
-                <section class="container adminimg" id="user">
+                <section class="container adminimg pb-2" id="user">
                     <div class="row">
                         <div class="col-md-12">
                             <h2>Utilisateurs</h2>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                        <div class="col-md-12 d-flex justify-content-end ">
                             <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                                 data-bs-target="#ModalAddUser">
                                 <i class="fas fa-plus-square"></i></button>
                         </div>
                     </div>
-                    <div class="box col txt-color-black">
+                    <div class="boxAdmin col txt-color-black">
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                             <img src="assets/img/Autres/img-pp.jpg">
                             <p>Daniel Isoji</p>
@@ -61,18 +61,18 @@ Partial: Tabs
             </div>
             <!--Blog--->
             <div class="tab-pane fade pb-4" id="pills-page" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <section class="container adminimg" id="blog">
+                <section class="container adminimg pb-2" id="blog">
                     <div class="row">
                         <div class="col-md-12">
                             <h2>Blog</h2>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                        <div class="col-md-12 d-flex justify-content-end">
                             <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                                 data-bs-target="#ModalBlog">
                                 <i class="fas fa-plus-square"></i></button>
                         </div>
                     </div>
-                    <div class="box col txt-color-black">
+                    <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                                 <img src="/assets/img/Voitures-Img/{{this.img_url}}">
@@ -80,27 +80,28 @@ Partial: Tabs
                             <div>
                                 <i class="fas fa-pencil-ruler pe-3"></i>
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteBlog"></i></a>
+                                        data-bs-target="#deleteBlog{{ this.id }}"></i></a>
                             </div>
                         </div>
+                        {{> modals/modalDeleteBlog }}
                         {{/each}}
                     </div>
                 </section>
             </div>
             <!--Commentaires-->
             <div class="tab-pane fade" id="pills-com" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <section class="container adminimg" id="com">
+                <section class="container adminimg pb-2" id="com">
                     <div class="row">
                         <div class="col-md-12">
                             <h2>Commentaires</h2>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-end pb-2">
+                        <div class="col-md-12 d-flex justify-content-end">
                             <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                                 data-bs-target="#ModalCom">
                                 <i class="fas fa-plus-square"></i></button>
                         </div>
                     </div>
-                    <div class="box col txt-color-black">
+                    <div class="boxAdmin col txt-color-black">
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
                                 <img src="assets/img/Voitures-Img/Jzx100.jpg">
                             <p>Daniel Isoji</p>

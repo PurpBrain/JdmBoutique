@@ -51,6 +51,10 @@ router.route('/blog/:id')
 // Admin
 router.route('/admin')
     .get(AdminController.adminpage)
+    
+
+router.route('/admin/:id')
+    .delete(AdminController.delVoiture)
 
 router.route('/admin/create/voiture')
     .post(Upload.single('img'),AdminController.addVoiture)

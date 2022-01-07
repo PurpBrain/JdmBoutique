@@ -5,7 +5,7 @@ function darkMode() {
     let background = document.body;
 
     //Variable pour changer le Texte
-    let txt = document.querySelectorAll("h1, h2, h3, label, input");
+    let txt = document.querySelectorAll("a, h1, h2, h3, label, input");
     let i;
 
     //Récupération de l'id pour changer la couleur du txt
@@ -17,13 +17,14 @@ function darkMode() {
             txt[i].style.color = 'black';
             background.classList.remove("dark-mode");
             background.classList.add("no-dark-mode");
-
+            backgroundCard.classList.remove("dark-mode")
         }
         //Sinon on met le text en blanc et on active le dark mode  
     } else {
         for (i = 0; i < txt.length; i++) {
             txt[i].style.color = 'white';
             background.classList.add("dark-mode");
+            
 
         }
     }
@@ -94,3 +95,4 @@ function validation(event) {
     }
 }
 validation()
+

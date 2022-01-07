@@ -50,3 +50,11 @@ exports.addVoiture = (req, res) => {
         })
     })
 }
+
+exports.delVoiture = (req, res) => {
+    let sql = `DELETE FROM voiture WHERE id=?`
+    db.query(sql, req.params.id, (error, dataRes, fields) => {
+        if (error) throw error;
+        res.redirect('back')
+    })
+}

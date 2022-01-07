@@ -22,9 +22,13 @@ Partial: Tout les produits de la page blog
             {{#each voiture}}
             <div id="voiture-{{this.id}}" class="col-12 col-md-6 col-lg-4">
                 <div class="product-item">
-                    <a href="/blog/{{this.id}}">
-                        <img src="/assets/img/Voitures-Img/{{this.img_url}}">
-                    </a>
+                    <div class="voiture-card">
+                        <a href="/blog/{{this.id}}">
+                            <div style="background-image: url('/assets/img/Voitures-Img/{{this.img_url }}');" class="sameImg">
+                                <p style="height: 250px;"></p>
+                            </div>
+                        </a>
+                    </div>
                     <h3>{{ this.make }} {{ this.model }}</h3>
                     <p>Prix: {{ this.price }}€</p>
                     {{!-- <p>{{ this.id }}</p> --}}

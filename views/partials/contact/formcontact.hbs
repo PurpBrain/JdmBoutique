@@ -34,13 +34,13 @@
                             <div class="col-md-6">
                                 <div class="contact-form">
                                     <label>Nom :</label>
-                                    <input name='nom' class="border rounded-2" type="text" id="name" />
+                                    <input required name='nom' class="border rounded-2" type="text" id="name" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="contact-form">
                                     <label>Email :</label>
-                                    <input name='email' type="email" id="email" class="border rounded-2" placeholder="Ajouter votre email" />
+                                    <input required name='email' type="email" id="email" class="border rounded-2" placeholder="Ajouter votre email" />
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <label>Sélectionnez le service</label>
-                                    <select name='destinataire' class="border rounded-2">
+                                    <select required name='destinataire' class="border rounded-2">
                                         <option>Service client</option>
                                         <option>Service comptable</option>
                                         <option>SAV</option>
@@ -62,7 +62,7 @@
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <label>Votre message:</label>
-                                    <textarea name='message' id="message" rows="3" class="border rounded-2 contact-message"></textarea>
+                                    <textarea required name='message' id="message" rows="3" class="border rounded-2 contact-message"></textarea>
                                 </div>
                             </div>
                         </div>
