@@ -1,34 +1,34 @@
-//Dark mode 
-function darkMode() {
+// //Dark mode 
+// function darkMode() {
 
-    //Variable pour changer le Background
-    let background = document.body;
+//     //Variable pour changer le Background
+//     let background = document.body;
 
-    //Variable pour changer le Texte
-    let txt = document.querySelectorAll("a, h1, h2, h3, label, input");
-    let i;
+//     //Variable pour changer le Texte
+//     let txt = document.querySelectorAll("a, h1, h2, h3, label, input");
+//     let i;
 
-    //Récupération de l'id pour changer la couleur du txt
-    var element = document.getElementById("texte");
+//     //Récupération de l'id pour changer la couleur du txt
+//     var element = document.getElementById("texte");
 
-    //Si texte blanc alors on change en noir et on désactive le dark mode
-    if (element.style.color == 'white') {
-        for (i = 0; i < txt.length; i++) {
-            txt[i].style.color = 'black';
-            background.classList.remove("dark-mode");
-            background.classList.add("no-dark-mode");
-            backgroundCard.classList.remove("dark-mode")
-        }
-        //Sinon on met le text en blanc et on active le dark mode  
-    } else {
-        for (i = 0; i < txt.length; i++) {
-            txt[i].style.color = 'white';
-            background.classList.add("dark-mode");
+//     //Si texte blanc alors on change en noir et on désactive le dark mode
+//     if (element.style.color == 'white') {
+//         for (i = 0; i < txt.length; i++) {
+//             txt[i].style.color = 'black';
+//             background.classList.remove("dark-mode");
+//             background.classList.add("no-dark-mode");
+//             backgroundCard.classList.remove("dark-mode")
+//         }
+//         //Sinon on met le text en blanc et on active le dark mode  
+//     } else {
+//         for (i = 0; i < txt.length; i++) {
+//             txt[i].style.color = 'white';
+//             background.classList.add("dark-mode");
             
 
-        }
-    }
-}
+//         }
+//     }
+// }
 //Définir l'interface
 const searchBarFilter = document.querySelector('#search');
 
