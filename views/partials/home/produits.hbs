@@ -5,15 +5,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Nos véhicules en ventes</h2>
+                <h2 data-aos="fade-up" data-aos-duration="1200">Nos véhicules en ventes</h2>
             </div>
         </div>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{!-- Utilisation du helper pour une limite de 3 --}}
             {{#each (limit voiture 3)}}
-            <div class="col-12 col-md-6 col-lg-4">
+            <div data-aos="fade-up" data-aos-duration="{{ this.id}}00" class="col-12 col-md-6 col-lg-4">
                 <div class="product-item txt-color-black">
-                     <div class="voiture-card">
+                     <div class="voiture-card"> 
                         <a href="/blog/{{this.id}}">
                             <div style="background-image: url('/assets/img/Voitures-Img/{{this.img_url }}');" class="sameImg">
                                 <p style="height: 250px;"></p>
@@ -22,7 +22,7 @@
                     </div>
                     <h3>{{ this.make }} {{ this.model }}</h3>
                     <p>Prix: {{ this.price }}€</p>
-                    {{!-- <p>{{ this.id }}</p> --}}
+                    <p>{{@key}} -- {{ this }}</p>
                 </div>
             </div>
             {{/each}}
