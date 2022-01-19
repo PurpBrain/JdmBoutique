@@ -31,14 +31,14 @@ exports.getVoiture =  (req, res) => {
 }
 
 exports.addVoiture = (req, res) => {
-    console.log(req.body.make)
+    console.log(req.files)
     // SQL pour creer un users
     let sql = `INSERT INTO voiture SET make=?, model=?, price=?, img_url=?`;
     let values = [
         req.body.make,
         req.body.model,
         req.body.price,
-        req.file.filename
+        req.files[0].filename
     ];
     db.query(sql, values, function (err, data, fields) {
         if (err) throw err;

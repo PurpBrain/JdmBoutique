@@ -72,9 +72,9 @@ Handlebars.registerHelper('limit', function (ar, max) {
 
 // Import de notre router
 const ROUTER = require('./back/router');
-const {
-  array
-} = require("./back/config/multer");
+// const {
+//   array
+// } = require("./back/config/multer_article");
 app.use('/', ROUTER)
 
 // Lancement de l'appli

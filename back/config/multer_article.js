@@ -13,7 +13,8 @@ const imageUpload = multer({
     storage: imageStorage,
     limits: {
         // Limite de la taille de l'img fixé à 2MB
-        fileSize: 2000000 // 2000000 Bytes = 2 MB
+        fileSize: 2000000, // 2000000 Bytes = 2 MB
+        files: 5 
     },
     fileFilter(req, file, callback) {
         // Si l'extansion de l'image est png/jpg/jpeg c'est bon 

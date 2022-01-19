@@ -14,7 +14,7 @@ const BlogController = require("./controllers/BlogControllers");
 const AdminController = require("./controllers/AdminController");
 const ArticleController = require("./controllers/ArticleController")
 const AutController = require("./controllers/AutController")
-const Upload = require('./config/multer');
+const Upload = require('./config/multer_article');
 
 // Routes
 
@@ -57,7 +57,7 @@ router.route('/admin/:id')
     .delete(AdminController.delVoiture)
 
 router.route('/admin/create/voiture')
-    .post(Upload.single('img'),AdminController.addVoiture)
+    .post(Upload.array('img'),AdminController.addVoiture)
     
 router.route('/api/voiture')
     .get(AdminController.getVoiture)
