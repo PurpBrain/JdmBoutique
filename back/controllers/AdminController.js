@@ -20,13 +20,30 @@ exports.adminpage = (req, res) => {
 
 exports.getVoiture =  (req, res) => {
     // SQL récupération de tout les users
-    let sql = `SELECT * FROM voiture`;
+   
+    var numRows;
+    var numPerPage = 6;
+    var page = parseInt(req.query.page, 10) || 0;
+    var numPages;
+    var skip = page * numPerPage;
+    var limit = skip + ',' + numPerPage;
 
-    db.query(sql, (error, data, fields) => {
-        if (error) throw error;
-        res.json({
-            fiche: data
-        })
+    let sql = `SELECT count(*) as numRows FROM voiture`;
+    db.query(sql, (error, results, fields) => {
+        numRows = results[0].numRows;
+        numPages = Math.ceil(numRows / numPerPage);
+    })
+
+    let sqlget = `SELECT * FROM voiture ORDER BY ID DESC LIMIT ${limit}`
+    db.query(sqlget, (error, results, fields) => {
+        if (page < numPages) {
+            res.json({
+                fiche: results
+            })
+        } else {
+            res.redirect('blog')
+        }
+
     })
 }
 
