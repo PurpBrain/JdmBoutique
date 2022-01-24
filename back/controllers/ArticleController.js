@@ -7,15 +7,15 @@
 exports.articlepage = (req, res) => {
     console.log('Page article');
 
-    let sql = `SELECT * FROM voiture`;
+    let sql = `SELECT * FROM voiture WHERE ID = ${req.params.id}`;
 
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
 
         
         res.render('article', {
-            voiture: data[req.params.id],
-            pathimg: `${data[req.params.id].img_url}`
+            voiture: data[0],
+            pathimg: data[0].img_url
         });
     })
 }

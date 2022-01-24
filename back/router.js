@@ -44,6 +44,9 @@ router.route('/forgot')
 router.route('/blog')
     .get(BlogController.blogpage)
 
+router.route('/result')
+    .get(BlogController.search)
+
 // ID Blog
 router.route('/blog/:id')
     .get(ArticleController.articlepage)

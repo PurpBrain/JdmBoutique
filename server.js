@@ -10,13 +10,13 @@ require("dotenv").config();
 
 // Import de module
 const express = require("express"),
- app = express(),
- bodyParser = require('body-parser'),
- methodOverride = require('method-override'),
- port = process.env.PORT || 3003,
- {engine} = require("express-handlebars"),
- Handlebars = require('handlebars'),
- mysql = require('mysql');
+  app = express(),
+  bodyParser = require('body-parser'),
+  methodOverride = require('method-override'),
+  port = process.env.PORT || 3003,
+  { engine } = require("express-handlebars"),
+  Handlebars = require('handlebars'),
+  mysql = require('mysql');
 
 let conf = {
   host: process.env.DB_HOST,
@@ -52,23 +52,32 @@ app.use('/assets', express.static('public'))
 
 // Helper pour donner une limite de card a afficher
 Handlebars.registerHelper('limit', function (ar, max) {
+  
+  var db = ar.slice(0,max);
+  return db;
 
-  let arrayVoiture = [];
-  for (i = 0; i < max; i++) {
-    var random = Math.floor(Math.random() * ar.length);
-    var random_voiture = ar[random];
-    // Si random_voiture est présent dans arrayVoiture alors on retire 1 à i afin de refaire un tour de boucle 
-    if (arrayVoiture.includes(random_voiture)) {
-      i -= 1;
-      console.log("doublons");
-    } else {
-      // Ajout de la voiture choisi aléatoirement
-      arrayVoiture.push(random_voiture)
-    }
-  }
-  return arrayVoiture;
+  // let arrayVoiture = [];
+  // for (i = 0; i < max; i++) {
+  // var random = Math.floor(Math.random() * ar.length);
+  // var random_voiture = ar[random];
+  //   // Si random_voiture est présent dans arrayVoiture alors on retire 1 à i afin de refaire un tour de boucle 
+  //   if (arrayVoiture.includes(random_voiture)) {
+  //     i -= 1;
+  //     console.log("doublons");
+  //   } else {
+  //     // Ajout de la voiture choisi aléatoirement
+  //     arrayVoiture.push(random_voiture)
+  //   }
+  // }
+  // return arrayVoiture;
 });
-
+Handlebars.registerHelper('iffpage', function (a, b, opts) {
+  if (a == b) {
+    return opts.fn(this);
+  } else {
+    return opts.inverse(this);
+  }
+})
 
 // Import de notre router
 const ROUTER = require('./back/router');
