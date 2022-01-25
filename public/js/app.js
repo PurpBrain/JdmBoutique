@@ -1,33 +1,17 @@
+//Preloader
+var time
+
+function loadFunction() {
+    time = setTimeout(showPage,700);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader").style.height = "0%";
+    document.getElementById("myPage").style.display = "block";
+}
 //Définir l'interface
 const searchBarFilter = document.querySelector('#search');
-
-//Barre de recherche 
-// search.addEventListener('keydown', function (event) {
-//     if (event.keyCode === 13) {
-//         searchData()
-//     } else return;
-// })
-
-// function searchData(event) {
-//     this.search = event.target.value
-//     console.log(this.search)
-//     console.log(this.filter)
-//     this.empService.searchData(this.search).subscribe((res) => {
-//         console.log("Filter Response", res);
-//         if (res) {
-//             this.voiture = res
-//             if (res.length === 0) {
-//                 this.noData = true
-//             } else {
-//                 this.noData = false
-//             }
-//         }
-//     },
-//         (err) => {
-//             console.log(err);
-//             console.log("error")
-//         })
-// }
 
 //check password 
 function checkPassword() {
