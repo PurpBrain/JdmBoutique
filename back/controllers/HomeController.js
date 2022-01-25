@@ -6,7 +6,7 @@
 exports.homepage = (req, res) => {
     console.log('Page home');
     
-    let sql = `SELECT * FROM voiture`;
+    let sql = `SELECT * FROM article`;
 
     db.query(sql, (error, data, fields) => {
         if (error) throw error;

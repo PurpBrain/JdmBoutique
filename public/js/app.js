@@ -2,7 +2,7 @@
 var time
 
 function loadFunction() {
-    time = setTimeout(showPage,700);
+    time = setTimeout(showPage,400);
 }
 
 function showPage() {

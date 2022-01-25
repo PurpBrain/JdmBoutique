@@ -13,13 +13,13 @@ exports.blogpage = (req, res) => {
     var skip = page * numPerPage;
     var limit = skip + ',' + numPerPage;
 console.log("blog",page)
-    let sql = `SELECT count(*) as numRows FROM voiture`;
+    let sql = `SELECT count(*) as numRows FROM article`;
     db.query(sql, (error, results, fields) => {
         numRows = results[0].numRows;
         numPages = Math.ceil(numRows / numPerPage);
     })
 
-    let sqlget = `SELECT * FROM voiture ORDER BY ID DESC LIMIT ${limit}`
+    let sqlget = `SELECT * FROM article ORDER BY ID DESC LIMIT ${limit}`
     db.query(sqlget, (error, results, fields) => {
         var responsePayload = {
             results: results
@@ -46,7 +46,7 @@ console.log("blog",page)
 
 exports.search = (req, res) => {
     search = req.query.search
-    var searchvoiture = `SELECT * FROM voiture WHERE (make LIKE '%${search}%' OR model LIKE '%${search}%')`
+    var searchvoiture = `SELECT * FROM article WHERE (make LIKE '%${search}%' OR model LIKE '%${search}%')`
     db.query(searchvoiture, function (error, resQuery) {
 
         if (error) throw error;
