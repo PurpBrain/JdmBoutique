@@ -12,7 +12,7 @@ exports.blogpage = (req, res) => {
     var numPages;
     var skip = page * numPerPage;
     var limit = skip + ',' + numPerPage;
-
+console.log("blog",page)
     let sql = `SELECT count(*) as numRows FROM voiture`;
     db.query(sql, (error, results, fields) => {
         numRows = results[0].numRows;

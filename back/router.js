@@ -64,6 +64,7 @@ router.route('/admin/create/voiture')
     
 router.route('/api/voiture')
     .get(AdminController.getVoiture)
+
 // /Routes
 
 // Export de notre router

@@ -56,7 +56,9 @@ function prixCroissant() {
 }
 
 function prixDécroissant() {
-    fetch("/api/voiture")
+
+
+    fetch(`/api/voiture?page=1`)
         .then(x => x.json())
         .then(data => sortDécroissant(data.fiche));
 

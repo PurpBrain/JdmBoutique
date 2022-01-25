@@ -14797,68 +14797,31 @@ header {
   transition: background-color 1s, color 1s, border 1s;
   margin-bottom: 20px;
   color: #000000 !important;
+  transition: 1s !important;
 }
 
 .btn-full {
   background-color: #575757;
   color: #000000;
   margin-right: 15px;
+  transition: 1s !important;
 }
 
 .btn-full:hover {
   background-color: #E0E0E0;
   color: #000000 !important;
+  transition: 1s !important;
 }
 
 .btn-contact {
   color: #000000 !important;
+  background-color: #A2A7A7 !important;
+  transition: 1s;
+}
+
+.btn-contact:hover {
   background-color: #E0E0E0 !important;
-}
-
-.neon-button {
-  font-size: 3rem;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  color: #000000;
-  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
-  position: fixed;
-  bottom: 10px;
-  right: 20px;
-  z-index: 0;
-}
-
-.neon-button::before {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  opacity: 0.7;
-}
-
-.neon-button::after {
-  content: "";
-  position: absolute;
-  opacity: 0;
-  background-color: #fff;
-  transition: opacity 100ms linear;
-}
-
-.neon-button:hover,
-.neon-button:focus {
-  color: #575757;
-  text-shadow: none;
-}
-
-.neon-button:hover::before,
-.neon-button:focus::before {
-  opacity: 1;
-}
-
-.neon-button:hover::after,
-.neon-button:focus::after {
-  opacity: 1;
+  transition: 1s !important;
 }
 
 .product {
@@ -14964,7 +14927,7 @@ header {
   margin-left: 6px;
   margin-right: 0;
   border-radius: 100%;
-  background-color: #33353d;
+  background-color: #3B3B3B;
 }
 
 .copyright-text {
@@ -14977,10 +14940,6 @@ header {
 
 .site-footer {
   padding-bottom: 0;
-}
-
-.site-footer .copyright-text, .site-footer .social-icons {
-  text-align: center;
 }
 
 .social-icons {

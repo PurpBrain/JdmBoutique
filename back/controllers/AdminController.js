@@ -1,6 +1,6 @@
 /*
  * Controller: Admin
- * ****************** */ 
+ * ****************** */
 
 // Controller pour la page admin
 
@@ -10,23 +10,24 @@ exports.adminpage = (req, res) => {
 
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
-        
-        res.render('admin',{
-        voiture:data
-    });
+
+        res.render('admin', {
+            voiture: data
+        });
     })
-    
+
 }
 
-exports.getVoiture =  (req, res) => {
+exports.getVoiture = (req, res) => {
     // SQL récupération de tout les users
-   
+    //    console.log(parseInt(req.query.page, 10))
     var numRows;
     var numPerPage = 6;
     var page = parseInt(req.query.page, 10) || 0;
     var numPages;
     var skip = page * numPerPage;
     var limit = skip + ',' + numPerPage;
+    console.log("voiture", req.query.page)
 
     let sql = `SELECT count(*) as numRows FROM voiture`;
     db.query(sql, (error, results, fields) => {
@@ -38,7 +39,8 @@ exports.getVoiture =  (req, res) => {
     db.query(sqlget, (error, results, fields) => {
         if (page < numPages) {
             res.json({
-                fiche: results
+                fiche: results,
+                num_page: page
             })
         } else {
             res.redirect('blog')
