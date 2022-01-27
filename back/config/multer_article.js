@@ -4,8 +4,11 @@ const imageStorage = multer.diskStorage({
     // Destination to store image     
     destination: './public/img/Voitures-Img',
     filename: (req, file, callback) => {
-        const name = file.originalname.split(' ').join('_');
-        callback(null, name);
+        const name = file.originalname.split(' ').join('_'),
+        completed=Date.now()+"_"+name
+        file.completed=completed 
+        
+        callback(null, completed);
     }
 });
 

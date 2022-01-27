@@ -6,21 +6,26 @@
 
 exports.adminpage = (req, res) => {
     console.log('Page admin');
-    let sql = `SELECT * FROM article`;
+    // res.render("admin", {
+    //     article: await db.query("SELECT * FROM article;"),
+    //     image: await db.query("SELECT DISTINCT img_url FROM image;")
+    //   });
+    // let sql = `SELECT * FROM article`;
+    let sqlGetImg = `SELECT img_url,make,model FROM image INNER JOIN article on article.id_Article = image.id_img;`;
 
-    db.query(sql, (error, data, fields) => {
+    db.query(sqlGetImg, (error, data, fields) => {
         if (error) throw error;
-        let sqlGetImg = `SELECT DISTINCT img_url FROM image`;
+        
         res.render('admin', {
             voiture: data
         });
+    // res.json({data})
     })
-
+    
+    
 }
 
 exports.getVoiture = (req, res) => {
-    // SQL récupération de tout les users
-    // console.log(parseInt(req.query.page, 10))
     var numRows;
     var numPerPage = 6;
     var page = parseInt(req.query.page, 10) || 0;
@@ -51,7 +56,7 @@ exports.getVoiture = (req, res) => {
 
 exports.addVoiture = (req, res) => {
     console.log(req.files)
-    // SQL pour creer un users
+    // SQL pour creer un article
     let sql = `INSERT INTO article SET make=?, model=?, price=?, author_id=?,description=?`;
 
     let values = [
@@ -83,7 +88,7 @@ exports.addVoiture = (req, res) => {
 
     db.query(sql, values, function (err, data, fields) {
         if (err) throw err;
-        // SQL récupération de tout les users
+        // SQL récupération de tout les articles
         let sql = `SELECT * FROM article`;
         db.query(sql, (error, dataRes, fields) => {
             if (error) throw error;
@@ -93,7 +98,7 @@ exports.addVoiture = (req, res) => {
 }
 
 exports.delVoiture = (req, res) => {
-    let sql = `DELETE FROM article WHERE id=?`
+    let sql = `DELETE * FROM article WHERE id=?`
     db.query(sql, req.params.id, (error, dataRes, fields) => {
         if (error) throw error;
         res.redirect('back')

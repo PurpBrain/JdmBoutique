@@ -6,8 +6,7 @@
 exports.homepage = (req, res) => {
     console.log('Page home');
     
-    let sql = `SELECT * FROM article`;
-
+    let sql = `SELECT * FROM article,image`;
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
         
