@@ -19,7 +19,7 @@ exports.blogpage = (req, res) => {
         numPages = Math.ceil(numRows / numPerPage);
     })
 
-    let sqlget = `SELECT * FROM article ORDER BY ID DESC LIMIT ${limit}`
+    let sqlget = `SELECT * FROM article INNER JOIN image ON image.id_article = article.img_id`
     db.query(sqlget, (error, results, fields) => {
         var responsePayload = {
             results: results

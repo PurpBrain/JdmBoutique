@@ -6,7 +6,7 @@
 exports.homepage = (req, res) => {
     console.log('Page home');
     
-    let sql = `SELECT * FROM article,image`;
+    let sql = `SELECT * FROM article INNER JOIN image ON image.id_article = article.img_id;`;
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
         

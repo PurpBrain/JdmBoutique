@@ -1,7 +1,7 @@
 {{!--
 Partial: Modal pour supprimer un article sur la page admin
 --}}
-<div class="modal fade" id="deleteBlog{{ this.id }}" tabindex="-1" aria-labelledby="modalDeleteBlog" aria-hidden="true">
+<div class="modal fade" id="deleteBlog{{ this.id_Article }}" tabindex="-1" aria-labelledby="modalDeleteBlog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -16,7 +16,7 @@ Partial: Modal pour supprimer un article sur la page admin
                 </div>
             </div>
             <div class="modal-footer">
-                <form action="/admin/{{ this.id }}?_method=DELETE" method="post">
+                <form action="/admin/{{ this.id_Article }}?_method=DELETE" method="post">
                     <button class="btn btn-danger">Supprimer</button>
                 </form>
             </div>

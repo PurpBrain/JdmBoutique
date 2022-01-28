@@ -11,7 +11,10 @@ exports.adminpage = (req, res) => {
     //     image: await db.query("SELECT DISTINCT img_url FROM image;")
     //   });
     // let sql = `SELECT * FROM article`;
-    let sqlGetImg = `SELECT img_url,make,model FROM image INNER JOIN article on article.id_Article = image.id_img;`;
+    let sqlGetImg = `SELECT image.id_img, image.img_url, article.id_Article, article.make, article.model
+                        FROM article 
+                        INNER JOIN image
+                        ON image.id_article = article.img_id;`;
 
     db.query(sqlGetImg, (error, data, fields) => {
         if (error) throw error;
@@ -57,7 +60,7 @@ exports.getVoiture = (req, res) => {
 exports.addVoiture = (req, res) => {
     console.log(req.files)
     // SQL pour creer un article
-    let sql = `INSERT INTO article SET make=?, model=?, price=?, author_id=?,description=?`;
+    let sql = `INSERT INTO article SET make=?, model=?, price=?, author_id=?, description=?`;
 
     let values = [
         req.body.make,
@@ -80,6 +83,19 @@ exports.addVoiture = (req, res) => {
 
             db.query(sqlSet, values, function (err, data3, fields) {
                 if (err) throw err;
+
+                console.log("test");
+
+                let sqlUpdate = `UPDATE article SET img_id = ? WHERE id_Article= ?`
+
+                /*let values = [
+
+                ]
+
+                db.query(sqlUpdate, values, function (err, data3, fields) {
+                    if (err) throw err;
+                    
+                })*/
             })
         }
     })
@@ -98,7 +114,11 @@ exports.addVoiture = (req, res) => {
 }
 
 exports.delVoiture = (req, res) => {
-    let sql = `DELETE * FROM article WHERE id=?`
+    let sql = `DELETE article, image 
+               FROM article 
+               INNER JOIN image 
+               ON image.id_article = article.img_id 
+               WHERE article.id_Article= ?`
     db.query(sql, req.params.id, (error, dataRes, fields) => {
         if (error) throw error;
         res.redirect('back')

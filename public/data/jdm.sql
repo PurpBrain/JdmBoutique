@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   PRIMARY KEY (`id_user`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`article`
 -- -----------------------------------------------------
@@ -39,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`article` (
   `model` VARCHAR(45) NOT NULL,
   `price` VARCHAR(45) NOT NULL,
   `author_id` INT NOT NULL,
+  -- `img_id` INT NULL,
   `description` VARCHAR(500) NOT NULL,
   PRIMARY KEY (`id_Article`),
   INDEX `fk_Article_2_idx` (`author_id` ASC) VISIBLE,
@@ -112,3 +112,40 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO user (pseudo, email, password, avatar_url) 
+  VALUES
+      ("leo", "leo@leo.leo", "1234", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v"),
+      ("leo1", "leo1@leo.leo", "1234", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v"),
+      ("leo2", "leo2@leo.leo", "1234", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v");
+
+INSERT INTO article (make, model, price, author_id, description, img_id) 
+  VALUES ("Nissan", "240sx", "15000", "1", "ma super descr", "1"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "2"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "3"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "4"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "5"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "6"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "7"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "8"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "9"),
+    ("Toyota", "GT86", "25000", "1", "ma super descr", "10"),
+    ("Toyota", "Ae86", "17000", "1", "ma super descr", "11");
+
+INSERT INTO image (img_url, id_article) 
+  VALUES
+    ("240sx.jpg", "1"),
+    ("gt86.jpg", "2"),
+    ("gt86.jpg", "3"),
+    ("gt86.jpg", "4"),
+    ("gt86.jpg", "5"),
+    ("gt86.jpg", "6"),
+    ("gt86.jpg", "7"),
+    ("gt86.jpg", "8"),
+    ("gt86.jpg", "9"),
+    ("gt86.jpg", "10"),
+    ("Ae86.jpg", "11");
+
+
+-- SELECT image.img_url, article.make, article.model FROM image INNER JOIN article on article.img_id = "1";
