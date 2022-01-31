@@ -17,7 +17,9 @@ const express = require("express"),
   { engine } = require("express-handlebars"),
   Handlebars = require('handlebars'),
   util = require('util'),
-  mysql = require('mysql');
+  mysql = require('mysql'),
+  expressSession = require("express-session"),
+  MySQLStore = require("express-mysql-session")(expressSession);
 
 let conf = {
   host: process.env.DB_HOST,
@@ -25,6 +27,19 @@ let conf = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE
 };
+
+var sessionStore = new MySQLStore(conf); 
+
+// Express-session
+app.use(
+  expressSession({
+    secret: "securite",
+    name: "ptiGato",
+    saveUninitialized: true,
+    resave: false,
+    store: sessionStore
+  })
+);
 
 db = mysql.createConnection(conf);
 db.query = util.promisify(db.query).bind(db);
