@@ -5,37 +5,50 @@
 // Controller pour la page blog
 exports.blogpage = (req, res) => {
     console.log('Page blog');
+    /////////// Pagination /////////// 
 
-    var numRows;
-    var numPerPage = 6;
-    var page = parseInt(req.query.page, 10) || 0;
-    var numPages;
-    var skip = page * numPerPage;
-    var limit = skip + ',' + numPerPage;
-    console.log("blog",page)
+    // Nombres d'article au total
+    let numRows;
+    //Nombres d'articles par page
+    let numPerPage = 6;
+    // Page actuel
+    let page = parseInt(req.query.page, 10) || 0;
+    // Numéro de page
+    let numPages;
+    // Numéro de l'article précédent la page actuelle 
+    let skip = page * numPerPage;
+    // Récupération des articles après "skip"
+    let limit = skip + ',' + numPerPage;
+    // Requête SQL pour compter le nombres de lignes dans la table * et lui donner le nom de "numRows" 
     let sql = `SELECT count(*) as numRows FROM article`;
-    db.query(sql, (error, results, fields) => {
-        numRows = results[0].numRows;
-        numPages = Math.ceil(numRows / numPerPage);
-    })
 
-    let sqlget = `SELECT * FROM article INNER JOIN image ON image.id_article = article.img_id`
+    db.query(sql, (error, results, fields) => {
+        
+        numRows = results[0].numRows;
+        // Numero de page qu'on arrondi a l'entier surpérieur 
+        numPages = Math.ceil(numRows / numPerPage);
+        // console.log(numPerPage)
+    })
+    
+    // Requête SQL pour séléctionner tout les articles selon les images trier par ordre croissant 
+    let sqlget = `SELECT * 
+                  FROM article 
+                  INNER JOIN image 
+                  ON image.id_article = article.img_id  
+                  ORDER BY article.id_Article 
+                  DESC LIMIT ${limit}`
     db.query(sqlget, (error, results, fields) => {
-        var responsePayload = {
-            results: results
-        };
+
+        // Si le numéro de la page est inférieur 
         if (page < numPages) {
-            responsePayload.pagination = {
+            var Pagination = {
                 current: page,
-                perPage: numPerPage,
                 previous: page > 0 ? page - 1 : undefined,
-                previousbis: page > 0 ? page - 2 : undefined,
                 next: page < numPages - 1 ? page + 1 : undefined,
-                nextbis: page < numPages - 1 ? page + 2 : undefined
             }
             res.render('blog', {
                 voiture: results,
-                page: responsePayload.pagination
+                page: Pagination
             })
         } else {
             res.redirect('blog')
@@ -45,8 +58,14 @@ exports.blogpage = (req, res) => {
 }
 
 exports.search = (req, res) => {
+    // Séléction de la barre de recherche
     search = req.query.search
-    var searchvoiture = `SELECT * FROM article WHERE (make LIKE '%${search}%' OR model LIKE '%${search}%')`
+    // Requête MySQL pour séléctionner les articles avec leurs images selon la recherche 
+    var searchvoiture = `SELECT * 
+                         FROM article 
+                         INNER JOIN image 
+                         ON image.id_article = article.img_id 
+                         WHERE (make LIKE '%${search}%' OR model LIKE '%${search}%')`
     db.query(searchvoiture, function (error, resQuery) {
 
         if (error) throw error;
@@ -55,19 +74,21 @@ exports.search = (req, res) => {
             res.redirect('blog');
         }
         else {
+            // Si la recherche est inférieur a deux caractères alors pas de résultats
             if (req.query.search.length <= 2) {
-                console.log("a")
                 res.render('blog', {
                     page_disable: true,
                     recherche_false: true
                 });
             } else {
+                // Si la recherche est vide alors redirection vers la page blog
                 if (resQuery == "") {
                     res.render('blog', {
                         page_disable: true,
                         recherche_false: true
                     });
                 } else {
+                    // Si tout est ok
                     res.render('blog', {
                         voiture: resQuery,
                         page_disable: true
@@ -77,3 +98,7 @@ exports.search = (req, res) => {
         }
     })
 }
+
+// exports.sortList = (req, res) => {
+//     monSelecteur = req.query.
+// }

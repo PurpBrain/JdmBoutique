@@ -14768,7 +14768,7 @@ nav a {
 }
 
 header {
-  background-image: url(../img/Voitures-Img/rx7-fc.jpg);
+  background-image: url(../img/Voitures-Img/rx7-FC.jpg);
   transform: scaleX(-1);
   background-size: cover;
   background-repeat: no-repeat;
@@ -14865,7 +14865,6 @@ header {
   font-size: 15px;
   line-height: 24px;
   color: #737373;
-  height: 100%;
 }
 
 .site-footer hr {
@@ -15091,7 +15090,7 @@ cite img {
   transition: 1s;
 }
 
-.loader {
+#loader {
   height: 50vh;
   display: flex;
   align-items: center;

@@ -1,13 +1,13 @@
 // Récupération de la valeur dans le selecteur 
-function getValue() {
-    var value = document.getElementById('monSelecteur').value;
-    if (value == 'croissant') {
-        prixCroissant()
-    }
-    if (value == 'décroissant') {
-        prixDécroissant()
-    }
-}
+// function getValue() {
+//     var value = document.getElementById('monSelecteur').value;
+//     if (value == 'croissant') {
+//         prixCroissant()
+//     }
+//     if (value == 'décroissant') {
+//         prixDécroissant()
+//     }
+// }
 
 function prixCroissant() {
     // Récupération de la db

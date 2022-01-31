@@ -16,6 +16,7 @@ const express = require("express"),
   port = process.env.PORT || 3003,
   { engine } = require("express-handlebars"),
   Handlebars = require('handlebars'),
+  util = require('util'),
   mysql = require('mysql');
 
 let conf = {
@@ -26,6 +27,8 @@ let conf = {
 };
 
 db = mysql.createConnection(conf);
+db.query = util.promisify(db.query).bind(db);
+
 
 db.connect((err) => {
   if (err) console.error('error connecting: ' + err.stack);
