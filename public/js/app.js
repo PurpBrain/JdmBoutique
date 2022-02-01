@@ -1,15 +1,15 @@
 //Preloader
-var time
+// var time
 
-function loadFunction() {
-    time = setTimeout(showPage,400);
-}
+// function loadFunction() {
+//     time = setTimeout(showPage,400);
+// }
 
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("loader").style.height = "0%";
-    document.getElementById("myPage").style.display = "block";
-}
+// function showPage() {
+//     document.getElementById("loader").style.display = "none";
+//     document.getElementById("loader").style.height = "0%";
+//     document.getElementById("myPage").style.display = "block";
+// }
 //Définir l'interface
 const searchBarFilter = document.querySelector('#search');
 

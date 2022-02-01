@@ -64,6 +64,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+// Session Connexion for HBS
+app.use('*', (req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+})
 
 // Configuration de la route vers notre dossier static
 app.use('/assets', express.static('public'))
@@ -74,20 +79,6 @@ Handlebars.registerHelper('limit', function (ar, max) {
   var db = ar.slice(0,max);
   return db;
 
-  // let arrayVoiture = [];
-  // for (i = 0; i < max; i++) {
-  // var random = Math.floor(Math.random() * ar.length);
-  // var random_voiture = ar[random];
-  //   // Si random_voiture est présent dans arrayVoiture alors on retire 1 à i afin de refaire un tour de boucle 
-  //   if (arrayVoiture.includes(random_voiture)) {
-  //     i -= 1;
-  //     console.log("doublons");
-  //   } else {
-  //     // Ajout de la voiture choisi aléatoirement
-  //     arrayVoiture.push(random_voiture)
-  //   }
-  // }
-  // return arrayVoiture;
 });
 Handlebars.registerHelper('iffpage', function (a, b, opts) {
   if (a == b) {
@@ -99,9 +90,6 @@ Handlebars.registerHelper('iffpage', function (a, b, opts) {
 
 // Import de notre router
 const ROUTER = require('./back/router');
-// const {
-//   array
-// } = require("./back/config/multer_article");
 app.use('/', ROUTER)
 
 // Lancement de l'appli

@@ -5,7 +5,7 @@
 // Controller pour la page home
 exports.homepage = (req, res) => {
     console.log('Page home');
-    
+    console.log('session',req.session)
     let sql = `SELECT * FROM article INNER JOIN image ON image.id_article = article.img_id;`;
     db.query(sql, (error, data, fields) => {
         if (error) throw error;

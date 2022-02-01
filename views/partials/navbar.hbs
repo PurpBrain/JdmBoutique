@@ -18,15 +18,28 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/blog">Nos véhicules</a>
                 </li>
+                {{#if user }}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    <a class="nav-link active" aria-current="page" href="/">Mon Compte</a>
                 </li>
+                   {{#if user.isAdmin }}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    </li>
+                   {{/if}}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#deconnexion">Déconnexion</a>
+                    
+                </li>
+                {{else }}
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login">Se connecter</a>
                 </li>
+                {{/if}}
             </ul>
         </div>
     </div>
 </nav>
-
-
+{{#if user }}
+{{> modals/modalDeco }}
+{{/if}}

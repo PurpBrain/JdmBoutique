@@ -12,10 +12,10 @@ const HomeController = require("./controllers/HomeController");
 const ContactController = require("./controllers/ContactController");
 const BlogController = require("./controllers/BlogControllers");
 const AdminController = require("./controllers/AdminController");
-const ArticleController = require("./controllers/ArticleController")
-const AutController = require("./controllers/AutController")
-const Upload = require('./config/multer_article');
-
+const ArticleController = require("./controllers/ArticleController");
+const AutController = require("./controllers/AutController");
+const UploadArticle = require('./config/multer_article');
+const UploadImgUser = require("./config/multer_user");
 // Routes
 
 // Home
@@ -29,17 +29,23 @@ router.route('/contact')
 
 //Register
 router.route('/register')
-    .post(Upload.single('avatar'),AutController.register)
-    .get(AutController.registerpage)
+    .get(AutController.registerpage)  
+    .post(UploadImgUser.single('avatar'),AutController.infoRegister) 
+      
 //Login
 router.route('/login')
-    .post(AutController.login)
     .get(AutController.loginpage)
+    .post(AutController.connect)
+
+// Logout
+router.route('/logout')
+    .post(AutController.logout)
     
 // Forgot Password
 router.route('/forgot')
     .post(AutController.forgot)
     .get(AutController.forgotpage)
+
 // Blog
 router.route('/blog')
     .get(BlogController.blogpage)
@@ -55,12 +61,11 @@ router.route('/blog/:id')
 router.route('/admin')
     .get(AdminController.adminpage)
     
-
 router.route('/admin/:id')
     .delete(AdminController.delVoiture)
 
 router.route('/admin/create/voiture')
-    .post(Upload.array('img'),AdminController.addVoiture)
+    .post(UploadArticle.array('img'),AdminController.addVoiture)
     
 router.route('/api/voiture')
     .get(AdminController.getVoiture)

@@ -24,7 +24,11 @@
                     <li><a href="/">Accueil</a></li>
                     <li><a href="/contact">Contactez-nous</a></li>
                     <li><a href="/blog">Nos véhicules</a></li>
+                    {{#if user}}
+                    <li><a href="/monCompte">Mon Compte</a></li>
+                    {{else }}
                     <li><a href="/login">Se connecter</a></li>
+                    {{/if}}
                     <li><a href="https://www.cnil.fr/">Mentions légales</a></li>
                 </ul>
             </div>
