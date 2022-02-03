@@ -14,7 +14,7 @@ Partial: Tabs
             </li>
             <li class="nav-item" role="com">
                 <button class="nav-link2" id="pills-com-tab" data-bs-toggle="pill" data-bs-target="#pills-com"
-                    type="button" role="tab" aria-controls="pills-com" aria-selected="false">Commentaires</button>
+                    type="button" role="tab" aria-controls="pills-com" aria-selected="false">Messages</button>
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
@@ -67,7 +67,7 @@ Partial: Tabs
                     <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                                <img src="/assets/img/Voitures-Img/{{this.img_url}}">
+                            <img src="/assets/img/Voitures-Img/{{this.img_url}}">
                             <p>Page : {{ this.make }} {{ this.model }}</p>
                             <div>
                                 <i class="fas fa-pencil-ruler pe-3"></i>
@@ -80,39 +80,26 @@ Partial: Tabs
                     </div>
                 </section>
             </div>
-            <!--Commentaires-->
+            <!--Messages-->
             <div class="tab-pane fade" id="pills-com" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <section class="container adminimg pb-5" id="com">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Commentaires</h2>
+                            <h2>Messages</h2>
                         </div>
                     </div>
                     <div class="boxAdmin col txt-color-black">
+                        {{#each voiture}}
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
-                            <p>Daniel Isoji</p>
+                            <img src="/assets/img/img-user/{{this.img_url}}">
+                            <p>Message de : {{ this.pseudo }} </p>
                             <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteCom"></i></a>
+                                <a><i class="far fa-comment" data-bs-toggle="modal"
+                                        data-bs-target=""></i></a>
                             </div>
                         </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
-                            <p>Daniel Isoji</p>
-                            <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteCom"></i></a>
-                            </div>
-                        </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                                <img src="assets/img/Voitures-Img/Jzx100.jpg">
-                            <p>Daniel Isoji</p>
-                            <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteCom"></i></a>
-                            </div>
-                        </div>
+                        {{!-- {{> modals/modalReponse }} --}}
+                        {{/each}}
                 </section>
             </div>
         </div>
