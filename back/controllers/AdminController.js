@@ -18,7 +18,6 @@ exports.adminpage = (req, res) => {
 
     db.query(sqlGetImg, (error, data, fields) => {
         if (error) throw error;
-console.log("all voiture",data)
         res.render('admin', {
             voiture: data
         });

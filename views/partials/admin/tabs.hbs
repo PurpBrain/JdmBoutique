@@ -27,27 +27,17 @@ Partial: Tabs
                         </div>
                     </div>
                     <div class="boxAdmin col txt-color-black">
+                        {{#each voiture}}
                         <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="assets/img/Autres/img-pp.jpg">
-                            <p>Daniel Isoji</p>
+                            <img src="/assets/img/img-user/{{this.img_url}}">
+                            <p>Page : {{ this.pseudo }} </p>
                             <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
                             </div>
                         </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="assets/img/Autres/img-pp.jpg">
-                            <p>Daniel Isoji</p>
-                            <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
-                            </div>
-                        </div>
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="assets/img/Autres/img-pp.jpg">
-                            <p>Daniel Isoji</p>
-                            <div>
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal" data-bs-target="#ban"></i></a>
-                            </div>
-                        </div>
+                        {{> modals/modalBan }}
+                        {{/each}}
                     </div>
                 </section>
             </div>
