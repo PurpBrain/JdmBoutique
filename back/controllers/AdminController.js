@@ -14,11 +14,11 @@ exports.adminpage = (req, res) => {
     let sqlGetImg = `SELECT image.id_img, image.img_url, article.id_Article, article.make, article.model
                         FROM article 
                         INNER JOIN image
-                        ON image.id_article = article.img_id;`;
+                        ON image.id_article = article.id_Article;`;
 
     db.query(sqlGetImg, (error, data, fields) => {
         if (error) throw error;
-
+console.log("all voiture",data)
         res.render('admin', {
             voiture: data
         });
@@ -63,8 +63,7 @@ exports.addVoiture = async (req, res) => {
 
     const { make, model, price, description } = req.body;
 
-
-    const cars_insert = await db.query(`INSERT INTO article SET make='${make}', model='${model}', price='${price}', author_id=1, description='${description}'`);
+    const cars_insert = await db.query(`INSERT INTO article SET make='${make}', model='${model}', price='${price}', author_id=${req.session.user.id_user}, description='${description}'`);
 
     for (i = 0; i < req.files.length; i++) {
         const picture_insert = await db.query(`INSERT INTO image SET img_url='${req.files[i].filename}', id_article='${cars_insert.insertId}'`);

@@ -116,7 +116,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO user (pseudo, email, password, avatar_url) 
   VALUES
-      ("leo", "leo@leo.leo", "$2b$10$P6iyUcmLF8wMJlL4ErlvXO5AZXLAsXUgCTtJjR8AKogZ/oKX7DDeC", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v");
+      ("leo", "leo@leo.leo", "$2b$10$ZX9lFAJaDscMyMEJNal5OuNq7FGwsSMyDmKz1ljUtYlH6TNAEmSpO", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v");
+INSERT INTO role (id_user, is_admin, is_ban, is_archive) 
+  VALUES
+      (1,1,0,0);
 
 INSERT INTO `article` (`id_Article`,`make`,`model`,`price`,`author_id`,`img_id`,`description`) 
 VALUES (1,'Nissan','240sx','16000',1,1,'Belle voiture'),

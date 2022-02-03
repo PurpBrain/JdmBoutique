@@ -10,7 +10,7 @@ exports.articlepage = (req, res) => {
     let sql = `SELECT * 
                FROM article 
                INNER JOIN image 
-               ON image.id_article = article.img_id 
+               ON image.id_article = article.id_Article 
                WHERE article.id_Article = ${req.params.id}`;
 
     db.query(sql, (error, data, fields) => {

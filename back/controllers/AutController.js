@@ -15,7 +15,7 @@ exports.connect = async (req, res) => {
 
     if (email && mdp) {
         const results = await db.query(`SELECT * FROM user WHERE email = '${email}'`)
-
+        const role = await db.query(`SELECT * FROM role WHERE id_user = '${results[0].id_user}'`)
         if (results.length > 0) {
 
 
@@ -25,8 +25,9 @@ exports.connect = async (req, res) => {
 
 
             bcrypt.compare(mdp, results[0].password, function (err, result) {
+                
                 if (result === true) {
-                    if (results[0].isAdmin === 1) {
+                    if (role[0].is_admin === 1) {
                         req.session.user =results[0]
                         req.session.user.isAdmin =true
                             
@@ -73,12 +74,15 @@ exports.infoRegister = async (req, res) => {
         })
 
     } else {
-        await db.query(`INSERT INTO user (pseudo, email, password, avatar_url) 
-                        VALUES ('${name}', '${email}', '${hash}', '${req.file.filename}');`),
-            function (err) {
-                if (err) res.redirect('back')
+        const user = await db.query(`INSERT INTO user (pseudo, email, password, avatar_url) 
+                        VALUES ('${name}', '${email}', '${hash}', '${req.file.filename}');`)
+        console.log(user)
+        const role = await db.query(`INSERT INTO role (id_user, is_admin, is_ban, is_archive) 
+                        VALUES (${user.insertId},'0', '0', '0')`)
+            // function (err) {
+            //     if (err) res.redirect('back')
 
-            };
+            // };
         console.log("Compte crée !")
         res.redirect("/")
     }

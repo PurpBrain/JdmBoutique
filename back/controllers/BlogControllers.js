@@ -34,7 +34,7 @@ exports.blogpage = (req, res) => {
     let sqlget = `SELECT * 
                   FROM article 
                   INNER JOIN image 
-                  ON image.id_article = article.img_id  
+                  ON image.id_article = article.id_Article 
                   ORDER BY article.id_Article 
                   DESC LIMIT ${limit}`
     db.query(sqlget, (error, results, fields) => {
