@@ -63,7 +63,7 @@ Partial: Tout les produits de la page blog
         {{else}}
         <nav aria-label="Page navigation example">
             <ul class="justify-content-center pagination">
-                {{#iffpage page.current 0}}
+                {{#iffpage page.current 1}}
                 {{else}}
                 <li class="page-item">
                     <a class="page-link" href="?page={{page.previous}}" aria-label="Previous">
@@ -72,7 +72,7 @@ Partial: Tout les produits de la page blog
                 </li>
                 {{/iffpage}}
 
-                {{#iffpage page.current 0}}
+                {{#iffpage page.current 1}}
                 {{else}}
                 <li class="page-item"><a class="page-link" href="?page={{page.previous}}">{{page.previous}}</a>
                 </li>

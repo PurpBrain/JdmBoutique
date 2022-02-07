@@ -26,7 +26,8 @@ const { adminpage,
         search,
         contactpage,
         createMessage,
-        homepage 
+        homepage,
+        accountpage 
     } = require("./controllers");
 
 // Import de middleware
@@ -86,6 +87,10 @@ router.route('/admin/create/voiture')
 router.route('/api/voiture')
     .get(getVoiture)
 
+// Mon Compte
+router.route('/account')
+    .get(accountpage)
+    
 // /Routes
 
 // Export de notre router

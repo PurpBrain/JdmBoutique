@@ -12,11 +12,11 @@ exports.blogpage = (req, res) => {
     //Nombres d'articles par page
     let numPerPage = 6;
     // Page actuel
-    let page = parseInt(req.query.page, 10) || 0;
+    let page = parseInt(req.query.page, 10) || 1;
     // Numéro de page
     let numPages;
     // Numéro de l'article précédent la page actuelle 
-    let skip = page * numPerPage;
+    let skip = (page-1) * numPerPage;
     // Récupération des articles après "skip"
     let limit = skip + ',' + numPerPage;
     // Requête SQL pour compter le nombres de lignes dans la table * et lui donner le nom de "numRows" 
@@ -40,11 +40,12 @@ exports.blogpage = (req, res) => {
     db.query(sqlget, (error, results, fields) => {
 
         // Si le numéro de la page est inférieur 
-        if (page < numPages) {
+        
+        if (page <= numPages) {
             var Pagination = {
                 current: page,
                 previous: page > 0 ? page - 1 : undefined,
-                next: page < numPages - 1 ? page + 1 : undefined,
+                next: page < numPages ? page + 1 : undefined,
             }
             res.render('blog', {
                 voiture: results,

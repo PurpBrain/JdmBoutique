@@ -3,7 +3,8 @@ const { adminpage, getVoiture, addVoiture, delVoiture } = require ("./AdminContr
       { loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout } = require("./AutController"),
       { blogpage, search } = require ("./BlogControllers"),
       { contactpage, createMessage} = require("./ContactController"),
-      { homepage } = require("./HomeController");
+      { homepage } = require("./HomeController"),
+      { accountpage } = require("./AccountController");
 
 module.exports = {
     // Page Admin
@@ -22,5 +23,8 @@ module.exports = {
     contactpage, createMessage,
 
     // Page Home
-    homepage
+    homepage,
+
+    // Page Account 
+    accountpage
 }

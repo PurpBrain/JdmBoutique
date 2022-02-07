@@ -53,7 +53,6 @@ exports.connect = async (req, res) => {
     }
 }
 
-
 exports.registerpage = (req, res) => {
     console.log('Page register');
     // Afficher la page register
