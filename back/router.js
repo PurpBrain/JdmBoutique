@@ -27,7 +27,8 @@ const { adminpage,
         contactpage,
         createMessage,
         homepage,
-        accountpage 
+        accountpage,
+        editProfile 
     } = require("./controllers");
 
 // Import de middleware
@@ -90,6 +91,7 @@ router.route('/api/voiture')
 // Mon Compte
 router.route('/account')
     .get(accountpage)
+    .put(UploadImgUser.single('avatar'),editProfile) 
     
 // /Routes
 

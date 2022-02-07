@@ -64,7 +64,8 @@ Partial : Tabs du compte
                 <section class="container adminimg pb-5 " id="account">
                     <div class="d-flex bd-highlight pb-3">
                         <img class="me-auto bd-highlight" src="/assets/img/img-user/{{user.avatar_url}}">
-                        <button type="button" class=" bd-highlight btn btn-secondary mb-3">Modifier</button>
+                        <button data-bs-toggle="modal" data-bs-target="#ModalChangePP" type="button"
+                            class=" bd-highlight btn btn-secondary mb-3">Modifier</button>
                     </div>
                     <div class="d-flex bd-highlight pb-3">
                         <p class="me-auto bd-highlight">Nom d'utilisateur :<br>{{user.pseudo}}</p>

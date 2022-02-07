@@ -4,7 +4,7 @@ const { adminpage, getVoiture, addVoiture, delVoiture } = require ("./AdminContr
       { blogpage, search } = require ("./BlogControllers"),
       { contactpage, createMessage} = require("./ContactController"),
       { homepage } = require("./HomeController"),
-      { accountpage } = require("./AccountController");
+      { accountpage, editProfile } = require("./AccountController");
 
 module.exports = {
     // Page Admin
@@ -26,5 +26,5 @@ module.exports = {
     homepage,
 
     // Page Account 
-    accountpage
+    accountpage,editProfile
 }
