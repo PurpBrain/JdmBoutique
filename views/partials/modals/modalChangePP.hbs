@@ -5,13 +5,13 @@
                 <h5 class="modal-title" id="ModalBlog">Changer de Photo de profil</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/account/?_method=PUT" method="post" enctype="multipart/form-data">
+            <form action="/account/{{user.id_user}}?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <!--Email & password-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="contact-form">
-                            <input name="img" type="file"/>
+                            <input name="avatar" type="file"/>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,6 @@
  * Controller: Modal Login
  * *********************** */
 const bcrypt = require('bcrypt');
-const { DEC8_BIN } = require('mysql/lib/protocol/constants/charsets');
 
 exports.loginpage = (req, res) => {
     console.log('Page Login');
@@ -25,13 +24,13 @@ exports.connect = async (req, res) => {
 
 
             bcrypt.compare(mdp, results[0].password, function (err, result) {
-                
+
                 if (result === true) {
                     if (role[0].is_admin === 1) {
-                        req.session.user =results[0]
-                        req.session.user.isAdmin =true
-                            
-                       
+                        req.session.user = results[0]
+                        req.session.user.isAdmin = true
+
+
                     } else {
                         req.session.user = results[0]
                     }
@@ -64,26 +63,26 @@ exports.infoRegister = async (req, res) => {
     const { name, email, mdp, avatar, mdpConfirm } = req.body;
     const hash = bcrypt.hashSync(mdp, 10);
 
-    if (mdp !== mdpConfirm) {
+    if (mdp == mdpConfirm) {
 
-        console.log("Mdp Différent")
-
-        res.render('register', {
-            flash: "Mot de passe différent !"
-        })
-
-    } else {
         const user = await db.query(`INSERT INTO user (pseudo, email, password, avatar_url) 
                         VALUES ('${name}', '${email}', '${hash}', '${req.file.filename}');`)
         console.log(user)
         const role = await db.query(`INSERT INTO role (id_user, is_admin, is_ban, is_archive) 
                         VALUES (${user.insertId},'0', '0', '0')`)
-            // function (err) {
-            //     if (err) res.redirect('back')
+        // function (err) {
+        //     if (err) res.redirect('back')
 
-            // };
+        // };
         console.log("Compte crée !")
         res.redirect("/")
+
+    } else {
+        console.log("Mdp Différent")
+
+        res.render('register', {
+            flash: "Mot de passe différent !"
+        })
     }
 }
 
@@ -101,8 +100,8 @@ exports.forgot = (req, res) => {
 
 exports.logout = (req, res) => {
     req.session.destroy(() => {
-      res.clearCookie('ptiGato');
-      console.log("Clear Cookie session :", req.sessionID);
-      res.redirect('/');
+        res.clearCookie('ptiGato');
+        console.log("Clear Cookie session :", req.sessionID);
+        res.redirect('/');
     })
-  }
+}

@@ -4,22 +4,17 @@
 
 // Controller pour la page admin
 
-exports.adminpage = (req, res) => {
+exports.adminpage = async (req, res) => {
     console.log('Page admin');
-    
-    let sqlGetImg = `SELECT image.id_img, image.img_url, article.id_Article, article.make, article.model
-                        FROM article 
-                        INNER JOIN image
-                        ON image.id_article = article.id_Article;`;
 
-    db.query(sqlGetImg, (error, data, fields) => {
-        if (error) throw error;
-        res.render('admin', {
-            voiture: data
-        });
+    const getUser = await db.query(`SELECT * FROM user;`);
+
+    const sqlGetImg = await db.query(`SELECT * FROM article INNER JOIN image ON image.id_article = article.id_Article;`);
+
+    res.render('admin', {
+        user: getUser,
+        voiture: sqlGetImg
     })
-
-
 }
 
 exports.getVoiture = (req, res) => {
