@@ -14,17 +14,11 @@ exports.editProfile = async (req, res) => {
     const { id } = req.params
     // console.log("id", id)
     // Récupération des infos 
-    const { pseudo, email, mdp } = req.body
-    
+    const { pseudo, email, mdp, old_mdp, new_mdp, confirm_new_mdp } = req.body
 
     // Faire await pour obtenir les infos de l'user 
     const user = await db.query(`SELECT * FROM user WHERE id_user = ${id}`);
     const role = await db.query(`SELECT * FROM role WHERE id_user = ${id}`);
-
-    // Mot de passe hasher
-    if (!req.file) {
-        var hash = bcrypt.hashSync(mdp, 10);
-    }
 
     // Condition pour les changements 
     let setavatar = !req.file ? user[0].avatar_url : req.file.filename
@@ -44,7 +38,9 @@ exports.editProfile = async (req, res) => {
 
         };
         res.redirect('back')
-    } else {
+    } 
+    if (!req.file && !old_mdp) {
+        var hash = bcrypt.hashSync(mdp, 10);
         // Comparaison des mdp 
         bcrypt.compare(mdp, user[0].password, async function (err, result) {
             console.log(result)
@@ -58,9 +54,7 @@ exports.editProfile = async (req, res) => {
                     pseudo: setpseudo,
                     email: setemail,
                     password: setpassword,
-                    is_admin: setIsAdmin,
-                    is_ban: setIsBan,
-                    is_archive: setIsArchive
+                    isAdmin: role[0].is_admin
                 };
                 res.redirect('back')
 
@@ -69,6 +63,28 @@ exports.editProfile = async (req, res) => {
             })
         })
     }
+    if (old_mdp) {
+        bcrypt.compare(old_mdp, user[0].password, async function (err, result) {
+            if (result === true) {
+                if (new_mdp == confirm_new_mdp) {
+                    const hash = bcrypt.hashSync(new_mdp, 10)
+                    await db.query(`UPDATE user SET password="${hash}" WHERE id_user = ${id}`);
+                    res.render('account', {
+                        flash: "Mot de passe modifié !"
+                    })
+                } else {
+                    res.render('account', {
+                        flash: "Les mots de passe ne sont pas identiques"
+                    })
+                }
+            } else {
+                res.render('account', {
+                    flash: "Mauvais mot de passe"
+                })
+            }
+        })
+    }
+     
 
 
 
