@@ -91,6 +91,12 @@ Handlebars.registerHelper('iffpage', function (a, b, opts) {
 // Import de notre router
 const ROUTER = require('./back/router');
 app.use('/', ROUTER)
+// Met toutes les pages non défini en 404 error
+app.use('*',function(req, res) {
+  res.status(404).render("error404", {
+    layout: 'err'
+  })
+})
 
 // Lancement de l'appli
 app.listen(port, () => {

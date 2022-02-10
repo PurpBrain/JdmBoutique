@@ -79,11 +79,11 @@ router.route('/blog/:id')
 router.route('/admin')
     .get(mdlAuth.isAdmin, adminpage)
 
-router.route('/admin/:id')
+router.route('/admin/delete/voiture/:id')
     .delete(delVoiture)
 
 router.route('/admin/create/voiture')
-    .post(UploadArticle.array('img'),addVoiture)
+    .post(mdlAuth.isAdmin,UploadArticle.array('img'),addVoiture)
     
 router.route('/api/voiture')
     .get(getVoiture)

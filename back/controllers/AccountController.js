@@ -1,7 +1,9 @@
 exports.accountpage = (req, res) => {
     console.log('Page Mon compte');
     // Afficher la page contact 
-    res.render('account');
+    res.render('account', {
+        layout: 'no-footer'
+    });
     console.log(req.session.user)
 }
 
@@ -10,12 +12,14 @@ const bcrypt = require('bcrypt');
 exports.editProfile = async (req, res) => {
     // Récupération de l'id 
     const { id } = req.params
-    console.log("id", id)
+    // console.log("id", id)
     // Récupération des infos 
     const { pseudo, email, mdp } = req.body
+    
 
     // Faire await pour obtenir les infos de l'user 
     const user = await db.query(`SELECT * FROM user WHERE id_user = ${id}`);
+    const role = await db.query(`SELECT * FROM role WHERE id_user = ${id}`);
 
     // Mot de passe hasher
     if (!req.file) {
@@ -35,7 +39,9 @@ exports.editProfile = async (req, res) => {
             avatar_url: setavatar,
             pseudo: setpseudo,
             email: setemail,
-            password: setpassword
+            password: setpassword,
+            isAdmin: role[0].is_admin
+
         };
         res.redirect('back')
     } else {
@@ -51,7 +57,10 @@ exports.editProfile = async (req, res) => {
                     avatar_url: setavatar,
                     pseudo: setpseudo,
                     email: setemail,
-                    password: setpassword
+                    password: setpassword,
+                    is_admin: setIsAdmin,
+                    is_ban: setIsBan,
+                    is_archive: setIsArchive
                 };
                 res.redirect('back')
 

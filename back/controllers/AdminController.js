@@ -12,6 +12,7 @@ exports.adminpage = async (req, res) => {
     const sqlGetImg = await db.query(`SELECT * FROM article INNER JOIN image ON image.id_article = article.id_Article;`);
 
     res.render('admin', {
+        layout: 'no-footer',
         user: getUser,
         voiture: sqlGetImg
     })
@@ -71,7 +72,7 @@ exports.delVoiture = (req, res) => {
     let sql = `DELETE image,article 
                FROM image
                INNER JOIN article
-               ON image.id_article = article.img_id 
+               ON image.id_article = article.id_Article
                WHERE image.id_article=?`
     db.query(sql, req.params.id, (error, dataRes, fields) => {
         if (error) throw error;
