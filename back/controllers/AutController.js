@@ -17,11 +17,9 @@ exports.connect = async (req, res) => {
         const role = await db.query(`SELECT * FROM role WHERE id_user = '${results[0].id_user}'`)
         if (results.length > 0) {
 
-
             if (results[0].isBan === 1) {
                 res.send("Vous avez été banni !")
             }
-
 
             bcrypt.compare(mdp, results[0].password, function (err, result) {
 
@@ -47,8 +45,6 @@ exports.connect = async (req, res) => {
                 flash: "Quelque chose ne va pas !"
             });
         }
-
-
     }
 }
 

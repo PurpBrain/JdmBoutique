@@ -15010,12 +15010,6 @@ header {
   font-weight: 600;
 }
 
-.search {
-  display: flex;
-  justify-content: center;
-  padding-top: 15px;
-}
-
 .search input {
   border-radius: 10px;
   border-color: transparent;
@@ -15024,11 +15018,6 @@ header {
 
 .search input:focus {
   outline: none;
-}
-
-.border-search {
-  border-radius: 10px;
-  border: 2px solid #000000;
 }
 
 .form-select-sm {

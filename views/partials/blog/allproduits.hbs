@@ -3,11 +3,21 @@ Partial: Tout les produits de la page blog
 --}}
 
 <produits>
-    <div class="container">
+    <div class="container pt-6">
         <div class="row">
             <div class="col-md-12">
                 <h2 id="texte">Nos véhicules en ventes</h2>
             </div>
+            <form action='/result?search=ma' method="get">
+                <div class="d-flex justify-content-center pt-2 pb-2">
+                    <div class="search border border-secondary rounded">
+                        <input type="text" name="search" id="search" placeholder="Chercher une voiture">
+                        <button action='/result?search=ma' method="get" style="background-color: transparent; border: 1px solid transparent;">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
             {{!-- <label class="txt-color-black">
                 <i class="fas fa-sort"></i>
                 Trier par :

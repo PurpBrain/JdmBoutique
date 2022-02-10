@@ -5,13 +5,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 data-aos="fade-up" data-aos-duration="1200">Nos véhicules en ventes</h2>
+                <h2 data-aos="fade-left">Nos véhicules en ventes</h2>
             </div>
         </div>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{!-- Utilisation du helper pour une limite de 3 --}}
             {{#each (limit voiture 3)}}
-            <div data-aos="fade-up" data-aos-delay="{{this.id}}00" class="col-12 col-md-6 col-lg-4">
+            <div data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="{{this.id_article}}00" class="col-12 col-md-6 col-lg-4">
                 <div class="product-item txt-color-black">
                     <div class="voiture-card">
                         <a href="/blog/{{this.id_Article}}">
@@ -30,9 +30,9 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h2>
+                <h2 data-aos="zoom-in">
                     <a href="blog">
-                        <i class="fas fa-angle-double-right"></i> Voir plus <i class="fas fa-angle-double-left"></i>
+                        <i  class="fas fa-angle-double-right"></i> Voir plus <i class="fas fa-angle-double-left"></i>
                     </a>
                 </h2>
             </div>
