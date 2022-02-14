@@ -3,6 +3,9 @@
  * ****************** */
 
 // Controller pour la page admin
+const fs = require("fs");
+const path = require('path');
+const { deleteFile } = require('../utils/deleteFile');
 
 exports.adminpage = async (req, res) => {
     console.log('Page admin');
@@ -68,7 +71,31 @@ exports.addVoiture = async (req, res) => {
 
 }
 
-exports.delVoiture = (req, res) => {
+exports.editVoiture = async (req, res) => {
+    const { id } = req.params
+    const { make, model, price, img, description } = req.body
+
+    const article = await db.query(`SELECT * FROM article WHERE id_Article = ${id}`)
+    const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
+
+    await db.query(`UPDATE article SET make="${make}", model="${model}", price="${price}", author_id="${req.session.user.id_user}", description="${description}" WHERE id_Article=${id}`)
+
+    if (req.file) {
+        const dir = path.join("./public/img/Voitures-Img")
+        deleteFile(dir, image[0].img_url)
+
+        await db.query(`UPDATE image SET img_url = "${req.file.filename}" WHERE id_img = "${id}"`)
+    }
+
+    console.log("Modif OK")
+    res.redirect('/admin')
+}
+exports.delVoiture = async (req, res) => {
+    const { id } = req.params
+    const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
+    const dir = path.join("./public/img/Voitures-Img")
+    deleteFile(dir, image[0].img_url)
+
     let sql = `DELETE image,article 
                FROM image
                INNER JOIN article

@@ -1,4 +1,4 @@
-const { adminpage, getVoiture, addVoiture, delVoiture } = require ("./AdminController"),
+const { adminpage, getVoiture, addVoiture, delVoiture, editVoiture } = require ("./AdminController"),
       { articlepage } = require ("./ArticleController"),
       { loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout } = require("./AutController"),
       { blogpage, search } = require ("./BlogControllers"),
@@ -8,7 +8,7 @@ const { adminpage, getVoiture, addVoiture, delVoiture } = require ("./AdminContr
 
 module.exports = {
     // Page Admin
-    adminpage, getVoiture, addVoiture, delVoiture,
+    adminpage, getVoiture, addVoiture, delVoiture, editVoiture,
 
     // Page Article
     articlepage,

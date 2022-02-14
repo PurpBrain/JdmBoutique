@@ -28,10 +28,14 @@ Partial: Tabs Admin
                     </div>
                     <div class="boxAdmin col txt-color-black">
                         {{#each user}}
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="/assets/img/img-user/{{this.avatar_url}}">
-                            <p>Pseudo : {{ this.pseudo }} </p>
-                            <div>
+                        <div class="d-flex align-items-center text-center py-3">
+                            <div class="col-md-4">
+                                <img src="/assets/img/img-user/{{this.avatar_url}}">
+                            </div>
+                            <div class="col-md-4">
+                               <p>Pseudo : {{ this.pseudo }} </p> 
+                            </div>
+                            <div class="col-md-4">
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
                                         data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
                             </div>
@@ -56,16 +60,22 @@ Partial: Tabs Admin
                     </div>
                     <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="/assets/img/Voitures-Img/{{this.img_url}}">
-                            <p>Page : {{ this.make }} {{ this.model }}</p>
-                            <div>
-                                <i class="fas fa-pencil-ruler pe-3"></i>
+                        <div class="d-flex align-items-center text-center py-3">
+                            <div class="col-md-4">
+                                 <img class=" col-md-4" src="/assets/img/Voitures-Img/{{this.img_url}}">
+                            </div>
+                            <div class="col-md-4">
+                                <p>Page : {{ this.make }} {{ this.model }}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editBlog{{ this.id_Article }}"></i></a>
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
                                         data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
                             </div>
                         </div>
                         {{> modals/modalDeleteBlog }}
+                        {{> modals/modalEditBlog }}
                         {{/each}}
                     </div>
                 </section>
@@ -80,10 +90,14 @@ Partial: Tabs Admin
                     </div>
                     <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
-                        <div class="row-md-4 d-flex align-items-center justify-content-around py-3">
-                            <img src="/assets/img/img-user/{{this.img_url}}">
-                            <p>Message de : {{ this.pseudo }} </p>
-                            <div>
+                        <div class="d-flex align-items-center text-center py-3">
+                            <div class="col-md-4">
+                                <img src="/assets/img/img-user/{{this.img_url}}">
+                            </div>
+                            <div class="col-md-4">
+                                <p>Message de : {{ this.pseudo }} </p>
+                            </div>
+                            <div class="col-md-4">
                                 <a><i class="far fa-comment" data-bs-toggle="modal"
                                         data-bs-target=""></i></a>
                             </div>

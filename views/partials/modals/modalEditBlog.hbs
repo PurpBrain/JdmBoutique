@@ -1,0 +1,56 @@
+{{!--
+    Partial: Modal pour modifier un article
+--}}
+<div class="modal fade" id="editBlog{{ this.id_Article }}" tabindex="-1" aria-labelledby="ModalEditBlog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/admin/edit/voiture/{{ this.id_Article }}?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editBlog">Modification d'article</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body">
+                
+                <!--Name & Description-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Marque de la voiture :</label>
+                            <input name="make" type="text" id="name" value="{{ this.make }}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Model de la voiture :</label>
+                            <input name="model" type="text" value="{{ this.model }}"/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Prix de la voiture :</label>
+                            <input name="price" type="number" value="{{ this.price }}"/>
+                        </div>
+                    </div>
+                </div>
+                <!--Image-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <input multiple name="img" type="file"></input>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Description :</label>
+                            <input name="description" type="text" id="description" value="{{ this.description }}"/>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

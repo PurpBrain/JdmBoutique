@@ -28,7 +28,8 @@ const { adminpage,
         createMessage,
         homepage,
         accountpage,
-        editProfile
+        editProfile,
+        editVoiture
     } = require("./controllers");
 
 // Import de middleware
@@ -79,6 +80,9 @@ router.route('/blog/:id')
 router.route('/admin')
     .get(mdlAuth.isAdmin, adminpage)
 
+router.route('/admin/edit/voiture/:id')
+    .put(UploadArticle.single('img'),editVoiture)
+
 router.route('/admin/delete/voiture/:id')
     .delete(delVoiture)
 
@@ -91,6 +95,7 @@ router.route('/api/voiture')
 // Mon Compte
 router.route('/account')
     .get(accountpage)
+
 router.route('/account/:id')
     .put(UploadImgUser.single('avatar'),editProfile) 
     
