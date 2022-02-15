@@ -1342,7 +1342,7 @@ $toast-padding-x:                   .75rem !default;
 $toast-padding-y:                   .5rem !default;
 $toast-font-size:                   .875rem !default;
 $toast-color:                       null !default;
-$toast-background-color:            rgba($white, .85) !default;
+$toast-background-color:            rgba($white, 1) !important;
 $toast-border-width:                1px !default;
 $toast-border-color:                rgba($black, .1) !default;
 $toast-border-radius:               $border-radius !default;

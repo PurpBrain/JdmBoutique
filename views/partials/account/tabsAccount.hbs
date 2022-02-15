@@ -13,9 +13,9 @@ Partial : Tabs du compte
                     aria-selected="true">Mes articles</button>
             </li>
             <li class="nav-item" role="commentaires">
-                <button class="nav-link2" id="pills-commentaires-tab" data-bs-toggle="pill"
-                    data-bs-target="#pills-commentaires" type="button" role="tab" aria-controls="pills-commentaires"
-                    aria-selected="false">Mes commentaires</button>
+                <button class="nav-link2" id="pills-com-tab" data-bs-toggle="pill" data-bs-target="#pills-commentaires"
+                    type="button" role="tab" aria-controls="pills-commentaires" aria-selected="false">Mes
+                    commentaires</button>
             </li>
             <li class="nav-item" role="account">
                 <button class="nav-link2" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account"
@@ -24,32 +24,47 @@ Partial : Tabs du compte
         </ul>
         <div class="tab-content" id="pills-tabContent">
             {{!-- Article --}}
-            <div class="tab-pane fade show active" id="pills-article" role="tabpanel" aria-labelledby="pills-home-tab">
-                <section class="container adminimg pb-5" id="user">
+            <div class="tab-pane fade show active" id="pills-article" role="tabpanel"
+                aria-labelledby="pills-article-tab">
+                <section class="container adminimg pb-5" id="article">
+                    {{#if myArticle }}
                     <div class="col-md-12 d-flex justify-content-end">
                         <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
                             data-bs-target="#ModalBlog">
                             <i class="fas fa-plus-square"></i></button>
                     </div>
                     <div class="boxAdmin col txt-color-black">
+                        {{#each myArticle }}
                         <div class="d-flex align-items-center text-center py-3">
                             <div class="col-md-4">
-                                <img src="/assets/img/Voitures-Img/1643625550428_supra.jpg">
+                                <a href="/blog/{{this.id_Article}}"><img class=" col-md-4"
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
                             </div>
                             <div class="col-md-4">
-                                <p>Page</p>
+                                <p>Page : {{ this.make }} {{ this.model }}</p>
                             </div>
                             <div class="col-md-4">
-                                <i class="fas fa-pencil-ruler pe-3"></i>
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editBlog{{ this.id_Article }}"></i></a>
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
                                         data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
                             </div>
                         </div>
+                        {{> modals/modalDeleteBlog data="/account"}}
+                        {{> modals/modalEditBlog data="/account"}}
+                        {{/each}}
                     </div>
+                    {{else }}
+                    <div class="boxAdmin col txt-color-black text-center pt-2 pb-2">
+                        <p>Vous n'avez publié aucun article récemment :(</p>
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalBlog">Publier
+                            un article</button>
+                    </div>
+                    {{/if}}
                 </section>
             </div>
             {{!-- Commentaires --}}
-            <div class="tab-pane fade" id="pills-commentaires" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade" id="pills-commentaires" role="tabpanel" aria-labelledby="pills-com-tab">
                 <section class="container adminimg pb-5" id="commentaires">
                     <div class="boxAdmin col txt-color-black">
                         <div class="d-flex align-items-center text-center py-3">
@@ -68,7 +83,7 @@ Partial : Tabs du compte
                 </section>
             </div>
             {{!-- Account --}}
-            <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
                 <section class="container adminimg pb-5 " id="account">
                     <div class="d-flex bd-highlight pb-3">
                         <img class="me-auto bd-highlight" src="/assets/img/img-user/{{user.avatar_url}}">

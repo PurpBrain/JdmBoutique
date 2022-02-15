@@ -14,6 +14,9 @@ exports.connect = async (req, res) => {
 
     if (email && mdp) {
         const results = await db.query(`SELECT * FROM user WHERE email = '${email}'`)
+        if(!results[0]) return res.render('login', {
+            flash: "Quelque chose ne va pas !"
+        });
         const role = await db.query(`SELECT * FROM role WHERE id_user = '${results[0].id_user}'`)
         if (results.length > 0) {
 

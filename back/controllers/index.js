@@ -1,14 +1,14 @@
-const { adminpage, getVoiture, addVoiture, delVoiture, editVoiture } = require ("./AdminController"),
+const { adminpage, getVoiture,  } = require ("./AdminController"),
       { articlepage } = require ("./ArticleController"),
       { loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout } = require("./AutController"),
       { blogpage, search } = require ("./BlogControllers"),
       { contactpage, createMessage} = require("./ContactController"),
       { homepage } = require("./HomeController"),
-      { accountpage, editProfile } = require("./AccountController");
+      { accountpage, editProfile, addVoiture, delVoiture, editVoiture} = require("./AccountController");
 
 module.exports = {
     // Page Admin
-    adminpage, getVoiture, addVoiture, delVoiture, editVoiture,
+    adminpage, getVoiture, 
 
     // Page Article
     articlepage,
@@ -26,5 +26,5 @@ module.exports = {
     homepage,
 
     // Page Account 
-    accountpage,editProfile
+    accountpage, editProfile, addVoiture, delVoiture, editVoiture
 }

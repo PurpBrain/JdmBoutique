@@ -4,7 +4,7 @@
 <div class="modal fade" id="editBlog{{ this.id_Article }}" tabindex="-1" aria-labelledby="ModalEditBlog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/admin/edit/voiture/{{ this.id_Article }}?_method=PUT" method="post" enctype="multipart/form-data">
+            <form action="{{data}}/edit/voiture/{{ this.id_Article }}?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="editBlog">Modification d'article</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

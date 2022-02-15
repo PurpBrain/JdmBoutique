@@ -52,20 +52,15 @@ Partial: Tabs Admin
                         <div class="col-md-12">
                             <h2>Blog</h2>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-end">
-                            <button type="button" class="btn txt-color-black" data-bs-toggle="modal"
-                                data-bs-target="#ModalBlog">
-                                <i class="fas fa-plus-square"></i></button>
-                        </div>
                     </div>
                     <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
                         <div class="d-flex align-items-center text-center py-3">
                             <div class="col-md-4">
-                                 <img class=" col-md-4" src="/assets/img/Voitures-Img/{{this.img_url}}">
+                                <a href="/blog/{{this.id_Article}}"><img  class=" col-md-4" src="/assets/img/Voitures-Img/{{this.img_url}}"></a> 
                             </div>
                             <div class="col-md-4">
-                                <p>Page : {{ this.make }} {{ this.model }}</p>
+                                <p>Article : {{ this.make }} {{ this.model }}<br>De : {{this.pseudo}}</p>
                             </div>
                             <div class="col-md-4">
                                 <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
@@ -74,8 +69,8 @@ Partial: Tabs Admin
                                         data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
                             </div>
                         </div>
-                        {{> modals/modalDeleteBlog }}
-                        {{> modals/modalEditBlog }}
+                        {{> modals/modalDeleteBlog data="/admin"}}
+                        {{> modals/modalEditBlog data="/admin"}}
                         {{/each}}
                     </div>
                 </section>
