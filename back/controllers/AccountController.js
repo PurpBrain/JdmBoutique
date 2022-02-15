@@ -1,3 +1,7 @@
+const fs = require("fs");
+const path = require('path');
+const { deleteFile } = require('../utils/deleteFile');
+
 exports.accountpage = async (req, res) => {
     console.log('Page Mon compte');
     // console.log("numero user",req.session.user.id_user)
@@ -39,8 +43,9 @@ exports.editProfile = async (req, res) => {
             email: setemail,
             password: setpassword,
             isAdmin: role[0].is_admin
-
         };
+        const dir = path.join("./public/img/Voitures-Img")
+        deleteFile(dir, image[0].img_url)
         res.redirect('back')
     } 
     if (!req.file && !old_mdp) {
@@ -116,6 +121,7 @@ exports.addVoiture = async (req, res) => {
     })
 
 }
+
 
 exports.editVoiture = async (req, res) => {
     const { id } = req.params

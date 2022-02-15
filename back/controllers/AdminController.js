@@ -3,9 +3,6 @@
  * ****************** */
 
 // Controller pour la page admin
-const fs = require("fs");
-const path = require('path');
-const { deleteFile } = require('../utils/deleteFile');
 
 exports.adminpage = async (req, res) => {
     console.log('Page admin');
