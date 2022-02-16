@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`article` (
   `price` VARCHAR(45) NOT NULL,
   `author_id` INT NOT NULL,
   `img_id` INT NULL,
-  `description` VARCHAR(500) NOT NULL,
+  `description` VARCHAR(5000) NOT NULL,
   PRIMARY KEY (`id_Article`),
   INDEX `fk_Article_2_idx` (`author_id` ASC) VISIBLE,
   CONSTRAINT `fk_Article_2`

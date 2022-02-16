@@ -10,7 +10,7 @@ exports.accountpage = async (req, res) => {
     // Afficher la page contact 
     res.render('account', {
         layout: 'no-footer',
-        myArticle: getMyArt
+        myArticle: getMyArt,
     });
     console.log(req.session.user)
 }
@@ -44,7 +44,8 @@ exports.editProfile = async (req, res) => {
             password: setpassword,
             isAdmin: role[0].is_admin
         };
-        const dir = path.join("./public/img/Voitures-Img")
+        const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
+        const dir = path.join("./public/img/img-user")
         deleteFile(dir, image[0].img_url)
         res.redirect('back')
     } 
@@ -93,11 +94,6 @@ exports.editProfile = async (req, res) => {
             }
         })
     }
-     
-
-
-
-
 }
 
 exports.addVoiture = async (req, res) => {
@@ -121,7 +117,6 @@ exports.addVoiture = async (req, res) => {
     })
 
 }
-
 
 exports.editVoiture = async (req, res) => {
     const { id } = req.params

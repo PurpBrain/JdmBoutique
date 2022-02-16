@@ -1,5 +1,5 @@
 const { adminpage, getVoiture,  } = require ("./AdminController"),
-      { articlepage } = require ("./ArticleController"),
+      { articlepage, addcom } = require ("./ArticleController"),
       { loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout } = require("./AutController"),
       { blogpage, search } = require ("./BlogControllers"),
       { contactpage, createMessage} = require("./ContactController"),
@@ -11,7 +11,7 @@ module.exports = {
     adminpage, getVoiture, 
 
     // Page Article
-    articlepage,
+    articlepage, addcom,
 
     // Page de Connexion 
     loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout,

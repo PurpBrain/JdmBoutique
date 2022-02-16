@@ -29,7 +29,8 @@ const { adminpage,
     homepage,
     accountpage,
     editProfile,
-    editVoiture
+    editVoiture,
+    addcom
 } = require("./controllers");
 
 // Import de middleware
@@ -72,9 +73,13 @@ router.route('/blog')
 router.route('/result')
     .get(search)
 
-// ID Blog
+// Article
 router.route('/blog/:id')
     .get(articlepage)
+    
+// Commentaire article
+router.route('/send/com/:id')
+    .post(addcom)
 
 // Admin
 router.route('/admin')

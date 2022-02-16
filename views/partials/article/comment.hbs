@@ -1,38 +1,37 @@
 {{!--
-    Partial: Commentaires
+Partial: Commentaires
 --}}
 <section class="clients">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h2>Commentaires</h2>
+            <div class="col-md-12 pt-2">
+                <p>Commentaires</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="client-profil">
-                    <blockquote>
-                        Aenean a orci condimentum, viverra dolor quis, maximus diam. Nunc pulvinar dictum tempor.
-                        <cite><img src="/assets/img/Autres/img-pp.jpg">Emilie du Châtelet</cite>
-                    </blockquote>
-                </div>
+        <form class="row" action="/send/com/{{ voiture.id_Article }}" method="post">
+            <div class="col-md-12 d-flex justify-content-start">
+                <input name="com" class="border-top-0 border-end-0 border-start-0 border-secondary"
+                    placeholder="Ajouter un commentaire" maxlength="144" required>
+                <button type="submit" class="ms-2 btn btn-outline-secondary">Envoyer</button>
             </div>
-            <div class="col-md-4">
-                <div class="client-profil">
-                    <blockquote>
-                        Aenean a orci condimentum, viverra dolor quis, maximus diam. Nunc pulvinar dictum tempor.
-                        <cite><img src="/assets/img/Autres/img-pp.jpg">Blaise Puitot</cite>
-                    </blockquote>
+        </form>
+        {{#if commentaire}}
+        {{#each commentaire}}
+        <div class="pt-3 pb-2 border-bottom border-2">
+            <div class="row client-profil">
+                <div class="col-md-1">
+                    <img src="/assets/img/img-user/{{ this.avatar_url }}">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="client-profil">
-                    <blockquote>
-                        Aenean a orci condimentum, viverra dolor quis, maximus diam. Nunc pulvinar dictum tempor.
-                        <cite><img src="/assets/img/Autres/img-pp.jpg">Julia Dubois</cite>
-                    </blockquote>
+                <div class="col-md-11">
+                    <p class="text-break"><strong>{{ this.pseudo }}</strong><br>{{ this.content }}</p>
                 </div>
             </div>
         </div>
+        {{/each}}
+        {{else }}
+        <div class="pt-3 pb-2 border-bottom border-2">
+            <p>Auncun commentaires publié sur cette annonce :(<br>Soyez le premier à commenter !</p>
+        </div>
+        {{/if}}
     </div>
 </section>

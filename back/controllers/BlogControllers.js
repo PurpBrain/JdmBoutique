@@ -99,7 +99,3 @@ exports.search = (req, res) => {
         }
     })
 }
-
-// exports.sortList = (req, res) => {
-//     monSelecteur = req.query.
-// }
