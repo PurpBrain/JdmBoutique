@@ -50,3 +50,10 @@ exports.getVoiture = (req, res) => {
 
     })
 }
+exports.banUser = async (req, res) => {
+    const { id } = req.params
+    await db.query(`UPDATE role SET is_ban = 1 WHERE id_user=${id}`)
+    res.render('admin', {
+        flash: "Vous avez banni cet utilisateur"
+    })
+}

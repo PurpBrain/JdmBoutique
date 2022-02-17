@@ -33,9 +33,9 @@ exports.blogpage = (req, res) => {
     // Requête SQL pour séléctionner tout les articles selon les images trier par ordre croissant 
     let sqlget = `SELECT * 
                   FROM article 
-                  INNER JOIN image 
-                  ON image.id_article = article.id_Article 
-                  ORDER BY article.id_Article 
+                  INNER JOIN image ON image.id_article = article.id_Article 
+                  INNER JOIN role ON article.author_id = role.id_user
+                  WHERE is_ban = 0 ORDER BY article.id_Article 
                   DESC LIMIT ${limit}`
     db.query(sqlget, (error, results, fields) => {
 

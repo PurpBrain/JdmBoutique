@@ -30,7 +30,9 @@ const { adminpage,
     accountpage,
     editProfile,
     editVoiture,
-    addcom
+    addcom,
+    delCom,
+    banUser
 } = require("./controllers");
 
 // Import de middleware
@@ -76,7 +78,7 @@ router.route('/result')
 // Article
 router.route('/blog/:id')
     .get(articlepage)
-    
+
 // Commentaire article
 router.route('/send/com/:id')
     .post(addcom)
@@ -91,15 +93,18 @@ router.route('/admin/edit/voiture/:id')
 router.route('/admin/delete/voiture/:id')
     .delete(delVoiture)
 
-router.route('/admin/create/voiture')
-    .post(UploadArticle.array('img'), addVoiture)
-
 router.route('/api/voiture')
     .get(getVoiture)
+
+router.route('/admin/ban/user/:id')
+    .post(banUser)
 
 // Mon Compte
 router.route('/account')
     .get(accountpage)
+
+router.route('/create/voiture')
+    .post(UploadArticle.array('img'), addVoiture)
 
 router.route('/account/edit/voiture/:id')
     .put(UploadArticle.single('img'), editVoiture)
@@ -109,6 +114,9 @@ router.route('/account/delete/voiture/:id')
 
 router.route('/account/create/voiture')
     .post(UploadArticle.array('img'), addVoiture)
+
+router.route('/account/delete/com/:id')
+    .delete(delCom)
 
 router.route('/account/:id')
     .put(UploadImgUser.single('avatar'), editProfile)

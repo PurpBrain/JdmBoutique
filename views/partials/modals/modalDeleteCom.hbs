@@ -1,8 +1,9 @@
 {{!--
-    Partial: Modal pour supprimer un com sur la page admin
+Partial: Modal pour supprimer un com sur la page admin
 --}}
 
-<div class="modal fade" id="deleteCom" tabindex="-1" aria-labelledby="modalDeleteCom" aria-hidden="true">
+<div class="modal fade" id="deleteCom{{ this.id_comment }}" tabindex="-1" aria-labelledby="modalDeleteCom"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,15 +15,18 @@
                     <div class="col-md-12">
                         <div class="contact-form">
                             <label>Contenu du commentaire :</label>
-                            <textarea class="form-control" id="text-message">Sed hendrerit ultricies orci at aliquet. Curabitur tristique fermentum finibus. Curabitur convallis convallis dolor sit amet sollicitudin
+                            <textarea class="form-control" id="text-message">{{this.content}}
                                             </textarea>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button href="/" type="button" class="btn btn-danger">Supprimer</button>
-            </div>
+            <form action="/account/delete/com/{{ this.id_comment }}?_method=DELETE" method="post">
+                <div class="modal-footer">
+                    <button type="submit"
+                        class="btn btn-danger">Supprimer</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

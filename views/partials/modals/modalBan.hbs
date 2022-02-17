@@ -1,7 +1,7 @@
 {{!--
-    Partial: Modal de ban sur le page admin
+Partial: Modal de ban sur le page admin
 --}}
-<div class="modal fade" id="ban" tabindex="-1" aria-labelledby="modalBan" aria-hidden="true">
+<div class="modal fade" id="modalBan{{ this.id_user }}" tabindex="-1" aria-labelledby="modalBan" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,18 +9,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-form">
-                            <label>Raison du ban :</label>
-                            <input type="text" id="reason" placeholder="Ajouter une raison" />
-                        </div>
-                    </div>
+                <p>Êtes vous sûr de vouloir bannir <strong>{{ this.pseudo }}</strong> ? </p>
+            </div>
+            <form action="/admin/ban/user/{{ this.id_user }}" method="post">
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Bannir</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button href="/" type="button" class="btn btn-danger">Bannir</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

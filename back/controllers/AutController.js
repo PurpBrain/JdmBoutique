@@ -14,35 +14,35 @@ exports.connect = async (req, res) => {
 
     if (email && mdp) {
         const results = await db.query(`SELECT * FROM user WHERE email = '${email}'`)
-        if(!results[0]) return res.render('login', {
+        if (!results[0]) return res.render('login', {
             flash: "Quelque chose ne va pas !"
         });
         const role = await db.query(`SELECT * FROM role WHERE id_user = '${results[0].id_user}'`)
         if (results.length > 0) {
 
-            if (results[0].isBan === 1) {
-                res.send("Vous avez été banni !")
+            if (role[0].is_ban === 1) {
+                res.render("login", {
+                    flash: "Vous êtes banni !"
+                })
+            } else {
+                bcrypt.compare(mdp, results[0].password, function (err, result) {
+
+                    if (result === true) {
+                        if (role[0].is_admin === 1) {
+                            req.session.user = results[0]
+                            req.session.user.isAdmin = true
+
+
+                        } else {
+                            req.session.user = results[0]
+                        }
+                        res.redirect('/');
+                        console.log("Log correct");
+                    } else return res.render('login', {
+                        flash: "Mauvais mdp !"
+                    });
+                })
             }
-
-            bcrypt.compare(mdp, results[0].password, function (err, result) {
-
-                if (result === true) {
-                    if (role[0].is_admin === 1) {
-                        req.session.user = results[0]
-                        req.session.user.isAdmin = true
-
-
-                    } else {
-                        req.session.user = results[0]
-                    }
-                    res.redirect('/');
-                    console.log("Log correct");
-                } else return res.render('login', {
-                    flash: "Mauvais mdp !"
-                });
-            })
-
-            return;
         } else {
             res.render('login', {
                 flash: "Quelque chose ne va pas !"

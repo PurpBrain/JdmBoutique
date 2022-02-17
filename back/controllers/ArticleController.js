@@ -10,11 +10,15 @@ exports.articlepage = async(req, res) => {
     const { id } = req.params 
     let sql = `SELECT * 
                FROM article 
-               INNER JOIN image 
-               ON image.id_article = article.id_Article 
-               WHERE article.id_Article = ${id}`;
+               INNER JOIN image ON image.id_article = article.id_Article 
+               INNER JOIN role ON role.id_user = article.author_id
+               WHERE article.id_Article = ${id} AND is_ban = 0`;
 
-    let getCom = await db.query(`SELECT * FROM comment INNER JOIN user ON comment.author_id = user.id_user WHERE article_id=${id};`)
+    let getCom = await db.query(`SELECT * FROM comment 
+                                 INNER JOIN user ON comment.author_id = user.id_user 
+                                 INNER JOIN role ON role.id_user = comment.author_id
+                                 WHERE article_id=${id} AND is_ban=0 ORDER BY id_comment DESC;`)
+    
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
 

@@ -66,20 +66,32 @@ Partial : Tabs du compte
             {{!-- Commentaires --}}
             <div class="tab-pane fade" id="pills-commentaires" role="tabpanel" aria-labelledby="pills-com-tab">
                 <section class="container adminimg pb-5" id="commentaires">
+                    {{#if myCom}}
                     <div class="boxAdmin col txt-color-black">
+                        {{#each myCom}}
                         <div class="d-flex align-items-center text-center py-3">
                             <div class="col-md-4">
-                                <img src="/assets/img/img-user/1643720061953_pnl.png">
+                                <a href="/blog/{{this.id_Article}}"><img
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
                             </div>
                             <div class="col-md-4">
-                                <p>Page</p>
+                                <p>Sur la page : {{ this.make }} {{ this.model }}</p>
                             </div>
                             <div class="col-md-4">
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
-                                        data-bs-target="#deleteBlog{{ this.id_Article }}"></i></a>
+                                        data-bs-target="#deleteCom{{ this.id_comment }}"></i></a>
                             </div>
                         </div>
+                        {{> modals/modalDeleteCom }}
+                        {{/each}}
                     </div>
+                    {{else }}
+                    <div class="boxAdmin col txt-color-black">
+                        <div class="my-3">
+                            <p class="text-center">Vous n'avez posté aucun commentaire :(</p>
+                        </div>
+                    </div>
+                    {{/if}}
                 </section>
             </div>
             {{!-- Account --}}

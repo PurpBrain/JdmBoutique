@@ -7,10 +7,16 @@ exports.accountpage = async (req, res) => {
     // console.log("numero user",req.session.user.id_user)
 
     const getMyArt = await db.query(`SELECT * FROM article INNER JOIN image ON image.id_article = article.id_Article WHERE author_id=${req.session.user.id_user}`)
+    const myCom = await db.query(`SELECT * 
+                                  FROM comment 
+                                  INNER JOIN article ON comment.article_id = article.id_Article 
+                                  INNER JOIN image ON image.id_article = article.id_Article
+                                  WHERE comment.author_id=${req.session.user.id_user}`)
     // Afficher la page contact 
     res.render('account', {
         layout: 'no-footer',
         myArticle: getMyArt,
+        myCom: myCom
     });
     console.log(req.session.user)
 }
@@ -125,7 +131,7 @@ exports.editVoiture = async (req, res) => {
     const article = await db.query(`SELECT * FROM article WHERE id_Article = ${id}`)
     const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
 
-    await db.query(`UPDATE article SET make="${make}", model="${model}", price="${price}", author_id="${req.session.user.id_user}", description="${description}" WHERE id_Article=${id}`)
+    await db.query(`UPDATE article SET make="${make}", model="${model}", price="${price}", description="${description}" WHERE id_Article=${id}`)
 
     if (req.file) {
         const dir = path.join("./public/img/Voitures-Img")
@@ -135,7 +141,7 @@ exports.editVoiture = async (req, res) => {
     }
 
     console.log("Modif OK")
-    res.redirect('/account')
+    res.redirect('back')
 }
 
 exports.delVoiture = async (req, res) => {
@@ -148,9 +154,16 @@ exports.delVoiture = async (req, res) => {
                FROM image
                INNER JOIN article
                ON image.id_article = article.id_Article
-               WHERE image.id_article=?`
+               WHERE image.id_article=${id}`
     db.query(sql, req.params.id, (error, dataRes, fields) => {
         if (error) throw error;
         res.redirect('back')
     })
+}
+
+exports.delCom = async (req, res) => {
+    const { id } = req.params
+    await db.query(`DELETE FROM comment WHERE id_comment=${id}`)
+    console.log("Com effacé")
+    res.redirect("back")
 }
