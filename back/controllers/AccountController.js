@@ -18,7 +18,6 @@ exports.accountpage = async (req, res) => {
         myArticle: getMyArt,
         myCom: myCom
     });
-    console.log(req.session.user)
 }
 
 const bcrypt = require('bcrypt');
@@ -54,7 +53,7 @@ exports.editProfile = async (req, res) => {
         const dir = path.join("./public/img/img-user")
         deleteFile(dir, image[0].img_url)
         res.redirect('back')
-    } 
+    }
     if (!req.file && !old_mdp) {
         var hash = bcrypt.hashSync(mdp, 10);
         // Comparaison des mdp 
@@ -147,18 +146,19 @@ exports.editVoiture = async (req, res) => {
 exports.delVoiture = async (req, res) => {
     const { id } = req.params
     const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
+    const comment = await db.query(`SELECT * FROM comment WHERE comment.article_id= ${id}`)
     const dir = path.join("./public/img/Voitures-Img")
     deleteFile(dir, image[0].img_url)
+console.log(comment)
+    let test;
+    !comment[0] ? test = 'LEFT' : test = 'RIGHT' 
 
-    let sql = `DELETE image,article 
-               FROM image
-               INNER JOIN article
-               ON image.id_article = article.id_Article
-               WHERE image.id_article=${id}`
-    db.query(sql, req.params.id, (error, dataRes, fields) => {
-        if (error) throw error;
-        res.redirect('back')
-    })
+    await db.query(`DELETE comment, image, article FROM article
+        RIGHT JOIN image ON image.id_article = article.id_Article 
+        ${test} JOIN comment ON comment.article_id  = article.id_Article
+        WHERE (article.id_Article = '${id}' OR comment.article_id = '${id}');`);
+
+    res.redirect("back")
 }
 
 exports.delCom = async (req, res) => {

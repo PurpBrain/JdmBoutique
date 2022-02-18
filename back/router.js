@@ -32,7 +32,8 @@ const { adminpage,
     editVoiture,
     addcom,
     delCom,
-    banUser
+    banUser,
+    debanUser,
 } = require("./controllers");
 
 // Import de middleware
@@ -98,6 +99,9 @@ router.route('/api/voiture')
 
 router.route('/admin/ban/user/:id')
     .post(banUser)
+
+router.route('/admin/deban/user/:id')
+    .post(debanUser)
 
 // Mon Compte
 router.route('/account')

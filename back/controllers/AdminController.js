@@ -7,18 +7,19 @@
 exports.adminpage = async (req, res) => {
     console.log('Page admin');
 
-    const getUser = await db.query(`SELECT * FROM user;`);
+    const getUser = await db.query(`SELECT * FROM user INNER JOIN role ON user.id_user = role.id_user;`);
 
     const sqlGetImg = await db.query(`SELECT * 
                                       FROM article 
                                       INNER JOIN image 
                                       ON image.id_article = article.id_Article
                                       INNER JOIN user
-                                      ON article.author_id=user.id_user;`);
+                                      ON article.author_id=user.id_user ORDER BY article.id_Article 
+                                      DESC;`);
 
     res.render('admin', {
         layout: 'no-footer',
-        user: getUser,
+        users: getUser,
         voiture: sqlGetImg
     })
 }
@@ -50,10 +51,15 @@ exports.getVoiture = (req, res) => {
 
     })
 }
+
 exports.banUser = async (req, res) => {
     const { id } = req.params
     await db.query(`UPDATE role SET is_ban = 1 WHERE id_user=${id}`)
-    res.render('admin', {
-        flash: "Vous avez banni cet utilisateur"
-    })
+    res.redirect('back')
+}
+
+exports.debanUser = async (req, res) => {
+    const { id } = req.params;
+    await db.query(`UPDATE role SET is_ban = 0 WHERE id_user=${id}`)
+    res.redirect('back')
 }

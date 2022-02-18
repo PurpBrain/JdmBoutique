@@ -27,17 +27,22 @@ Partial: Tabs Admin
                         </div>
                     </div>
                     <div class="boxAdmin col txt-color-black">
-                        {{#each user}}
+                        {{#each users}}
                         <div class="d-flex align-items-center text-center py-3">
                             <div class="col-md-4">
                                 <img src="/assets/img/img-user/{{this.avatar_url}}">
                             </div>
                             <div class="col-md-4">
-                               <p>Pseudo : {{ this.pseudo }} </p> 
+                                <p>Pseudo : {{ this.pseudo }}</p>
                             </div>
                             <div class="col-md-4">
-                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                {{#if this.is_ban }}
+                                    <a><i class="fas fa-balance-scale-left" data-bs-toggle="modal"
                                         data-bs-target="#modalBan{{ this.id_user }}"></i></a>
+                                {{else }}
+                                <a><i class="fas fa-gavel" data-bs-toggle="modal"
+                                        data-bs-target="#modalBan{{ this.id_user }}"></i></a>
+                                {{/if}}
                             </div>
                         </div>
                         {{> modals/modalBan }}
@@ -57,7 +62,8 @@ Partial: Tabs Admin
                         {{#each voiture}}
                         <div class="d-flex align-items-center text-center py-3">
                             <div class="col-md-4">
-                                <a href="/blog/{{this.id_Article}}"><img  class=" col-md-4" src="/assets/img/Voitures-Img/{{this.img_url}}"></a> 
+                                <a href="/blog/{{this.id_Article}}"><img class=" col-md-4"
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
                             </div>
                             <div class="col-md-4">
                                 <p>Article : {{ this.make }} {{ this.model }}<br>De : {{this.pseudo}}</p>
@@ -93,8 +99,7 @@ Partial: Tabs Admin
                                 <p>Message de : {{ this.pseudo }} </p>
                             </div>
                             <div class="col-md-4">
-                                <a><i class="far fa-comment" data-bs-toggle="modal"
-                                        data-bs-target=""></i></a>
+                                <a><i class="far fa-comment" data-bs-toggle="modal" data-bs-target=""></i></a>
                             </div>
                         </div>
                         {{!-- {{> modals/modalReponse }} --}}
