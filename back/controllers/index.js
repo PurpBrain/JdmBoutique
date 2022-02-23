@@ -3,7 +3,7 @@ const { adminpage, getVoiture,banUser,debanUser,  } = require ("./AdminControlle
       { loginpage, connect, registerpage, infoRegister, forgotpage, forgot, logout } = require("./AutController"),
       { blogpage, search } = require ("./BlogControllers"),
       { contactpage, createMessage} = require("./ContactController"),
-      { homepage } = require("./HomeController"),
+      { homepage, addMessage } = require("./HomeController"),
       { accountpage, editProfile, addVoiture, delVoiture, editVoiture, delCom} = require("./AccountController");
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
     contactpage, createMessage,
 
     // Page Home
-    homepage,
+    homepage, addMessage,
 
     // Page Account 
     accountpage, editProfile, addVoiture, delVoiture, editVoiture, delCom

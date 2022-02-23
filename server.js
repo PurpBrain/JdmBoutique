@@ -30,6 +30,9 @@ let conf = {
 
 var sessionStore = new MySQLStore(conf); 
 
+// const expressOasGenerator = require('express-oas-generator');
+// expressOasGenerator.init(app, {});
+
 // Express-session
 app.use(
   expressSession({
@@ -99,9 +102,17 @@ Handlebars.registerHelper('iffpage', function (a, b, opts) {
   }
 })
 
+const swaggerUi = require('swagger-ui-express'),
+      swaggerDocument = require('./back/config/swagger.json');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // Import de notre router
+const ROUTERAPI = require('./back/router-api');
+app.use('/api', ROUTERAPI)
+
 const ROUTER = require('./back/router');
 app.use('/', ROUTER)
+
 // Met toutes les pages non défini en 404 error
 app.use('*',function(req, res) {
   res.status(404).render("error404", {
@@ -109,7 +120,9 @@ app.use('*',function(req, res) {
   })
 })
 
+
 // Lancement de l'appli
 app.listen(port, () => {
   console.log("le serv est sur le port:" + port);
 })
+module.exports = {app}

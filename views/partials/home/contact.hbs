@@ -20,13 +20,13 @@
                     <p><i class="fas fa-map-marker-alt"></i>2 rue du noyer aux perdrix 77170 Servon</p>
                 </div>
             </div>
-            <form action="/contact" method="post">
+            <form action="/send/message" method="post">
                 <!--Email & Name-->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="contact-form">
                             <label>Nom :</label>
-                            <input name="Nom" class="border rounded-2" type="text" id="name" />
+                            <input name="name" class="border rounded-2" type="text" id="name" />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="contact-form">
                         <label>Sélectionnez le service</label>
-                        <select name='destinataire' class="border rounded-2">
+                        <select name='service' class="border rounded-2">
                             <option>Service client</option>
                             <option>Service comptable</option>
                             <option>SAV</option>

@@ -1,61 +1,49 @@
 var assert = require("assert");
 const { query } = require("../server"); // import to server.js
 
-describe("MOCHA // CRUD // User", () => {
-  let users = {};
-  let id = 0;
-
-  // Boucle pour prendre tout les users
-  beforeEach(async () => {
-    let sql = `SELECT * FROM user`;
-    const user = await db.query(sql);
-  });
+describe("MOCHA // CRUD // MESSAGE", () => {
+  // let users = {};
+  // let id = 0;
 
   // Test
-  it("TEST // User", (done) => {
+  it("TEST // Message", (done) => {
     done();
   });
 
-  // Create USER
+  // Create MESSAGE
 
-  // it("POST // User", async () => {
-  //   // let values = ["12345", "Node", "no@de.fr", "0404040404"];
-  //   let sql = `INSERT INTO user SET avatar_url="12345", pseudo="Node", email="node.fr", password="0404040404"`;
-  //   const user = await db.query(sql);
+  it("POST // MESSAGE", (done) => {
+    db.query(`INSERT INTO message SET name='eeee', email='eee@eee', service='eee', message="eee"`, function (err, data) {
+      if (err) throw err;
+      // console.log("POST: ", typeof data.insertid);
+      assert.strictEqual( 'number' ,typeof data.insertId)
+      done()
+    });
+  });
 
-  //   assert.ok(user);
+  // // Get ALL Customer
+  // it("GET ALL // Customer", async () => {
+  //   let sql = `SELECT * FROM user`;
+  //   const listUser = await db.query(sql);
 
-  //   const userID = await db.query(`SELECT * FROM user where id_user = ${user.insertId}`);
+  //   // console.log('GET ALL: ', listUser)
 
-  //   assert.strictEqual(userID[0].avatar_url, "12345");
-  //   assert.strictEqual(userID[0].pseudo, "Node")
-  //   assert.strictEqual(userID[0].email, "node.fr");
-  //   assert.strictEqual(userID[0].password, "0404040404");
+  //   assert.ok(listUser);
+
+  //   const users = await db.query(`SELECT * FROM user`);
+  //   assert.strictEqual(users.length > 0, true);
   // });
 
-  // Get ALL Customer
-  it("GET ALL // Customer", async () => {
-    let sql = `SELECT * FROM user`;
-    const listUser = await db.query(sql);
+  // // Get ID Customer
+  // it("GET ID // Customer", async () => {
+  //   // Récupère l'id du BeforeEach
+  //   let sql = `SELECT * FROM user WHERE id_user = "${users.id_user}"`;
+  //   const userID = await db.query(sql);
 
-    // console.log('GET ALL: ', listUser)
+  //   // console.log('GETID: ', userID)
 
-    assert.ok(listUser);
-
-    const users = await db.query(`SELECT * FROM user`);
-    assert.strictEqual(users.length > 0, true);
-  });
-
-  // Get ID Customer
-  it("GET ID // Customer", async () => {
-    // Récupère l'id du BeforeEach
-    let sql = `SELECT * FROM user WHERE id_user = "${users.id_user}"`;
-    const userID = await db.query(sql);
-
-    // console.log('GETID: ', userID)
-
-    assert.ok(userID);
-  });
+  //   assert.ok(userID);
+  // });
 
 //   // Edit Customers
 //   it("PUT ID // Customer", async () => {

@@ -34,6 +34,7 @@ const { adminpage,
     delCom,
     banUser,
     debanUser,
+    addMessage,
 } = require("./controllers");
 
 // Import de middleware
@@ -44,6 +45,9 @@ const mdlAuth = require('./middleware/auth')
 // Home
 router.route('/')
     .get(homepage)
+
+router.route('/send/message')
+    .post(addMessage)
 
 // Contact
 router.route('/contact')
