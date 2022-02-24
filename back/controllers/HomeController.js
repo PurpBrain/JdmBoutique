@@ -1,6 +1,6 @@
 /*
  * Controller: Home
- * **************** */ 
+ * **************** */
 
 // Controller pour la page home
 exports.homepage = (req, res) => {
@@ -13,10 +13,10 @@ exports.homepage = (req, res) => {
             WHERE is_ban = 0 ORDER BY article.id_Article DESC;`;
     db.query(sql, (error, data, fields) => {
         if (error) throw error;
-        
-        res.render('home',{
-        voiture:data
-    });
+
+        res.render('home', {
+            voiture: data
+        });
     })
 }
 exports.addMessage = async (req, res) => {
@@ -25,8 +25,14 @@ exports.addMessage = async (req, res) => {
     const { name, email, service, message } = req.body;
 
     await db.query(`INSERT INTO message SET name='${name}', email='${email}', service='${service}', message="${message}"`);
+    const getVoiture = await db.query(`SELECT * 
+                                    FROM article 
+                                    INNER JOIN image ON image.id_article = article.id_Article 
+                                    INNER JOIN role ON article.author_id = role.id_user
+                                    WHERE is_ban = 0 ORDER BY article.id_Article DESC;`)
 
     res.render("home", {
-        flash: "Message envoyé"
+        flash: "Message envoyé",    
+        voiture: getVoiture
     })
 } 

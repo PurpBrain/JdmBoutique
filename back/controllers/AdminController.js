@@ -16,11 +16,13 @@ exports.adminpage = async (req, res) => {
                                       INNER JOIN user
                                       ON article.author_id=user.id_user ORDER BY article.id_Article 
                                       DESC;`);
+    const getMessage = await db.query(`SELECT * FROM message`)
 
     res.render('admin', {
         layout: 'no-footer',
         users: getUser,
-        voiture: sqlGetImg
+        voiture: sqlGetImg,
+        message: getMessage
     })
 }
 

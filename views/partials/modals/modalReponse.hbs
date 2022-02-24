@@ -1,11 +1,8 @@
-{{!--
-    Partial: Modal pour ajouter un article
---}}
-<div class="modal fade" id="ModalBlog" tabindex="-1" aria-labelledby="ModalBlog" aria-hidden="true">
+<div class="modal fade" id="ModalReponse{{ this.idcomment }}" tabindex="-1" aria-labelledby="ModalReponse" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ajouter un article</h5>
+                <h5 class="modal-title">Message de {{ this.name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="/create/voiture" method="post" enctype="multipart/form-data">

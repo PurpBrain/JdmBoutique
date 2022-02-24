@@ -40,6 +40,7 @@ exports.editProfile = async (req, res) => {
     let setpassword = !hash ? user[0].hash : hash
 
     if (req.file) {
+        const user = await db.query(`SELECT * FROM user WHERE id_user = ${id}`)
         await db.query(`UPDATE user SET avatar_url="${setavatar}" WHERE id_user = ${id}`)
         req.session.user = {
             id_user: id,
@@ -49,9 +50,9 @@ exports.editProfile = async (req, res) => {
             password: setpassword,
             isAdmin: role[0].is_admin
         };
-        const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
+        // console.log(user)
         const dir = path.join("./public/img/img-user")
-        deleteFile(dir, image[0].img_url)
+        deleteFile(dir, user[0].avatar_url)
         res.redirect('back')
     }
     if (!req.file && !old_mdp) {
@@ -149,7 +150,7 @@ exports.delVoiture = async (req, res) => {
     const comment = await db.query(`SELECT * FROM comment WHERE comment.article_id= ${id}`)
     const dir = path.join("./public/img/Voitures-Img")
     deleteFile(dir, image[0].img_url)
-console.log(comment)
+
     let test;
     !comment[0] ? test = 'LEFT' : test = 'RIGHT' 
 

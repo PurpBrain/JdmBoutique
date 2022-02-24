@@ -3,16 +3,17 @@ Partial: Tabs Admin
 --}}
 <div class="container pt-6">
     <div class="row">
-        <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
-            <li class="nav-item" role="user">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist"
+            aria-owns="pills-user-tab pills-page-tab pills-com-tab">
+            <li role="tab" class="nav-item" role="user">
                 <button class="nav-link2 active" id="pills-user-tab" data-bs-toggle="pill" data-bs-target="#pills-user"
                     type="button" role="tab" aria-controls="pills-user" aria-selected="true">Utilisateurs</button>
             </li>
-            <li class="nav-item" role="page">
+            <li role="tab" class="nav-item" role="page">
                 <button class="nav-link2" id="pills-page-tab" data-bs-toggle="pill" data-bs-target="#pills-page"
                     type="button" role="tab" aria-controls="pills-page" aria-selected="false">Blog</button>
             </li>
-            <li class="nav-item" role="com">
+            <li role="tab" class="nav-item" role="com">
                 <button class="nav-link2" id="pills-com-tab" data-bs-toggle="pill" data-bs-target="#pills-com"
                     type="button" role="tab" aria-controls="pills-com" aria-selected="false">Messages</button>
             </li>
@@ -29,15 +30,15 @@ Partial: Tabs Admin
                     <div class="boxAdmin col txt-color-black">
                         {{#each users}}
                         <div class="d-flex align-items-center text-center py-3">
-                            <div class="col-md-4">
-                                <img src="/assets/img/img-user/{{this.avatar_url}}">
+                            <div class="col-4">
+                                <img alt="{{ this.avatar_url }}" src="/assets/img/img-user/{{this.avatar_url}}">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 <p>Pseudo : {{ this.pseudo }}</p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 {{#if this.is_ban }}
-                                    <a><i class="fas fa-balance-scale-left" data-bs-toggle="modal"
+                                <a><i class="fas fa-balance-scale-left" data-bs-toggle="modal"
                                         data-bs-target="#modalBan{{ this.id_user }}"></i></a>
                                 {{else }}
                                 <a><i class="fas fa-gavel" data-bs-toggle="modal"
@@ -61,14 +62,16 @@ Partial: Tabs Admin
                     <div class="boxAdmin col txt-color-black">
                         {{#each voiture}}
                         <div class="d-flex align-items-center text-center py-3">
-                            <div class="col-md-4">
-                                <a href="/blog/{{this.id_Article}}"><img class=" col-md-4"
-                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
+                            <div class="col-4">
+                                <a href="/blog/{{this.id_Article}}">
+                                    <img alt="{{ this.img_url }}" class=" col-md-4"
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}">
+                                </a>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 <p>Article : {{ this.make }} {{ this.model }}<br>De : {{this.pseudo}}</p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
                                         data-bs-target="#editBlog{{ this.id_Article }}"></i></a>
                                 <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
@@ -89,21 +92,27 @@ Partial: Tabs Admin
                             <h2>Messages</h2>
                         </div>
                     </div>
+                    {{#if message}}
                     <div class="boxAdmin col txt-color-black">
-                        {{#each voiture}}
+                        {{#each message}}
                         <div class="d-flex align-items-center text-center py-3">
-                            <div class="col-md-4">
-                                <img src="/assets/img/img-user/{{this.img_url}}">
+                            <div class="col-6">
+                                <p>Message de : {{ this.name }} <br>{{ this.service }}</p>
                             </div>
-                            <div class="col-md-4">
-                                <p>Message de : {{ this.pseudo }} </p>
-                            </div>
-                            <div class="col-md-4">
-                                <a><i class="far fa-comment" data-bs-toggle="modal" data-bs-target=""></i></a>
+                            <div class="col-6">
+                                <a><i class="far fa-comment" data-bs-toggle="modal" data-bs-target="#ModalReponse"></i></a>
                             </div>
                         </div>
-                        {{!-- {{> modals/modalReponse }} --}}
+                        {{> modals/modalReponse }}
                         {{/each}}
+                    </div>
+                    {{else }}
+                    <div class="boxAdmin col txt-color-black">
+                        <div class="my-3">
+                            <p class="text-center">Vous n'avez pas de message ! :(</p>
+                        </div>
+                    </div>
+                    {{/if}}
                 </section>
             </div>
         </div>
