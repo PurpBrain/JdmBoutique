@@ -91,12 +91,6 @@ exports.forgotpage = (req, res) => {
     res.render('forgot');
 }
 
-exports.forgot = (req, res) => {
-    console.log("Controller forgot", req.body);
-    //Pour revenir a la page de base
-    res.redirect('back');
-}
-
 exports.logout = (req, res) => {
     req.session.destroy(() => {
         res.clearCookie('ptiGato');

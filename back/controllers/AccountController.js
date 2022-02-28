@@ -131,7 +131,8 @@ exports.editVoiture = async (req, res) => {
     const article = await db.query(`SELECT * FROM article WHERE id_Article = ${id}`)
     const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
 
-    await db.query(`UPDATE article SET make="${make}", model="${model}", price="${price}", description="${description}" WHERE id_Article=${id}`)
+    await db.query(`UPDATE article 
+                    SET make="${make}", model="${model}", price="${price}", description="${description}" WHERE id_Article=${id}`)
 
     if (req.file) {
         const dir = path.join("./public/img/Voitures-Img")

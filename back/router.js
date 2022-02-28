@@ -52,7 +52,6 @@ router.route('/send/message')
 // Contact
 router.route('/contact')
     .get(contactpage)
-    .post(createMessage);
 
 //Register
 router.route('/register')
@@ -70,7 +69,6 @@ router.route('/logout')
 
 // Forgot Password
 router.route('/forgot')
-    .post(forgot)
     .get(forgotpage)
 
 // Blog
@@ -110,9 +108,6 @@ router.route('/admin/deban/user/:id')
 // Mon Compte
 router.route('/account')
     .get(accountpage)
-
-router.route('/create/voiture')
-    .post(UploadArticle.array('img'), addVoiture)
 
 router.route('/account/edit/voiture/:id')
     .put(UploadArticle.single('img'), editVoiture)

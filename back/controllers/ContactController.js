@@ -9,8 +9,3 @@ exports.contactpage = (req, res) => {
     // Afficher la page contact 
     res.render('contact');
 }
-
-exports.createMessage = (req, res) => {
-    console.log("Controller formulaire", req.body);
-    res.redirect('back'); 
-}
