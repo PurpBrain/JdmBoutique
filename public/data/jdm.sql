@@ -127,40 +127,40 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 INSERT INTO user (pseudo, email, password, avatar_url) 
   VALUES
-      ("leo", "leo@leo.leo", "$2b$10$ZX9lFAJaDscMyMEJNal5OuNq7FGwsSMyDmKz1ljUtYlH6TNAEmSpO", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v");
+      ("leo", "leo.doray@gmail.com", "$2b$10$ZX9lFAJaDscMyMEJNal5OuNq7FGwsSMyDmKz1ljUtYlH6TNAEmSpO", "https://img.search.brave.com/nDH_jrFqpK-tmqZ3wHQMB_7dsi2hmynhG1anSHTvMOU/rs:fit:900:900:1/g:ce/aHR0cHM6Ly95dDMu/Z2dwaHQuY29tL2Ev/QUdGLWw3LW8xRm5u/NGpJSm8zMDBxUkxC/WHE1M21mLVVPV0hW/dWotRTZBPXM5MDAt/Yy1rLWMweGZmZmZm/ZmZmLW5vLXJqLW1v");
 INSERT INTO role (id_user, is_admin, is_ban, is_archive) 
   VALUES
       (1,1,0,0);
 
-INSERT INTO `article` (`id_Article`,`make`,`model`,`price`,`author_id`,`img_id`,`description`) 
-VALUES (1,'Nissan','240sx','16000',1,1,'Belle voiture'),
-(2,'Mazda','Rx-7 FD','25000',1,2,'Belle voiture'),
-(3,'Honda','NSX','50000',1,3,'Belle voiture'),
-(4,'Toyota','Supra','60000',1,4,'Belle voiture'),
-(5,'Toyota','Ae86','15000',1,5,'aeaezaeze'),
-(6,'Toyota','GT 86','24000',1,6,'aeazedddde'),
-(7,'Honda','Civic','12000',1,7,'azd'),
-(8,'Nissan','GTR - 32','42000',1,8,'5757'),
-(9,'Nissan','GT-R 35','55000',1,9,'tfgthjhytyjtyjtyj'),
-(10,'Subaru','Impreza WRX','15000',1,10,'Bevorelitule '),
-(11,'Nissan','S13','22000',1,11,'uuuuu'),
-(12,'Toyota','Chaser JZX 100','13000',1,12,'tfgthjhytyjtyjtyj'),
-(13,'Mazda','Mx-5 Miata','7000',1,13,'Très bon état');
+-- INSERT INTO `article` (`id_Article`,`make`,`model`,`price`,`author_id`,`img_id`,`description`) 
+-- VALUES (1,'Nissan','240sx','16000',1,1,'Belle voiture'),
+-- (2,'Mazda','Rx-7 FD','25000',1,2,'Belle voiture'),
+-- (3,'Honda','NSX','50000',1,3,'Belle voiture'),
+-- (4,'Toyota','Supra','60000',1,4,'Belle voiture'),
+-- (5,'Toyota','Ae86','15000',1,5,'aeaezaeze'),
+-- (6,'Toyota','GT 86','24000',1,6,'aeazedddde'),
+-- (7,'Honda','Civic','12000',1,7,'azd'),
+-- (8,'Nissan','GTR - 32','42000',1,8,'5757'),
+-- (9,'Nissan','GT-R 35','55000',1,9,'tfgthjhytyjtyjtyj'),
+-- (10,'Subaru','Impreza WRX','15000',1,10,'Bevorelitule '),
+-- (11,'Nissan','S13','22000',1,11,'uuuuu'),
+-- (12,'Toyota','Chaser JZX 100','13000',1,12,'tfgthjhytyjtyjtyj'),
+-- (13,'Mazda','Mx-5 Miata','7000',1,13,'Très bon état');
 
-INSERT INTO `image` (`id_img`,`img_url`,`id_article`)
-VALUES (1,'1643625480145_240sx.jpg',1),
-(2,'1643625503076_rx7-fd.jpg',2),
-(3,'1643625528120_honda-nsx.jpg',3),
-(4,'1643625550428_supra.jpg',4),
-(5,'1643625571288_Ae86.jpg',5),
-(6,'1643625595024_gt86.jpg',6),
-(7,'1643625626358_civic.jpg',7),
-(8,'1643625660222_gtr32.jpg',8),
-(9,'1643625684301_nissan-gtr-canada-aa.jpg',9),
-(10,'1643625729539_Impreza.jpg',10),
-(11,'1643625747445_s13.jpg',11),
-(12,'1643625780399_Jzx100.jpg',12),
-(13,'1643625807420_miata.jpg',13);
+-- INSERT INTO `image` (`id_img`,`img_url`,`id_article`)
+-- VALUES (1,'1643625480145_240sx.jpg',1),
+-- (2,'1643625503076_rx7-fd.jpg',2),
+-- (3,'1643625528120_honda-nsx.jpg',3),
+-- (4,'1643625550428_supra.jpg',4),
+-- (5,'1643625571288_Ae86.jpg',5),
+-- (6,'1643625595024_gt86.jpg',6),
+-- (7,'1643625626358_civic.jpg',7),
+-- (8,'1643625660222_gtr32.jpg',8),
+-- (9,'1643625684301_nissan-gtr-canada-aa.jpg',9),
+-- (10,'1643625729539_Impreza.jpg',10),
+-- (11,'1643625747445_s13.jpg',11),
+-- (12,'1643625780399_Jzx100.jpg',12),
+-- (13,'1643625807420_miata.jpg',13);
 
 
 -- SELECT image.img_url, article.make, article.model FROM image INNER JOIN article on article.img_id = "1";

@@ -17,32 +17,32 @@
                     <div class="col-md-6">
                         <div class="contact-form">
                             <label>Marque de la voiture :</label>
-                            <input name="make" type="text" id="name" value="{{ this.make }}"/>
+                            <input minlength="2" maxlength="45" name="make" type="text" id="name" value="{{ this.make }}" required/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-form">
                             <label>Model de la voiture :</label>
-                            <input name="model" type="text" value="{{ this.model }}"/>
+                            <input minlength="2" maxlength="45" name="model" type="text" value="{{ this.model }}" required/>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="contact-form">
                             <label>Prix de la voiture :</label>
-                            <input name="price" type="number" value="{{ this.price }}"/>
+                            <input minlength="2" maxlength="45" name="price" type="number" value="{{ this.price }}" required/>
                         </div>
                     </div>
                 </div>
                 <!--Image-->
                 <div class="row">
                     <div class="col-md-6">
-                        <input multiple name="img" type="file"></input>
+                        <input multiple name="img" type="file" required></input>
                     </div>
                 </div>
                 <div class="col-md-12">
                         <div class="contact-form">
                             <label>Description :</label>
-                            <input name="description" type="text" id="description" value="{{ this.description }}"/>
+                            <input minlength="10" maxlength="500" name="description" type="text" id="description" value="{{ this.description }}" required/>
                         </div>
                     </div>
             </div>

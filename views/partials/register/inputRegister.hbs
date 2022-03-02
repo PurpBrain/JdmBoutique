@@ -8,14 +8,14 @@
                     <div class="contact-form">
                         <label>Nom :</label>
                         <input name='name' class="form-control" type="text" id="nameRegister"
-                            placeholder="Ajouter votre nom" required/>
+                            minlength="4" maxlength="20" placeholder="Ajouter votre nom" required/>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="contact-form">
                         <label>Email :</label>
                         <input name='email' class="form-control" type="email" id="emailRegister"
-                            placeholder="Ajouter votre email" required/>
+                            minlength="4" maxlength="40" placeholder="Ajouter votre email" required/>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                         <label>Mot de passe :</label>
                         <div class="input-group mb-3">
                             <input name='mdp' class="form-control" type="password" id="password"
-                                placeholder="Mot de passe" onchange="checkPassword()" required/>
+                                minlength="6" maxlength="50" placeholder="Mot de passe" onchange="checkPassword()" required/>
                             <span class="icons input-group-text"><i class="far fa-times-circle"></i></span>
                         </div>
 
@@ -37,7 +37,7 @@
                         <label>Confirmation mot de passe :</label>
                         <div class="input-group mb-3">
                             <input name='mdpConfirm' class="form-control" type="password" id="passwordConfirm"
-                                placeholder="Confirmation mot de passe" onchange="checkPassword()" required/>
+                                minlength="6" maxlength="50" placeholder="Confirmation mot de passe" onchange="checkPassword()" required/>
                             <span class="icons input-group-text"><i class="far fa-times-circle"></i></span>
                         </div>
                     </div>
