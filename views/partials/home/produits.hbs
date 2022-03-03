@@ -2,16 +2,17 @@
 
 <!--PRODUITS--->
 <section id="nosproduits">
-    <div class="container">
+    <div class="container pt-3 pb-3">
         <div class="row">
             <div class="col-md-12">
-                <h2 data-aos="fade-right" >Nos véhicules en ventes</h2>
+                <h2 data-aos="fade-right">Nos véhicules en ventes</h2>
             </div>
         </div>
         <div id="voitures" class="product row pb-3 justify-content-center">
             {{!-- Utilisation du helper pour une limite de 3 --}}
             {{#each (limit voiture 3)}}
-            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="col-12 col-md-6 col-lg-4">
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"
+                class="col-12 col-md-6 col-lg-4">
                 <div class="product-item txt-color-black">
                     <div class="voiture-card">
                         <a href="/blog/{{this.id_Article}}">
@@ -29,13 +30,11 @@
             {{/each}}
         </div>
         <div class="row">
-            <div class="col-12">
-                <h2 data-aos="zoom-in">
-                    <a href="blog">
-                        <i  class="fas fa-angle-double-right"></i> Voir plus <i class="fas fa-angle-double-left"></i>
-                    </a>
-                </h2>
-            </div>
+            <h2 data-aos="fade-up">
+                <a href="blog">
+                    <i class="fas fa-angle-double-right"></i> Voir plus <i class="fas fa-angle-double-left"></i>
+                </a>
+            </h2>
         </div>
     </div>
 </section>
