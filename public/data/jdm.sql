@@ -8,15 +8,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema db_driftland
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `db_driftland` DEFAULT CHARACTER SET utf8 ;
+USE `db_driftland` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `db_driftland`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `db_driftland`.`user` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `avatar_url` VARCHAR(500) NOT NULL,
   `pseudo` VARCHAR(45) NOT NULL,
@@ -29,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`article`
+-- Table `db_driftland`.`article`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`article` (
+CREATE TABLE IF NOT EXISTS `db_driftland`.`article` (
   `id_Article` INT NOT NULL AUTO_INCREMENT,
   `make` VARCHAR(45) NOT NULL,
   `model` VARCHAR(45) NOT NULL,
@@ -43,16 +43,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`article` (
   INDEX `fk_Article_2_idx` (`author_id` ASC) VISIBLE,
   CONSTRAINT `fk_Article_2`
     FOREIGN KEY (`author_id`)
-    REFERENCES `mydb`.`user` (`id_user`)
+    REFERENCES `db_driftland`.`user` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`comment`
+-- Table `db_driftland`.`comment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`comment` (
+CREATE TABLE IF NOT EXISTS `db_driftland`.`comment` (
   `id_comment` INT NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(144) NOT NULL,
   `author_id` INT NOT NULL COMMENT '	',
@@ -62,21 +62,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`comment` (
   INDEX `fk_comment_2_idx` (`author_id` ASC) VISIBLE,
   CONSTRAINT `fk_comment_1`
     FOREIGN KEY (`article_id`)
-    REFERENCES `mydb`.`article` (`id_Article`)
+    REFERENCES `db_driftland`.`article` (`id_Article`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_comment_2`
     FOREIGN KEY (`author_id`)
-    REFERENCES `mydb`.`user` (`id_user`)
+    REFERENCES `db_driftland`.`user` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`role`
+-- Table `db_driftland`.`role`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`role` (
+CREATE TABLE IF NOT EXISTS `db_driftland`.`role` (
   `id_user` INT NOT NULL,
   `is_admin` TINYINT NOT NULL,
   `is_ban` TINYINT NOT NULL,
@@ -85,16 +85,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`role` (
   UNIQUE INDEX `id_user_UNIQUE` (`id_user` ASC) VISIBLE,
   CONSTRAINT `fk_role_1`
     FOREIGN KEY (`id_user`)
-    REFERENCES `mydb`.`user` (`id_user`)
+    REFERENCES `db_driftland`.`user` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`image`
+-- Table `db_driftland`.`image`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`image` (
+CREATE TABLE IF NOT EXISTS `db_driftland`.`image` (
   `id_img` INT NOT NULL AUTO_INCREMENT,
   `img_url` VARCHAR(500) NOT NULL,
   `id_article` INT NOT NULL,
@@ -102,13 +102,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`image` (
   INDEX `fk_img_1_idx` (`id_article` ASC) VISIBLE,
   CONSTRAINT `fk_img_1`
     FOREIGN KEY (`id_article`)
-    REFERENCES `mydb`.`article` (`id_Article`)
+    REFERENCES `db_driftland`.`article` (`id_Article`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `mydb`.`message`
+-- Table `db_driftland`.`message`
 -- -----------------------------------------------------
 CREATE TABLE `message` (
   `idmessage` int NOT NULL AUTO_INCREMENT,

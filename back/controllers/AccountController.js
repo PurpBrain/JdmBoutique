@@ -41,7 +41,7 @@ exports.editProfile = async (req, res) => {
 
     if (req.file) {
         const user = await db.query(`SELECT * FROM user WHERE id_user = ${id}`)
-        await db.query(`UPDATE user SET avatar_url= :avatar WHERE id_user = ${id}`,{setavatar})
+        await db.query(`UPDATE user SET avatar_url="${setavatar}" WHERE id_user = ${id}`)
         req.session.user = {
             id_user: id,
             avatar_url: setavatar,
@@ -61,7 +61,7 @@ exports.editProfile = async (req, res) => {
         bcrypt.compare(mdp, user[0].password, async function (err, result) {
             console.log(result)
             if (result === true) {
-                await db.query(`UPDATE user SET pseudo= :pseudo, email=:email, password="${hash}" WHERE id_user = ${id}`,{setpseudo},{setemail})
+                await db.query(`UPDATE user SET pseudo= :setpseudo, email=:setemail, password="${hash}" WHERE id_user = ${id}`,{setpseudo, setemail})
 
                 console.log("modif faite")
                 req.session.user = {
@@ -108,7 +108,7 @@ exports.addVoiture = async (req, res) => {
 
     const { make, model, price, description } = req.body;
 
-    const cars_insert = await db.query(`INSERT INTO article SET make= :make, model= :model, price='${price}', author_id=${req.session.user.id_user}, description= :description`,{make},{model},{description});
+    const cars_insert = await db.query(`INSERT INTO article SET make= :make, model= :model, price='${price}', author_id=${req.session.user.id_user}, description= :description`,{make, model, description});
 
     for (i = 0; i < req.files.length; i++) {
         const picture_insert = await db.query(`INSERT INTO image SET img_url='${req.files[i].filename}', id_article='${cars_insert.insertId}'`);
@@ -132,7 +132,7 @@ exports.editVoiture = async (req, res) => {
     const image = await db.query(`SELECT * FROM image WHERE id_img = ${id}`)
 
     await db.query(`UPDATE article 
-                    SET make= :make, model=:model, price="${price}", description=:description WHERE id_Article=${id}`,{make},{model},{description})
+                    SET make= :make, model= :model, price="${price}", description= :description WHERE id_Article=${id}`,{make, model, description})
 
     if (req.file) {
         const dir = path.join("./public/img/Voitures-Img")

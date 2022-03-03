@@ -6,7 +6,6 @@
 exports.blogpage = (req, res) => {
     console.log('Page blog');
     /////////// Pagination /////////// 
-
     // Nombres d'article au total
     let numRows;
     //Nombres d'articles par page
@@ -23,13 +22,11 @@ exports.blogpage = (req, res) => {
     let sql = `SELECT count(*) as numRows FROM article`;
 
     db.query(sql, (error, results, fields) => {
-        
         numRows = results[0].numRows;
         // Numero de page qu'on arrondi a l'entier surpérieur 
         numPages = Math.ceil(numRows / numPerPage);
         // console.log(numPerPage)
     })
-    
     // Requête SQL pour séléctionner tout les articles selon les images trier par ordre croissant 
     let sqlget = `SELECT * 
                   FROM article 

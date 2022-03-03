@@ -94,11 +94,11 @@ Handlebars.registerHelper('limit', function (ar, max) {
   return db;
 
 });
-Handlebars.registerHelper('iffpage', function (a, b, opts) {
+Handlebars.registerHelper('iffpage', function (a, b, option) {
   if (a == b) {
-    return opts.fn(this);
+    return option.fn(this);
   } else {
-    return opts.inverse(this);
+    return option.inverse(this);
   }
 })
 
