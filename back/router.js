@@ -20,12 +20,10 @@ const { adminpage,
     registerpage,
     infoRegister,
     forgotpage,
-    forgot,
     logout,
     blogpage,
     search,
     contactpage,
-    createMessage,
     homepage,
     accountpage,
     editProfile,
@@ -39,6 +37,7 @@ const { adminpage,
 
 // Import de middleware
 const mdlAuth = require('./middleware/auth')
+const mdlBlog = require('./middleware/blog')
 
 // Routes
 
@@ -80,7 +79,7 @@ router.route('/result')
 
 // Article
 router.route('/blog/:id')
-    .get(articlepage)
+    .get(mdlBlog.blog_exist, articlepage)
 
 // Commentaire article
 router.route('/send/com/:id')

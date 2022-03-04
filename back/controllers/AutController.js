@@ -63,16 +63,15 @@ exports.infoRegister = async (req, res) => {
     const hash = bcrypt.hashSync(mdp, 10);
 
     if (mdp == mdpConfirm) {
-
+        
         const user = await db.query(`INSERT INTO user (pseudo, email, password, avatar_url) 
                         VALUES ('${name}', '${email}', '${hash}', '${req.file.filename}');`)
         console.log(user)
         const role = await db.query(`INSERT INTO role (id_user, is_admin, is_ban, is_archive) 
                         VALUES (${user.insertId},'0', '0', '0')`)
-        // function (err) {
-        //     if (err) res.redirect('back')
+        const results = await db.query(`SELECT * FROM user WHERE email = '${email}'`)                
+                        req.session.user = results[0]
 
-        // };
         console.log("Compte crée !")
         res.redirect("/")
 
