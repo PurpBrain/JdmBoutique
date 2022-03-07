@@ -2,6 +2,8 @@
  * Controller: Home
  * **************** */
 
+const { mailSend } = require("../utils/nodeMailer");
+
 // Controller pour la page home
 exports.homepage = (req, res) => {
     console.log('Page home');

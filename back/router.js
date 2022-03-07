@@ -33,6 +33,7 @@ const { adminpage,
     banUser,
     debanUser,
     addMessage,
+    repMsg,
 } = require("./controllers");
 
 // Import de middleware
@@ -103,7 +104,8 @@ router.route('/admin/ban/user/:id')
 
 router.route('/admin/deban/user/:id')
     .post(debanUser)
-
+router.route('/sendMail/:id')
+    .post(repMsg)
 // Mon Compte
 router.route('/account')
     .get(accountpage)

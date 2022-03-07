@@ -65,3 +65,23 @@ exports.debanUser = async (req, res) => {
     await db.query(`UPDATE role SET is_ban = 0 WHERE id_user=${id}`)
     res.redirect('back')
 }
+
+exports.repMsg = async (req,res) => {
+    const { mailSend } = require("../utils/nodeMailer")
+    const { reponse } = req.body;
+    const { id } = req.params;
+    const [message] = await db.query(`SELECT * FROM message WHERE idmessage=${id}`)
+
+    let msg = `Votre message:${message.message}<br>Réponse de l'admin: ${reponse}`;
+
+    mailSend (`JDM BOUTIQUE <${process.env.MAIL_USER}>`,`${message.email}`,"Réponse à votre demande",msg, async(err,info) => {
+        if (err) {
+            console.log(err)
+            res.redirect('back')
+        }else {
+            await db.query(`DELETE FROM message WHERE idmessage=${id}`)
+            res.redirect('back')
+        }
+    })
+    
+}
