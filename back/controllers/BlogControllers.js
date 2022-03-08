@@ -34,8 +34,8 @@ exports.blogpage = (req, res) => {
                   INNER JOIN role ON article.author_id = role.id_user
                   WHERE is_ban = 0 ORDER BY article.id_Article 
                   DESC LIMIT ${limit}`
+    
     db.query(sqlget, (error, results, fields) => {
-
         // Si le numéro de la page est inférieur 
         
         if (page <= numPages) {
@@ -49,7 +49,9 @@ exports.blogpage = (req, res) => {
                 page: Pagination
             })
         } else {
-            res.redirect('blog')
+            res.render('home', {
+                flash: "Aucun article en ligne. Publiez en un"
+            })
         }
 
     })
