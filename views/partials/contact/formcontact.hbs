@@ -1,0 +1,68 @@
+{{!--Partial du formulaire de contact--}}
+
+<!--CONTACT-->
+<section id="contact">
+    <div class="container txt-color-black">
+        <div class="row">
+            <div class="form text-center">
+                <h2>Contactez-nous</h2>
+                <p>Nunc sit amet condimentum nisl. Aliquam in tincidunt eros. Curabitur ut accumsan
+                    diam. Integer tellus nisi, gravida sed felis a, commodo elementum nisi. Nullam vitae
+                    augue venenatis, condimentum mauris eu, placerat justo.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="logo text-center">
+                    <p><i class="fas fa-phone"></i>02.51.34.65.33</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="logo text-center">
+                    <p><i class="fas fa-map-marker-alt"></i>2 rue du noyer aux perdrix 77170 Servon</p>
+                </div>
+            </div>
+            <form action="/send/message" method="post">
+                <!--Email & Name-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label for="name">Nom :</label>
+                            <input name="name" class="border rounded-2" type="text" id="name" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Email :</label>
+                            <input name="email" type="email" id="email" class="border rounded-2"
+                                placeholder="Ajouter votre email" />
+                        </div>
+                    </div>
+                </div>
+                <!--Type Contact-->
+                <div class="row">
+                    <div class="contact-form">
+                        <label>Sélectionnez le service</label>
+                        <select name='service' class="border rounded-2">
+                            <option>Service client</option>
+                            <option>Service comptable</option>
+                            <option>SAV</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Message-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label for="message">Votre message:</label>
+                            <textarea name="message" id="message" rows="3"
+                                class="contact-message border rounded-2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--Send Button-->
+                <div class="contact-form">
+                    <button type="submit" class="btn btn-contact">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

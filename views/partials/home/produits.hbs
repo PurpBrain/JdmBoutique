@@ -1,0 +1,63 @@
+{{!-- Partial produits --}}
+
+<!--PRODUITS--->
+<section id="nosproduits">
+    <div class="container pt-4 pb-4">
+        <div class="col-md-12">
+            <h2 data-aos="fade-right">Nos véhicules en ventes</h2>
+        </div>
+        <div id="voitures" class="product row pb-4 justify-content-center">
+            {{!-- Utilisation du helper pour une limite de 3 --}}
+            {{#if voiture}}
+            {{#each (limit voiture 3)}}
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"
+                class="col-12 col-md-6 col-lg-4">
+                <div class="product-item txt-color-black">
+                    <div class="voiture-card">
+                        <a href="/blog/{{this.id_Article}}">
+                            <div style="background-image: url('/assets/img/Voitures-Img/{{this.img_url }}');"
+                                class="sameImg">
+                                <p style="height: 250px;"></p>
+                            </div>
+                        </a>
+                    </div>
+                    <h3>{{ this.make }} {{ this.model }}</h3>
+                    <p>Prix: {{ this.price }}€</p>
+                    {{!-- <p>{{@key}} -- {{ this }}</p> --}}
+                </div>
+            </div>
+            {{/each}}
+            {{else }}
+            {{#if user}}
+            <div class="row">
+                <div class="text-center">
+                    <h4>Il n'y a actuellement pas de voitures en vente sur le site<br>Vous pouvez mettre en ligne une
+                        annonce via ce bouton</h4>
+                </div>
+                <div class="d-flex justify-content-center pt-4 ">
+                    <button data-bs-toggle="modal" data-bs-target="#ModalBlog" class="btn btn-primary">Publier !</button>
+                    {{> modals/modalAddBlog }}
+                </div>
+            </div>
+            {{else }}
+            <div class="row">
+                <div class="text-center">
+                    <h4>Il n'y a actuellement pas de voitures en vente sur le site<br>Vous pouvez mettre en ligne une
+                        annonce en vous connectant</h4>
+                </div>
+                <div class="d-flex justify-content-center pt-4 ">
+                    <button onclick="window.location.href='/login'" class="btn btn-primary">Connectez-vous !</button>
+                </div>
+            </div>
+            {{/if}}
+            {{/if}}
+        </div>
+        <div class="row">
+            <h2 data-aos="fade-up">
+                <a href="blog">
+                    <i class="fas fa-angle-double-right"></i> Voir plus <i class="fas fa-angle-double-left"></i>
+                </a>
+            </h2>
+        </div>
+    </div>
+</section>

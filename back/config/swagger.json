@@ -1,0 +1,49 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "site-bootstrap-test-nodejs",
+      "version": "1.0.0",
+      "license": {
+        "name": "ISC"
+      },
+      "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3).\n\nCommand terminal sass : ```sass --watch assets/sass/index.sass:assets/css/style.css```"
+    },
+    "paths": {
+      "/api/blog": {
+        "get": {
+          "summary": "/api/blog",
+          "responses": {
+            
+          },
+          "tags": [
+            
+          ]
+        }
+      },
+      "/api/result": {
+        "get": {
+          "summary": "/api/result",
+          "responses": {
+            
+          },
+          "tags": [
+            
+          ]
+        }
+      },
+      "/api/send/message": {
+        "post": {
+          "summary": "/api/send/message",
+          "responses": {
+            
+          },
+          "tags": [
+            
+          ]
+        }
+      }
+    },
+    "tags": [
+      
+    ]
+  }

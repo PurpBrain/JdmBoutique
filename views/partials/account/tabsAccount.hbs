@@ -1,0 +1,123 @@
+{{!--
+Partial : Tabs du compte
+--}}
+<div class="text-center pt-5">
+    <h2>Mon Compte</h2>
+</div>
+<div class="container ">
+    <div class="row">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist" aria-owns="pills-article-tab pills-com-tab pills-account-tab">
+            <li role="tab" class="nav-item" role="article">
+                <button class="nav-link2 active" id="pills-article-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-article" type="button" role="tab" aria-controls="pills-article"
+                    aria-selected="true">Mes articles</button>
+            </li>
+            <li role="tab" class="nav-item" role="commentaires">
+                <button class="nav-link2" id="pills-com-tab" data-bs-toggle="pill" data-bs-target="#pills-commentaires"
+                    type="button" role="tab" aria-controls="pills-commentaires" aria-selected="false">Mes
+                    commentaires</button>
+            </li>
+            <li role="tab" class="nav-item" role="account">
+                <button class="nav-link2" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account"
+                    type="button" role="tab" aria-controls="pills-account" aria-selected="false">Mon compte</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            {{!-- Article --}}
+            <div class="tab-pane fade show active" id="pills-article" role="tabpanel"
+                aria-labelledby="pills-article-tab">
+                <section class="container adminimg pb-5" id="article">
+                    {{#if myArticle }}
+                    <div class="col-md-12 d-flex justify-content-end">
+                        <button aria-label="Add Article" type="button" class="btn txt-color-black" data-bs-toggle="modal"
+                            data-bs-target="#ModalBlog">
+                            <i class="fas fa-plus-square"></i></button>
+                    </div>
+                    <div class="boxAdmin col txt-color-black">
+                        {{#each myArticle }}
+                        <div class="d-flex align-items-center text-center py-3">
+                            <div class="col-4">
+                                <a href="/blog/{{this.id_Article}}"><img alt="{{ this.img_url }}" class=" col-md-4"
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
+                            </div>
+                            <div class="col-4">
+                                <p>Page : {{ this.make }} {{ this.model }}</p>
+                            </div>
+                            <div class="col-4">
+                                <a><i class="fas fa-pencil-ruler pe-3" data-bs-toggle="modal"
+                                        data-bs-target="#editBlog{{ this.id_Article }}"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#deleteBlog{{ this.id_Article }}"><i class="fas fa-trash-alt" ></i></a>
+                            </div>
+                        </div>
+                        {{> modals/modalDeleteBlog data="/account"}}
+                        {{> modals/modalEditBlog data="/account"}}
+                        {{/each}}
+                    </div>
+                    {{else }}
+                    <div class="boxAdmin col txt-color-black text-center pt-2 pb-2">
+                        <p>Vous n'avez publié aucun article récemment :(</p>
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalBlog">Publier
+                            un article</button>
+                    </div>
+                    {{/if}}
+                </section>
+            </div>
+            {{!-- Commentaires --}}
+            <div class="tab-pane fade" id="pills-commentaires" role="tabpanel" aria-labelledby="pills-com-tab">
+                <section class="container adminimg pb-5" id="commentaires">
+                    {{#if myCom}}
+                    <div class="boxAdmin col txt-color-black">
+                        {{#each myCom}}
+                        <div class="d-flex align-items-center text-center py-3">
+                            <div class="col-4">
+                                <a href="/blog/{{this.id_Article}}"><img alt="{{ this.img_url }}"
+                                        src="/assets/img/Voitures-Img/{{this.img_url}}"></a>
+                            </div>
+                            <div class="col-4">
+                                <p>Sur la page : {{ this.make }} {{ this.model }}</p>
+                            </div>
+                            <div class="col-4">
+                                <a><i class="fas fa-trash-alt" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCom{{ this.id_comment }}"></i></a>
+                            </div>
+                        </div>
+                        {{> modals/modalDeleteCom }}
+                        {{/each}}
+                    </div>
+                    {{else }}
+                    <div class="boxAdmin col txt-color-black">
+                        <div class="my-3">
+                            <p class="text-center">Vous n'avez posté aucun commentaire :(</p>
+                        </div>
+                    </div>
+                    {{/if}}
+                </section>
+            </div>
+            {{!-- Account --}}
+            <div class="tab-pane fade" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+                <section class="container adminimg pb-5 " id="account">
+                    <div class="d-flex bd-highlight pb-3">
+                        <img class="me-auto bd-highlight" src="/assets/img/img-user/{{user.avatar_url}}">
+                        <button data-bs-toggle="modal" data-bs-target="#ModalChangePP" type="button"
+                            class=" bd-highlight btn btn-secondary mb-3">Modifier</button>
+                    </div>
+                    <div class="d-flex bd-highlight pb-3">
+                        <p class="me-auto bd-highlight">Nom d'utilisateur :<br>{{user.pseudo}}</p>
+                        <button data-bs-toggle="modal" data-bs-target="#ModalChangeUsername" type="button"
+                            class="bd-highlight btn btn-secondary mb-4">Modifier</button>
+                    </div>
+                    <div class="d-flex bd-highlight pb-3">
+                        <p class="me-auto bd-highlight">E-Mail :<br>{{user.email}}</p>
+                        <button data-bs-toggle="modal" data-bs-target="#ModalChangeEmail" type="button"
+                            class="bd-highlight btn btn-secondary mb-4">Modifier</button>
+                    </div>
+                    <div class="d-flex bd-highlight pb-3">
+                        <p class="me-auto bd-highlight">Mot de passe</p>
+                        <button data-bs-toggle="modal" data-bs-target="#ModalChangePassword" type="button"
+                            class="bd-highlight btn btn-secondary mb-4">Modifier</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

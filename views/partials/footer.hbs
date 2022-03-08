@@ -1,0 +1,72 @@
+{{!--Partial du Footer--}}
+
+<!--Footer-->
+<!-- Site footer -->
+<footer id="footer" class="mt-auto site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <h1>JAPANESE DOMESTIC MARKET</h1>
+                <div class="logo">
+                    <p><i class="fas fa-map-marker-alt"></i>2 rue du noyer aux perdrix 77170 Servon</p>
+                </div>
+                <div class="logo">
+                    <p><i class="fas fa-phone-square"></i>02.51.34.65.33</p>
+                </div>
+                <div class="logo">
+                    <p><i class="fas fa-envelope"></i>leo.doray@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <h1>Quick Links</h1>
+                <ul class="footer-links">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/contact">Contactez-nous</a></li>
+                    <li><a href="/blog">Nos véhicules</a></li>
+                    {{#if user}}
+                    <li><a href="/account">Mon Compte</a></li>
+                    {{else }}
+                    <li><a href="/login">Se connecter</a></li>
+                    {{/if}}
+                    <li><a href="https://www.cnil.fr/">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 col-md-6">
+                <h1 class="text-uppercase font-weight-bold mb-4">Newsletter</h1>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque
+                    temporibus.</p>
+                <div class="p-1 rounded border">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1"
+                            class="form-control border-0 shadow-0">
+                        <div class="input-group-append">
+                            <button aria-label="newslater" type="submit" class="button-addon1 btn btn-link"><i
+                                    class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                    <a href="#">JAPANESE DOMESTIC MARKET</a>.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

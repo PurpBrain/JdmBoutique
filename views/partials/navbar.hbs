@@ -1,0 +1,45 @@
+{{!--Partial de la navbar--}}
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top border-bottom border-secondary">
+    <div class="container">
+        <a class="navbar-brand me-3 me-xl-4 order-lg-1" href="/">Boutique JDM</a>
+        <button class="navbar-toggler ms-auto order-lg-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse order-lg-2 navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/contact">Qui sommes nous ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/blog">Nos véhicules</a>
+                </li>
+                {{#if user }}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/account">Mon Compte</a>
+                </li>
+                   {{#if user.isAdmin }}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    </li>
+                   {{/if}}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" data-bs-toggle="modal" href="#deconnexion">Déconnexion</a>
+                    
+                </li>
+                {{else }}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/login">Se connecter</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
+{{#if user }}
+{{> modals/modalDeco }}
+{{/if}}

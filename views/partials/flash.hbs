@@ -1,0 +1,20 @@
+{{#if flash }}
+<div data-autohide="false" data-delay="5000" class="position-fixed top-0 end-0 p-3" style="z-index: 99999">
+    <div id="po" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="width: auto;">
+        <div class="toast-header">
+            <strong class="me-auto">Message automatique</strong>
+            <small class="mx-2">A l'instant</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <p>{{ flash }} :)</p>
+        </div>
+    </div>
+</div>
+<script>
+    setTimeout(() => {
+        var toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+    }, 0)
+</script>
+{{/if }}

@@ -1,0 +1,56 @@
+<!--Email & Name-->
+<form action="/register" method="post" enctype="multipart/form-data">
+    <div class="container col-sm-12 col-md-12 col-lg-9 col-xl-5 pt-8 pb-4 mb-7">
+        <div class="p-4 border border-dark rounded">
+            <div class="row">
+                <h2>Créer votre compte</h2>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <label>Nom :</label>
+                        <input name='name' class="form-control" type="text" id="nameRegister"
+                            minlength="4" maxlength="20" placeholder="Ajouter votre nom" required/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <label>Email :</label>
+                        <input name='email' class="form-control" type="email" id="emailRegister"
+                            minlength="4" maxlength="40" placeholder="Ajouter votre email" required/>
+                    </div>
+                </div>
+            </div>
+            <!--Password-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <label>Mot de passe :</label>
+                        <div class="input-group mb-3">
+                            <input name='mdp' class="form-control" type="password" id="password"
+                                minlength="6" maxlength="50" placeholder="Mot de passe" onchange="checkPassword()" required/>
+                            <span class="icons input-group-text"><i class="far fa-times-circle"></i></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <label>Confirmation mot de passe :</label>
+                        <div class="input-group mb-3">
+                            <input name='mdpConfirm' class="form-control" type="password" id="passwordConfirm"
+                                minlength="6" maxlength="50" placeholder="Confirmation mot de passe" onchange="checkPassword()" required/>
+                            <span class="icons input-group-text"><i class="far fa-times-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="file" name="avatar" required/>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <button type='submit' class="btn btn-primary">Enregistrez-vous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

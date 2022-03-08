@@ -1,0 +1,55 @@
+{{!--
+    Partial: Modal pour ajouter un article
+--}}
+<div class="modal fade" id="ModalBlog" tabindex="-1" aria-labelledby="ModalBlog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter un article</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/account/create/voiture" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                
+                <!--Name & Description-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Marque de la voiture :</label>
+                            <input minlength="2" maxlength="44" name="make" type="text" id="name" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-form">
+                            <label>Model de la voiture :</label>
+                            <input minlength="2" maxlength="44" name="model" type="text" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Prix de la voiture :</label>
+                            <input minlength="2" maxlength="44" name="price" type="number" required/>
+                        </div>
+                    </div>
+                </div>
+                <!--Image-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <input multiple name="img" type="file" required></input>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Description :</label>
+                            <input minlength="10" maxlength="500" name="description" type="text" id="description" required/>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

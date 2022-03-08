@@ -1,0 +1,32 @@
+<div class="modal fade" id="ModalChangeUsername" tabindex="-1" aria-labelledby="ModalChangeUsername" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Changer de pseudo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/account/{{user.id_user}}?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <!--Name & password-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Nouveau pseudo :</label>
+                            <input minlength="2" maxlength="45" placeholder="Votre magnifique pseudo" name="pseudo" type="text" id="name" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Mot de passe :</label>
+                            <input placeholder="Votre Mot de passe" name="mdp" type="password" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="modal fade" id="ModalReponse{{ this.idmessage }}" tabindex="-1" aria-labelledby="ModalReponse"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Message de {{ this.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/sendMail/{{this.idmessage}}" method="post">
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Message de {{ this.name }} :</label>
+                            <input name="message" type="text" id="message" value="{{this.message}}" disabled/>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="contact-form">
+                            <label>Votre réponse</label>
+                            <input name="reponse" type="text" id="reponse" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
